@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:p="property" Id="VoXlOjme1zCOsq6SjxMlN9" LanguageVersion="2022.5.0-0543-g82b6f0906b" Version="0.128">
+  <NugetDependency Id="LA0G2SvWhiBOt3hUrPV03g" Location="VL.CoreLib" Version="2022.5.0-0543-g82b6f0906b" />
+  <Patch Id="Lwtmc2TyLNSLxynae09CBX">
+    <Canvas Id="JQ8ALlw0X7fPaSf8oreJKf" DefaultCategory="Main" BordersChecked="false" CanvasType="FullCategory" />
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="TgtToLMDAjBPEjTNQcLgYK">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <CategoryReference Kind="Category" Name="Primitive" />
+      </p:NodeReference>
+      <Patch Id="A2pdq3psuqON9VL5e07azZ">
+        <Canvas Id="EZevK9QZcFHLRt3b7izXCQ" CanvasType="Group">
+          <Pad Id="GYSBjmw9PvMO2pqLoZ7Ivi" Bounds="459,36,628,128" ShowValueBox="true" isIOBox="true" Value="Year/Month/Day&#x9;Hour:Min:Sec&#x9;Latitude&#x9;Longitude&#x9;Depth&#x9;Magnitude&#x9;Event ID&#x9;Location&#x9;Type&#xD;&#xA;2022/01/31&#x9;23:44:27.43&#x9;38.3029&#x9;23.4036&#x9;11.3&#x9;1.4&#x9;noa2022ceqkl&#x9;8 Km ESE from Thebes&#x9;manual&#xD;&#xA;2022/01/31&#x9;23:12:43.47&#x9;35.1169&#x9;25.2164&#x9;12.5&#x9;1.6&#x9;noa2022cepjd&#x9;6 Km SW from Arkalochori&#x9;manual&#xD;&#xA;2022/01/31&#x9;22:20:53.49&#x9;38.3070&#x9;21.5465&#x9;15.8&#x9;1.1&#x9;noa2022cenqr&#x9;12 Km SE from Mesolongion&#x9;manual&#xD;&#xA;2022/01/31&#x9;22:19:42.53&#x9;38.2915&#x9;23.4013&#x9;12.1&#x9;1.2&#x9;noa2022cenpr&#x9;8 Km ESE from Thebes&#x9;manual&#xD;&#xA;2022/01/31&#x9;22:14:36.35&#x9;38.0772&#x9;21.9292&#x9;12.3&#x9;1.1&#x9;noa2022cenla&#x9;13 Km ESE from Chalandritsa Achaia&#x9;manual&#xD;&#xA;2022/01/31&#x9;22:05:16.04&#x9;41.3443&#x9;20.9134&#x9;15.8&#x9;2.5&#x9;noa2022cendh&#x9;75 Km NNW from Florina&#x9;manual&#xD;&#xA;2022/01/31&#x9;22:02:17.82&#x9;38.3098&#x9;23.4023&#x9;12.2&#x9;1.9&#x9;noa2022cenas&#x9;8 Km E from Thebes&#x9;manual&#xD;&#xA;2022/01/31&#x9;21:11:45.19&#x9;38.2787&#x9;23.3995&#x9;13.5&#x9;1.4&#x9;noa2022celji&#x9;8 Km ESE from Thebes&#x9;manual&#xD;&#xA;2022/01/31&#x9;21:00:18.66&#x9;38.3125&#x9;23.4077&#x9;13.5&#x9;1.6&#x9;noa2022cekzn&#x9;8 Km W from Asopia Voiotia&#x9;manual&#xD;&#xA;2022/01/31&#x9;20:02:25.24&#x9;38.3469&#x9;20.3055&#x9;11.0&#x9;2.0&#x9;noa2022cejbw&#x9;20 Km NW from Lixouri &#x9;manual&#xD;&#xA;2022/01/31&#x9;19:43:00.47&#x9;38.3015&#x9;23.3913&#x9;8.5&#x9;1.9&#x9;noa2022ceilf&#x9;7 Km ESE from Thebes&#x9;manual&#xD;&#xA;2022/01/31&#x9;19:30:18.99&#x9;38.3144&#x9;23.4096&#x9;12.1&#x9;3.1&#x9;noa2022ceiai&#x9;8 Km S from Ypato Voiotia&#x9;manual&#xD;&#xA;2022/01/31&#x9;19:24:19.24&#x9;38.2951&#x9;23.4370&#x9;11.5&#x9;1.7&#x9;noa2022cehva&#x9;6 Km W from Asopia Voiotia&#x9;manual&#xD;&#xA;2022/01/31&#x9;19:18:35.29&#x9;37.7092&#x9;26.8135&#x9;12.8&#x9;2.7&#x9;noa2022cehqe&#x9;11 Km E from Marathokampos Samou&#x9;manual&#xD;&#xA;2022/01/31&#x9;19:16:01.74&#x9;38.3116&#x9;23.4087&#x9;10.9&#x9;1.4&#x9;noa2022cehoc&#x9;8 Km W from Asopia Voiotia&#x9;manual&#xD;&#xA;2022/01/31&#x9;19:08:28.51&#x9;38.3382&#x9;23.4462&#x9;6.5&#x9;3.5&#x9;noa2022cehhh&#x9;6 Km NW from Asopia Voiotia&#x9;manual&#xD;&#xA;2022/01/31&#x9;17:39:44.98&#x9;34.9347&#x9;26.5045&#x9;13.4&#x9;2.4&#x9;noa2022ceejp&#x9;28 Km SE from Zakros&#x9;manual&#xD;&#xA;2022/01/31&#x9;16:23:02.00&#x9;36.9878&#x9;21.3240&#x9;11.4&#x9;2.5&#x9;noa2022cebvq&#x9;29 Km WSW from Gargalianoi Messinia&#x9;manual&#xD;&#xA;2022/01/31&#x9;16:21:18.19&#x9;35.2959&#x9;25.2956&#x9;23.0&#x9;1.6&#x9;noa2022cebuf&#x9;14 Km ENE from Archanes&#x9;manual&#xD;&#xA;2022/01/31&#x9;15:44:45.34&#x9;35.0674&#x9;23.4421&#x9;23.7&#x9;2.7&#x9;noa2022ceaov&#x9;28 Km SW from Palaiochora&#x9;manual&#xD;&#xA;2022/01/31&#x9;14:34:52.76&#x9;37.9056&#x9;25.2621&#x9;11.3&#x9;1.8&#x9;noa2022cdygx&#x9;30 Km ENE from Andros&#x9;manual&#xD;&#xA;2022/01/31&#x9;14:28:01.76&#x9;34.6298&#x9;24.1214&#x9;22.2&#x9;2.7&#x9;noa2022cdybb&#x9;23 Km S from Gavdhos&#x9;manual&#xD;&#xA;2022/01/31&#x9;14:10:09.56&#x9;38.5011&#x9;21.4998&#x9;10.9&#x9;1.8&#x9;noa2022cdxlr&#x9;15 Km NNE from Mesolongion&#x9;manual&#xD;&#xA;2022/01/31&#x9;14:01:29.02&#x9;38.4421&#x9;23.5904&#x9;15.0&#x9;2.3&#x9;noa2022cdxef&#x9;3 Km SSW from Chalkis&#x9;manual&#xD;&#xA;2022/01/31&#x9;13:22:47.70&#x9;34.7717&#x9;24.1150&#x9;5.5&#x9;3.0&#x9;noa2022cdvxb&#x9;8 Km SSE from Gavdhos&#x9;manual&#xD;&#xA;2022/01/31&#x9;12:05:47.87&#x9;37.7051&#x9;20.4199&#x9;6.1&#x9;2.3&#x9;noa2022cdtja&#x9;27 Km WSW from Agios Leon Zakynthos&#x9;manual&#xD;&#xA;2022/01/31&#x9;11:34:22.54&#x9;37.8928&#x9;24.0536&#x9;7.0&#x9;1.3&#x9;noa2022cdshp&#x9;5 Km SE from Vravrona&#x9;manual&#xD;&#xA;2022/01/31&#x9;10:44:12.25&#x9;35.2757&#x9;25.2635&#x9;21.2&#x9;1.5&#x9;noa2022cdqra&#x9;10 Km ENE from Archanes&#x9;manual&#xD;&#xA;2022/01/31&#x9;09:28:07.93&#x9;35.1540&#x9;25.2608&#x9;10.9&#x9;2.1&#x9;noa2022cdods&#x9;1 Km NNW from Arkalochori&#x9;manual&#xD;&#xA;2022/01/31&#x9;08:59:07.55&#x9;35.1512&#x9;25.2599&#x9;9.9&#x9;1.7&#x9;noa2022cdnew&#x9;1 Km NW from Arkalochori&#x9;manual&#xD;&#xA;2022/01/31&#x9;08:11:37.67&#x9;35.1462&#x9;25.2512&#x9;10.1&#x9;1.9&#x9;noa2022cdlqc&#x9;1 Km W from Arkalochori&#x9;manual&#xD;&#xA;2022/01/31&#x9;07:29:35.38&#x9;38.3125&#x9;23.4087&#x9;8.2&#x9;1.5&#x9;noa2022cdkga&#x9;8 Km W from Asopia Voiotia&#x9;manual&#xD;&#xA;2022/01/31&#x9;07:11:57.54&#x9;38.3281&#x9;23.3784&#x9;7.9&#x9;1.1&#x9;noa2022cdjqn&#x9;6 Km ENE from Thebes&#x9;manual&#xD;&#xA;2022/01/31&#x9;06:31:28.84&#x9;34.6225&#x9;25.3958&#x9;17.5&#x9;2.3&#x9;noa2022cdiie&#x9;39 Km SW from Chrysi&#x9;manual&#xD;&#xA;2022/01/31&#x9;05:50:58.15&#x9;34.6225&#x9;25.3500&#x9;13.6&#x9;2.2&#x9;noa2022cdgzl&#x9;41 Km S from Tsoutsouros&#x9;manual&#xD;&#xA;2022/01/31&#x9;05:46:25.81&#x9;38.7296&#x9;20.4941&#x9;5.6&#x9;1.7&#x9;noa2022cdgvo&#x9;12 Km WSW from Agios Nikitas&#x9;manual&#xD;&#xA;2022/01/31&#x9;02:59:28.48&#x9;34.9612&#x9;26.2619&#x9;13.6&#x9;2.6&#x9;noa2022cdbii&#x9;15 Km S from Zakros&#x9;manual&#xD;&#xA;2022/01/31&#x9;01:39:29.83&#x9;37.7188&#x9;26.0147&#x9;9.4&#x9;2.3&#x9;noa2022ccyrs&#x9;18 Km NW from Evdilos Ikarias&#x9;manual&#xD;&#xA;2022/01/31&#x9;01:16:24.21&#x9;34.9713&#x9;23.3405&#x9;22.5&#x9;2.2&#x9;noa2022ccxxx&#x9;42 Km SW from Palaiochora&#x9;manual&#xD;&#xA;2022/01/31&#x9;01:11:00.82&#x9;38.1798&#x9;22.9088&#x9;18.0&#x9;2.2&#x9;noa2022ccxtg&#x9;10 Km SW from Domvraina Voiotia&#x9;manual&#xD;&#xA;2022/01/31&#x9;01:02:35.45&#x9;35.0597&#x9;25.1271&#x9;8.5&#x9;1.2&#x9;noa2022ccxlf&#x9;6 Km NNW from Pyrgos&#x9;manual&#xD;&#xA;2022/01/31&#x9;00:05:45.88&#x9;38.4402&#x9;23.6545&#x9;11.1&#x9;2.2&#x9;noa2022ccvpi&#x9;2 Km NW from Vasiliko&#x9;manual&#xD;&#xA;2022/01/31&#x9;00:01:27.44&#x9;35.4465&#x9;22.8268&#x9;29.6&#x9;2.8&#x9;noa2022ccvlp&#x9;64 Km SW from Andikithira&#x9;manual&#xD;&#xA;2022/01/30&#x9;22:57:48.86&#x9;38.1459&#x9;21.7030&#x9;15.0&#x9;1.3&#x9;noa2022cctiz&#x9;8 Km WNW from Chalandritsa Achaia&#x9;manual&#xD;&#xA;2022/01/30&#x9;22:33:05.69&#x9;35.0061&#x9;23.3899&#x9;27.0&#x9;2.5&#x9;noa2022ccsnt&#x9;36 Km SW from Palaiochora&#x9;manual&#xD;&#xA;2022/01/30&#x9;22:26:19.27&#x9;35.1833&#x9;25.2608&#x9;9.8&#x9;1.5&#x9;noa2022ccshy&#x9;4 Km N from Arkalochori&#x9;manual&#xD;&#xA;2022/01/30&#x9;22:16:07.85&#x9;34.9493&#x9;24.4318&#x9;38.9&#x9;3.4&#x9;noa2022ccrzg&#x9;27 Km S from Plakias Rethymno&#x9;manual&#xD;&#xA;2022/01/30&#x9;21:29:06.03&#x9;38.8939&#x9;21.2782&#x9;9.7&#x9;1.4&#x9;noa2022ccqkw&#x9;10 Km ENE from Amfilochia&#x9;manual&#xD;&#xA;2022/01/30&#x9;21:04:08.17&#x9;34.7836&#x9;24.9435&#x9;27.0&#x9;2.1&#x9;noa2022ccppm&#x9;21 Km SE from Kaloi Limenes&#x9;manual&#xD;&#xA;2022/01/30&#x9;20:09:25.08&#x9;38.9383&#x9;26.6977&#x9;12.1&#x9;3.3&#x9;noa2022ccnun&#x9;22 Km SSE from Mitilini&#x9;manual&#xD;&#xA;2022/01/30&#x9;20:04:36.31&#x9;35.8557&#x9;27.7112&#x9;61.9&#x9;3.0&#x9;noa2022ccnqg&#x9;12 Km SSW from Katavia Rhodos&#x9;manual&#xD;&#xA;2022/01/30&#x9;20:02:25.03&#x9;34.8651&#x9;23.0695&#x9;28.0&#x9;2.7&#x9;noa2022ccnoo&#x9;69 Km SW from Palaiochora&#x9;manual&#xD;&#xA;2022/01/30&#x9;19:48:58.05&#x9;38.2997&#x9;23.4288&#x9;11.5&#x9;0.9&#x9;noa2022ccncw&#x9;6 Km W from Asopia Voiotia&#x9;manual&#xD;&#xA;2022/01/30&#x9;19:35:15.27&#x9;34.8944&#x9;24.9225&#x9;45.3&#x9;1.8&#x9;noa2022ccmrg&#x9;9 Km S from Miamou&#x9;manual&#xD;&#xA;2022/01/30&#x9;18:35:38.71&#x9;34.6408&#x9;24.1306&#x9;21.1&#x9;2.8&#x9;noa2022ccksc&#x9;22 Km S from Gavdhos&#x9;manual&#xD;&#xA;2022/01/30&#x9;17:52:48.15&#x9;35.1155&#x9;25.2223&#x9;11.0&#x9;1.6&#x9;noa2022ccjhg&#x9;5 Km SW from Arkalochori&#x9;manual&#xD;&#xA;2022/01/30&#x9;17:28:23.43&#x9;38.4068&#x9;21.8422&#x9;7.9&#x9;0.9&#x9;noa2022ccimc&#x9;2 Km NE from Nafpaktos&#x9;manual&#xD;&#xA;2022/01/30&#x9;16:22:50.33&#x9;38.9781&#x9;21.6444&#x9;14.8&#x9;2.2&#x9;noa2022ccgid&#x9;3 Km S from Kerasochori&#x9;manual&#xD;&#xA;2022/01/30&#x9;15:03:09.69&#x9;39.1965&#x9;19.9576&#x9;33.9&#x9;2.0&#x9;noa2022ccdrv&#x9;20 Km W from Paxoi Gaios &#x9;manual&#xD;&#xA;2022/01/30&#x9;14:05:28.15&#x9;34.8770&#x9;25.4837&#x9;27.7&#x9;2.3&#x9;noa2022ccbuh&#x9;13 Km SSE from Arvi&#x9;manual&#xD;&#xA;2022/01/30&#x9;13:47:23.48&#x9;38.7662&#x9;23.6069&#x9;10.0&#x9;1.7&#x9;noa2022ccbew&#x9;11 Km ENE from Prokopi&#x9;manual&#xD;&#xA;2022/01/30&#x9;12:31:16.82&#x9;35.2812&#x9;25.2754&#x9;22.0&#x9;2.6&#x9;noa2022cbyrl&#x9;12 Km ENE from Archanes&#x9;manual&#xD;&#xA;2022/01/30&#x9;12:25:13.00&#x9;39.8053&#x9;22.1246&#x9;11.9&#x9;1.7&#x9;noa2022cbymh&#x9;11 Km SSW from Elassona&#x9;manual&#xD;&#xA;2022/01/30&#x9;12:19:46.86&#x9;38.4732&#x9;21.4792&#x9;15.5&#x9;1.7&#x9;noa2022cbyhq&#x9;12 Km NNE from Mesolongion&#x9;manual&#xD;&#xA;2022/01/30&#x9;12:01:10.27&#x9;38.4920&#x9;22.3650&#x9;11.1&#x9;1.7&#x9;noa2022cbxrr&#x9;4 Km SSW from Amfissa&#x9;manual&#xD;&#xA;2022/01/30&#x9;11:47:18.25&#x9;38.7364&#x9;21.9859&#x9;12.3&#x9;1.6&#x9;noa2022cbxft&#x9;17 Km WNW from Athanasios Diakos&#x9;manual&#xD;&#xA;2022/01/30&#x9;11:31:20.92&#x9;39.7343&#x9;22.1919&#x9;11.4&#x9;2.8&#x9;noa2022cbwsc&#x9;8 Km W from Tyrnavos&#x9;manual&#xD;&#xA;2022/01/30&#x9;10:05:15.17&#x9;38.4315&#x9;22.2624&#x9;7.0&#x9;1.2&#x9;noa2022cbtwg&#x9;9 Km NNE from Eratini&#x9;manual&#xD;&#xA;2022/01/30&#x9;09:10:43.54&#x9;37.4625&#x9;20.3000&#x9;11.6&#x9;2.4&#x9;noa2022cbsbk&#x9;50 Km SW from Agios Leon Zakynthos&#x9;manual&#xD;&#xA;2022/01/30&#x9;07:58:28.68&#x9;38.7346&#x9;20.5632&#x9;9.8&#x9;2.6&#x9;noa2022cbprm&#x9;7 Km SW from Agios Nikitas&#x9;manual&#xD;&#xA;2022/01/30&#x9;07:46:01.48&#x9;34.5438&#x9;25.4654&#x9;19.3&#x9;2.4&#x9;noa2022cbpgv&#x9;42 Km SSW from Chrysi&#x9;manual&#xD;&#xA;2022/01/30&#x9;07:19:54.45&#x9;38.2919&#x9;23.4018&#x9;10.3&#x9;1.1&#x9;noa2022cbokg&#x9;8 Km ESE from Thebes&#x9;manual&#xD;&#xA;2022/01/30&#x9;07:09:09.09&#x9;38.6472&#x9;22.3416&#x9;70.4&#x9;2.0&#x9;noa2022cbobc&#x9;8 Km WSW from Gravia&#x9;manual&#xD;&#xA;2022/01/30&#x9;06:26:32.85&#x9;38.3304&#x9;23.4219&#x9;12.7&#x9;1.3&#x9;noa2022cbmqp&#x9;7 Km SSE from Ypato Voiotia&#x9;manual&#xD;&#xA;2022/01/30&#x9;06:19:53.29&#x9;35.1384&#x9;25.1353&#x9;14.9&#x9;1.4&#x9;noa2022cbmkq&#x9;11 Km SSW from Archanes&#x9;manual&#xD;&#xA;2022/01/30&#x9;04:36:34.82&#x9;41.5663&#x9;24.0340&#x9;10.4&#x9;2.9&#x9;noa2022cbjah&#x9;20 Km NNW from Potamoi&#x9;manual&#xD;&#xA;2022/01/30&#x9;03:40:41.99&#x9;39.4579&#x9;23.4764&#x9;12.8&#x9;2.2&#x9;noa2022cbhei&#x9;32 Km ENE from Milies Piliou&#x9;manual&#xD;&#xA;2022/01/30&#x9;03:06:17.83&#x9;38.5890&#x9;24.1685&#x9;11.4&#x9;2.6&#x9;noa2022cbgav&#x9;8 Km SE from Kymi&#x9;manual&#xD;&#xA;2022/01/30&#x9;02:49:48.41&#x9;39.4492&#x9;23.4915&#x9;16.3&#x9;2.2&#x9;noa2022cbfmr&#x9;32 Km ENE from Milies Piliou&#x9;manual&#xD;&#xA;2022/01/30&#x9;01:45:56.75&#x9;37.8232&#x9;21.1844&#x9;17.8&#x9;2.0&#x9;noa2022cbdjx&#x9;12 Km SW from Andravida&#x9;manual&#xD;&#xA;2022/01/30&#x9;00:38:24.57&#x9;34.8775&#x9;23.6128&#x9;19.1&#x9;2.8&#x9;noa2022cbbdy&#x9;40 Km S from Palaiochora&#x9;manual&#xD;&#xA;2022/01/29&#x9;23:50:52.89&#x9;34.8784&#x9;23.6147&#x9;20.8&#x9;3.3&#x9;noa2022cazpe&#x9;39 Km S from Palaiochora&#x9;manual&#xD;&#xA;2022/01/29&#x9;23:34:53.66&#x9;37.8658&#x9;22.8951&#x9;16.6&#x9;2.0&#x9;noa2022cazbl&#x9;1 Km SSE from Solomos&#x9;manual&#xD;&#xA;2022/01/29&#x9;22:45:30.19&#x9;35.5435&#x9;22.5119&#x9;12.0&#x9;2.9&#x9;noa2022caxld&#x9;80 Km SSW from Kithira&#x9;manual&#xD;&#xA;2022/01/29&#x9;20:30:20.11&#x9;38.7126&#x9;20.5595&#x9;15.0&#x9;2.6&#x9;noa2022caszd&#x9;10 Km NNW from Vasiliki Lefkadas&#x9;manual&#xD;&#xA;2022/01/29&#x9;20:29:59.64&#x9;35.0972&#x9;25.2361&#x9;11.4&#x9;1.8&#x9;noa2022casya&#x9;6 Km SSW from Arkalochori&#x9;manual&#xD;&#xA;2022/01/29&#x9;20:12:27.25&#x9;35.1480&#x9;25.2512&#x9;13.9&#x9;1.2&#x9;noa2022casjo&#x9;1 Km W from Arkalochori&#x9;manual&#xD;&#xA;2022/01/29&#x9;17:35:37.74&#x9;34.8880&#x9;23.1857&#x9;21.2&#x9;2.7&#x9;noa2022canfg&#x9;59 Km SW from Palaiochora&#x9;manual&#xD;&#xA;2022/01/29&#x9;16:24:24.05&#x9;35.1073&#x9;25.2159&#x9;9.9&#x9;2.6&#x9;noa2022cakwd&#x9;6 Km SW from Arkalochori&#x9;manual&#xD;&#xA;2022/01/29&#x9;16:01:02.06&#x9;38.4572&#x9;21.8697&#x9;9.0&#x9;1.7&#x9;noa2022cakcc&#x9;7 Km NW from Efpalion&#x9;manual&#xD;&#xA;2022/01/29&#x9;15:44:46.40&#x9;34.6857&#x9;24.9078&#x9;14.5&#x9;2.2&#x9;noa2022cajoe&#x9;29 Km SSE from Kaloi Limenes&#x9;manual&#xD;&#xA;2022/01/29&#x9;14:37:43.51&#x9;38.2713&#x9;23.3528&#x9;12.3&#x9;1.0&#x9;noa2022cahig&#x9;6 Km SSE from Thebes&#x9;manual&#xD;&#xA;2022/01/29&#x9;13:31:34.33&#x9;38.3212&#x9;23.4073&#x9;9.1&#x9;2.0&#x9;noa2022cafdw&#x9;8 Km S from Ypato Voiotia&#x9;manual&#xD;&#xA;2022/01/29&#x9;13:07:03.21&#x9;35.2139&#x9;25.3116&#x9;6.2&#x9;1.2&#x9;noa2022caeiv&#x9;9 Km NNE from Arkalochori&#x9;manual&#xD;&#xA;2022/01/29&#x9;12:34:53.30&#x9;38.3162&#x9;23.4087&#x9;6.3&#x9;1.8&#x9;noa2022cadhg&#x9;8 Km S from Ypato Voiotia&#x9;manual&#xD;&#xA;2022/01/29&#x9;12:14:19.44&#x9;38.2521&#x9;21.5511&#x9;32.5&#x9;1.7&#x9;noa2022cacpq&#x9;11 Km N from Kato Achaia&#x9;manual&#xD;&#xA;2022/01/29&#x9;12:09:53.49&#x9;38.2988&#x9;23.3876&#x9;6.4&#x9;1.5&#x9;noa2022caclu&#x9;6 Km ESE from Thebes&#x9;manual&#xD;&#xA;2022/01/29&#x9;11:20:31.23&#x9;38.0672&#x9;21.5593&#x9;28.7&#x9;1.6&#x9;noa2022caavl&#x9;10 Km S from Kato Achaia&#x9;manual&#xD;&#xA;2022/01/29&#x9;09:44:17.07&#x9;34.9054&#x9;23.1793&#x9;17.9&#x9;2.6&#x9;noa2022bzxqx&#x9;58 Km SW from Palaiochora&#x9;manual&#xD;&#xA;2022/01/29&#x9;09:29:03.96&#x9;38.6055&#x9;22.9994&#x9;14.6&#x9;2.4&#x9;noa2022bzxdq&#x9;6 Km S from Atalanti&#x9;manual&#xD;&#xA;2022/01/29&#x9;08:47:54.96&#x9;38.2658&#x9;22.1626&#x9;9.9&#x9;2.0&#x9;noa2022bzvun&#x9;7 Km ENE from Aigio&#x9;manual&#xD;&#xA;2022/01/29&#x9;07:51:07.32&#x9;38.0232&#x9;23.6467&#x9;8.9&#x9;1.8&#x9;noa2022bztxu&#x9;1 Km NW from Chaidari&#x9;manual&#xD;&#xA;2022/01/29&#x9;07:30:06.49&#x9;35.1389&#x9;25.2017&#x9;9.1&#x9;0.9&#x9;noa2022bztfs&#x9;6 Km W from Arkalochori&#x9;manual&#xD;&#xA;2022/01/29&#x9;06:30:51.51&#x9;36.5863&#x9;23.4430&#x9;66.6&#x9;2.3&#x9;noa2022bzrgy&#x9;35 Km ENE from Neapoli Voion&#x9;manual&#xD;&#xA;2022/01/29&#x9;05:37:30.56&#x9;35.1155&#x9;25.2196&#x9;6.6&#x9;1.6&#x9;noa2022bzpne&#x9;5 Km SW from Arkalochori&#x9;manual&#xD;&#xA;2022/01/29&#x9;04:45:56.70&#x9;38.2887&#x9;22.1965&#x9;7.5&#x9;0.6&#x9;noa2022bznuy&#x9;8 Km SSW from Eratini&#x9;manual&#xD;&#xA;2022/01/29&#x9;04:15:34.87&#x9;36.5236&#x9;25.4778&#x9;12.5&#x9;2.3&#x9;noa2022bzmux&#x9;11 Km NE from Oia &#x9;manual&#xD;&#xA;2022/01/29&#x9;04:04:20.69&#x9;34.2197&#x9;25.6247&#x9;25.0&#x9;2.4&#x9;noa2022bzmlh&#x9;73 Km S from Chrysi&#x9;manual&#xD;&#xA;2022/01/29&#x9;03:25:57.75&#x9;35.1155&#x9;25.1958&#x9;8.9&#x9;2.4&#x9;noa2022bzlei&#x9;7 Km WSW from Arkalochori&#x9;manual&#xD;&#xA;2022/01/29&#x9;03:21:46.06&#x9;35.2538&#x9;25.2361&#x9;18.0&#x9;1.4&#x9;noa2022bzlat&#x9;7 Km ENE from Archanes&#x9;manual&#xD;&#xA;2022/01/29&#x9;02:46:06.60&#x9;38.1075&#x9;23.1725&#x9;11.3&#x9;1.1&#x9;noa2022bzjwe&#x9;2 Km NNW from Alepochori&#x9;manual&#xD;&#xA;2022/01/29&#x9;01:13:54.75&#x9;35.2043&#x9;25.3450&#x9;6.0&#x9;0.7&#x9;noa2022bzgvb&#x9;10 Km NE from Arkalochori&#x9;manual&#xD;&#xA;2022/01/29&#x9;00:09:59.74&#x9;38.1038&#x9;21.9493&#x9;15.9&#x9;0.9&#x9;noa2022bzesi&#x9;15 Km E from Chalandritsa Achaia&#x9;manual&#xD;&#xA;2022/01/29&#x9;00:08:51.00&#x9;34.6500&#x9;24.5938&#x9;18.9&#x9;2.4&#x9;noa2022bzerg&#x9;37 Km SSW from Kaloi Limenes&#x9;manual&#xD;&#xA;2022/01/29&#x9;00:04:50.47&#x9;36.4993&#x9;27.6132&#x9;81.1&#x9;3.1&#x9;noa2022bzenu&#x9;24 Km WSW from Symi&#x9;manual&#xD;&#xA;2022/01/29&#x9;00:00:12.58&#x9;35.1521&#x9;25.2269&#x9;9.3&#x9;1.1&#x9;noa2022bzejv&#x9;4 Km W from Arkalochori&#x9;manual&#xD;&#xA;2022/01/28&#x9;23:43:51.54&#x9;38.3322&#x9;25.5038&#x9;18.1&#x9;1.9&#x9;noa2022bzdvu&#x9;24 Km SSW from Psara&#x9;manual&#xD;&#xA;2022/01/28&#x9;22:38:47.91&#x9;38.4737&#x9;22.3567&#x9;8.3&#x9;1.3&#x9;noa2022bzbrz&#x9;6 Km SSW from Amfissa&#x9;manual&#xD;&#xA;2022/01/28&#x9;22:18:37.41&#x9;38.2924&#x9;23.4077&#x9;4.6&#x9;0.4&#x9;noa2022bzbar&#x9;8 Km W from Asopia Voiotia&#x9;manual&#xD;&#xA;2022/01/28&#x9;22:00:39.02&#x9;35.1787&#x9;25.2470&#x9;7.7&#x9;0.9&#x9;noa2022bzalg&#x9;4 Km NNW from Arkalochori&#x9;manual&#xD;&#xA;2022/01/28&#x9;21:46:11.75&#x9;37.7843&#x9;23.5881&#x9;17.5&#x9;1.2&#x9;noa2022byzyw&#x9;15 Km ENE from Aigina&#x9;manual&#xD;&#xA;2022/01/28&#x9;21:40:31.17&#x9;35.0551&#x9;25.1042&#x9;10.1&#x9;1.0&#x9;noa2022byztz&#x9;7 Km NW from Pyrgos&#x9;manual&#xD;&#xA;2022/01/28&#x9;21:13:40.82&#x9;38.6870&#x9;20.5669&#x9;7.8&#x9;1.5&#x9;noa2022byywy&#x9;8 Km NNW from Vasiliki Lefkadas&#x9;manual&#xD;&#xA;2022/01/28&#x9;21:13:34.96&#x9;37.4483&#x9;21.6866&#x9;12.9&#x9;1.4&#x9;noa2022byywx&#x9;5 Km SE from Zacharo Ilia&#x9;manual&#xD;&#xA;2022/01/28&#x9;21:07:23.28&#x9;38.4727&#x9;21.8303&#x9;10.4&#x9;0.4&#x9;noa2022byyqp&#x9;9 Km N from Nafpaktos&#x9;manual&#xD;&#xA;2022/01/28&#x9;21:06:13.79&#x9;38.4901&#x9;21.8202&#x9;6.7&#x9;1.5&#x9;noa2022byyqo&#x9;11 Km N from Nafpaktos&#x9;manual&#xD;&#xA;2022/01/28&#x9;20:29:33.57&#x9;35.1384&#x9;25.2232&#x9;12.4&#x9;1.1&#x9;noa2022byxkp&#x9;4 Km WSW from Arkalochori&#x9;manual&#xD;&#xA;2022/01/28&#x9;19:56:58.30&#x9;36.6293&#x9;26.6959&#x9;84.9&#x9;2.4&#x9;noa2022bywjh&#x9;27 Km WSW from Kefalos Kos&#x9;manual&#xD;&#xA;2022/01/28&#x9;19:53:13.03&#x9;38.9122&#x9;26.1497&#x9;15.1&#x9;2.6&#x9;noa2022bywfy&#x9;19 Km S from Polichnitos&#x9;manual&#xD;&#xA;2022/01/28&#x9;18:57:14.02&#x9;35.0587&#x9;25.1537&#x9;10.9&#x9;1.4&#x9;noa2022byujx&#x9;6 Km N from Pyrgos&#x9;manual&#xD;&#xA;2022/01/28&#x9;18:43:42.63&#x9;38.0887&#x9;21.9772&#x9;57.9&#x9;1.7&#x9;noa2022bytyi&#x9;13 Km WNW from Kalavryta&#x9;manual&#xD;&#xA;2022/01/28&#x9;18:39:21.58&#x9;35.1462&#x9;25.2383&#x9;10.9&#x9;1.6&#x9;noa2022bytup&#x9;3 Km W from Arkalochori&#x9;manual&#xD;&#xA;2022/01/28&#x9;17:32:02.59&#x9;37.3141&#x9;20.5692&#x9;7.9&#x9;2.2&#x9;noa2022byrox&#x9;40 Km W from Strofades&#x9;manual&#xD;&#xA;2022/01/28&#x9;15:18:40.09&#x9;35.2876&#x9;25.2727&#x9;23.7&#x9;2.1&#x9;noa2022bynej&#x9;12 Km ENE from Archanes&#x9;manual&#xD;&#xA;2022/01/28&#x9;15:00:56.82&#x9;39.5636&#x9;21.9159&#x9;46.4&#x9;1.6&#x9;noa2022bymox&#x9;13 Km E from Trikala&#x9;manual&#xD;&#xA;2022/01/28&#x9;14:54:32.77&#x9;38.1844&#x9;20.2245&#x9;17.0&#x9;2.5&#x9;noa2022bymjt&#x9;19 Km W from Lixouri &#x9;manual&#xD;&#xA;2022/01/28&#x9;14:46:41.67&#x9;37.4313&#x9;20.3183&#x9;27.2&#x9;2.3&#x9;noa2022bymdb&#x9;52 Km SW from Agios Leon Zakynthos&#x9;manual&#xD;&#xA;2022/01/28&#x9;14:45:53.89&#x9;38.1111&#x9;21.2379&#x9;15.1&#x9;1.4&#x9;noa2022bymci&#x9;14 Km NW from Varda Ilia&#x9;manual&#xD;&#xA;2022/01/28&#x9;13:30:51.17&#x9;38.3180&#x9;23.4160&#x9;11.5&#x9;1.8&#x9;noa2022byjpx&#x9;8 Km SSE from Ypato Voiotia&#x9;manual&#xD;&#xA;2022/01/28&#x9;13:22:28.70&#x9;35.9885&#x9;26.9101&#x9;12.5&#x9;3.6&#x9;noa2022byjit&#x9;36 Km NW from Olympos Karpathos&#x9;manual&#xD;&#xA;2022/01/28&#x9;13:10:42.37&#x9;38.3011&#x9;23.3945&#x9;19.7&#x9;1.6&#x9;noa2022byiyr&#x9;7 Km ESE from Thebes&#x9;manual&#xD;&#xA;2022/01/28&#x9;13:03:10.21&#x9;35.1192&#x9;25.2086&#x9;13.6&#x9;1.5&#x9;noa2022byirg&#x9;6 Km WSW from Arkalochori&#x9;manual&#xD;&#xA;2022/01/28&#x9;12:42:18.89&#x9;36.0031&#x9;28.2285&#x9;11.6&#x9;2.8&#x9;noa2022byiah&#x9;16 Km SE from Lindos&#x9;manual&#xD;&#xA;2022/01/28&#x9;12:30:20.37&#x9;38.3034&#x9;23.3986&#x9;7.9&#x9;1.4&#x9;noa2022byhpz&#x9;7 Km ESE from Thebes&#x9;manual&#xD;&#xA;2022/01/28&#x9;11:09:52.72&#x9;38.3006&#x9;21.7763&#x9;10.3&#x9;1.1&#x9;noa2022byeym&#x9;1 Km W from Rio&#x9;manual&#xD;&#xA;2022/01/28&#x9;09:55:29.67&#x9;38.3061&#x9;23.3986&#x9;13.3&#x9;2.2&#x9;noa2022bycne&#x9;7 Km E from Thebes&#x9;manual&#xD;&#xA;2022/01/28&#x9;09:41:34.18&#x9;38.3121&#x9;23.4055&#x9;11.0&#x9;3.0&#x9;noa2022bycbf&#x9;8 Km W from Asopia Voiotia&#x9;manual&#xD;&#xA;2022/01/28&#x9;08:04:45.26&#x9;37.1924&#x9;20.4346&#x9;6.1&#x9;2.7&#x9;noa2022bxywg&#x9;52 Km W from Strofades&#x9;manual&#xD;&#xA;2022/01/28&#x9;07:45:43.53&#x9;38.3144&#x9;22.0518&#x9;7.9&#x9;1.1&#x9;noa2022bxyfg&#x9;8 Km NNW from Aigio&#x9;manual&#xD;&#xA;2022/01/28&#x9;05:38:58.43&#x9;38.7282&#x9;23.6650&#x9;11.3&#x9;1.4&#x9;noa2022bxuav&#x9;8 Km WNW from Limnionas&#x9;manual&#xD;&#xA;2022/01/28&#x9;05:25:48.55&#x9;39.2780&#x9;20.6012&#x9;13.5&#x9;1.7&#x9;noa2022bxtpw&#x9;11 Km NE from Loutsa&#x9;manual&#xD;&#xA;2022/01/28&#x9;05:14:11.41&#x9;39.7316&#x9;22.1764&#x9;13.8&#x9;1.4&#x9;noa2022bxtfy&#x9;10 Km W from Tyrnavos&#x9;manual">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="ImmutableTypeFlag" Name="String" />
+              <CategoryReference Kind="Category" Name="Primitive" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Node Bounds="365,356,94,19" Id="JxXo5Fc4yHsM6wQxzbGeW5">
+            <p:NodeReference LastCategoryFullName="VL.Earth" LastDependency="VL.Earth.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="ReadEarthquakes" />
+            </p:NodeReference>
+            <Pin Id="BqAiOCPaVKhQdxo2jrSgT3" Name="Force" Kind="InputPin" />
+            <Pin Id="BXQh02gFJz3NEMX6hbq04E" Name="Earthquakes Catalog" Kind="InputPin" />
+            <Pin Id="QwoRHtNAJwONvSNukaC07b" Name="Has Changed" Kind="OutputPin" />
+            <Pin Id="FlXPWJP6m0RNdTwJsdjEOd" Name="Earthwuakes" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="441,556,207,196" Id="Cuqg6dOgdxvOTgEYUXFd49">
+            <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
+              <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
+              <CategoryReference Kind="Category" Name="Primitive" />
+              <Choice Kind="ApplicationStatefulRegion" Name="ForEach" />
+            </p:NodeReference>
+            <Pin Id="Su3267lowJxMxngX19xEod" Name="Break" Kind="OutputPin" />
+            <Patch Id="EPBYOtrLzBANlLx20bh0Df" ManuallySortedPins="true">
+              <Patch Id="MFKKiVQSsd7PXZLqXy4hwJ" Name="Create" ManuallySortedPins="true" />
+              <Patch Id="DjAVlIfuhnKLEZShnxrXKr" Name="Update" ManuallySortedPins="true" />
+              <Patch Id="Js3ZFXINkLcNLhrHH3X0Fk" Name="Dispose" ManuallySortedPins="true" />
+              <Node Bounds="453,598,56,26" Id="UoG1OJKQNljPT8JIEMWzdq">
+                <p:NodeReference LastCategoryFullName="VL.Earth.Earthquake" LastDependency="VL.Earth.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="OperationCallFlag" Name="To3D" />
+                </p:NodeReference>
+                <Pin Id="I75RJq8MfMLLiOD17KVLii" Name="Input" Kind="StateInputPin" />
+                <Pin Id="Rl5nP7v0EAGL3jrxj1vvUB" Name="Output" Kind="StateOutputPin" />
+                <Pin Id="Kh9zxboHQWMNoCTFwaTnfO" Name="Position3D" Kind="OutputPin" />
+                <Pin Id="MhpprvXwHkdPRBMr3mIyUC" Name="Map" Kind="InputPin" DefaultValue="True" />
+                <Pin Id="OExmoyfLezYQcEuAJbPnhC" Name="Input Minimum" Kind="InputPin" />
+                <Pin Id="KuytRV95nWtLVl2iw34VNH" Name="Input Maximum" Kind="InputPin" />
+                <Pin Id="RWFObMlapxJOJuM8AQydch" Name="Output Minimum" Kind="InputPin" />
+                <Pin Id="JlT3lxY62AaPXNK3p8DKdb" Name="Output Maximum" Kind="InputPin" />
+              </Node>
+              <Node Bounds="552,681,28,19" Id="Tgf9Ur1t0m2OHN8RpBQXqK">
+                <p:NodeReference LastCategoryFullName="3D.Vector3" LastDependency="VL.CoreLib.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="OperationCallFlag" Name="XY" />
+                </p:NodeReference>
+                <Pin Id="BFnK6k6TMMhPHorZeUgPAS" Name="Input" Kind="StateInputPin" />
+                <Pin Id="TO7xtKgvWH9MN1zzXnWkd2" Name="Output" Kind="StateOutputPin" />
+              </Node>
+              <Node Bounds="551,713" Id="KgrmoDNzKFQN20aA4TRT8C">
+                <p:NodeReference LastCategoryFullName="Graphics.Skia.Layers" LastDependency="VL.Skia.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="ProcessAppFlag" Name="Circle" />
+                </p:NodeReference>
+                <Pin Id="AZUgnkqJsc8PSfudRalH63" Name="Position" Kind="InputPin" />
+                <Pin Id="B77QEzcp1N7MdQwaolBCmv" Name="Radius" Kind="InputPin" DefaultValue="0.002" />
+                <Pin Id="ViZy2lKLbj7QaPzwT97rOM" Name="Anchor" Kind="InputPin" />
+                <Pin Id="PpHrMIPEiOFLvP8GrjU1WT" Name="Paint" Kind="InputPin" />
+                <Pin Id="KA9Lt0mi3kmNbYdhnn2xsA" Name="Enabled" Kind="InputPin" />
+                <Pin Id="L6irHccOM57NMtSihsNacr" Name="Output" Kind="OutputPin" />
+              </Node>
+              <Node Bounds="455,659,68,26" Id="NLhTxf8qsysPY3wXC0DkF8">
+                <p:NodeReference LastCategoryFullName="VL.Earth.Earthquake" LastDependency="VL.Earth.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="OperationCallFlag" Name="GetLatLong" />
+                </p:NodeReference>
+                <Pin Id="SSeNYMtN5INLE4GgDBbkj9" Name="Input" Kind="StateInputPin" />
+                <Pin Id="MleByspVXnSP9iFEUY2n1E" Name="Output" Kind="StateOutputPin" />
+                <Pin Id="MwWFvPviWC6Lna6QqOVHEp" Name="LatLong" Kind="OutputPin" />
+              </Node>
+            </Patch>
+            <ControlPoint Id="RS5rGuA3RjCMjtWOuXCEGG" Bounds="455,562" Alignment="Top" />
+            <ControlPoint Id="PYX41bLlFT1MtjfBmzjRR8" Bounds="553,744" Alignment="Bottom" />
+            <ControlPoint Id="GZoTW6Q2IhSLgopyCtqqBQ" Bounds="623,744" Alignment="Bottom" />
+            <ControlPoint Id="HGp5eSEWsuoNC3DzFcpdW0" Bounds="577,746" Alignment="Bottom" />
+          </Node>
+          <Node Bounds="497,1174,145,19" Id="GzuoEeJAhIIQJOvCVBSWry">
+            <p:NodeReference LastCategoryFullName="Graphics.Skia" LastDependency="VL.Skia.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="Renderer" />
+            </p:NodeReference>
+            <Pin Id="O68SRPLATo8OL69nWarxhE" Name="Bounds" Kind="InputPin" DefaultValue="1529, 0, 1036, 1158" />
+            <Pin Id="KtZCFecsRRJOuinTKMfNNm" Name="Input" Kind="InputPin" />
+            <Pin Id="NaHQSsQ1TjqPLIR6fLOUnF" Name="Color" Kind="InputPin" />
+            <Pin Id="G0Z86mdAKCSLmIPkjcRrcY" Name="Clear" Kind="InputPin" />
+            <Pin Id="PSSsxZi4bWONPfDCktlZzh" Name="Space" Kind="InputPin" />
+            <Pin Id="RgtlgJUsweANx50kCpl3uB" Name="Show Cursor" Kind="InputPin" />
+            <Pin Id="A95UrjoxnidNDDtXCzYADe" Name="VSync" Kind="InputPin" />
+            <Pin Id="CCd12HP5q7GPYMsBaASxqc" Name="Enabled" Kind="InputPin" />
+            <Pin Id="VrVOEIgXnJ4OTVqOW0odj1" Name="Form" Kind="OutputPin" />
+            <Pin Id="NnzMqd1vC30NWerN73TdQi" Name="ClientBounds" Kind="OutputPin" />
+            <Pin Id="RcOHEZRM0zMQOAJwq7Vzco" Name="Render Time" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="554,899,45,19" Id="EnBpCkM14onMgz4QqrP0PD">
+            <p:NodeReference LastCategoryFullName="Graphics.Skia" LastDependency="VL.Skia.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="Category" Name="Skia" NeedsToBeDirectParent="true" />
+              <Choice Kind="ProcessAppFlag" Name="Group (Spectral)" />
+            </p:NodeReference>
+            <Pin Id="EYyRTMA9WpkLkNoCKKcw9Q" Name="Input" Kind="InputPin" />
+            <Pin Id="TAe04SZt4fDLsNQv6wpBBZ" Name="Debug" Kind="InputPin" />
+            <Pin Id="Ufl3s3tgLXZQCJDatDUa1f" Name="Enabled" Kind="InputPin" />
+            <Pin Id="QkZ1b66xHAWNOabV55lETI" Name="Output" Kind="OutputPin" />
+          </Node>
+          <Pad Id="VRqk0ATohcHNqOC94DjV93" Comment="Input Maximum" Bounds="515,447,35,43" ShowValueBox="true" isIOBox="true" Value="34.8, 29.61, 0">
+            <p:TypeAnnotation LastCategoryFullName="3D" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="Vector3" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="T3dYyGiWljELa15hClOFM1" Comment="Input Minimum" Bounds="497,368,41,43" ShowValueBox="true" isIOBox="true" Value="41.75, 19.37, 100">
+            <p:TypeAnnotation LastCategoryFullName="3D" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="Vector3" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Node Bounds="535,999,64,19" Id="IVbWqEtPfWkLj08cKjF08E">
+            <p:NodeReference LastCategoryFullName="Graphics.Skia.Transform" LastDependency="VL.Skia.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="Category" Name="Transform" NeedsToBeDirectParent="true">
+                <p:OuterCategoryReference Kind="Category" Name="Skia" NeedsToBeDirectParent="true" />
+              </CategoryReference>
+              <Choice Kind="ProcessAppFlag" Name="Transform" />
+            </p:NodeReference>
+            <Pin Id="VjmlDrywqEvLefdVCzKKbD" Name="Input" Kind="InputPin" />
+            <Pin Id="IRLuT5NwPlkPVk9R5jTXMF" Name="Transformation" Kind="InputPin" />
+            <Pin Id="RLYZR5I6kF2NUb2UvVrm3y" Name="Output" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="654,1084,76,19" Id="U0RVjR0n4RnMWNVkAs3yB8">
+            <p:NodeReference LastCategoryFullName="2D.Transform" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="Category" Name="Transform" NeedsToBeDirectParent="true">
+                <p:OuterCategoryReference Kind="Category" Name="2D" NeedsToBeDirectParent="true" />
+              </CategoryReference>
+              <Choice Kind="OperationCallFlag" Name="UniformScale" />
+            </p:NodeReference>
+            <Pin Id="AQygximfMC4LeY5AHTQhT6" Name="Input" Kind="InputPin" />
+            <Pin Id="JVUCRsIokDCMF2svdHaRPG" Name="Scaling" Kind="InputPin" DefaultValue="1.66" />
+            <Pin Id="P8f2CD9fwz5NqDCqKwilWV" Name="Output" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="621,854,85,19" Id="BdC2LMGRySROm1MX7QCyuV">
+            <p:NodeReference LastCategoryFullName="Graphics.Skia.Layers" LastDependency="VL.Skia.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="Circle" />
+            </p:NodeReference>
+            <Pin Id="ODLYtSieXoRMpoCsg4oPZY" Name="Position" Kind="InputPin" />
+            <Pin Id="UgJLX2rIvCgOauZ9OOBel3" Name="Radius" Kind="InputPin" DefaultValue="0.011000001" />
+            <Pin Id="If5nYKDRvPEOcjl0xYO9zt" Name="Anchor" Kind="InputPin" />
+            <Pin Id="K73HIVUuHeyPgdL8qRFD6W" Name="Paint" Kind="InputPin" />
+            <Pin Id="DRsflfMDvpYNoT37GZ2EwF" Name="Enabled" Kind="InputPin" />
+            <Pin Id="TJYoPiSEhNbM361U5pZxWe" Name="Output" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="535,951,85,19" Id="A0CDEzBZD9UMgNnKyS3twW">
+            <p:NodeReference LastCategoryFullName="Graphics.Skia" LastDependency="VL.Skia.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="Group" />
+            </p:NodeReference>
+            <Pin Id="Bo7Mq1Ma4S3QKbrQbHfsEi" Name="Input" Kind="InputPin" />
+            <Pin Id="OJBmM5mjPP9Pt0j9pdsFuC" Name="Input 2" Kind="InputPin" />
+            <Pin Id="DwP6UfCyso0PsKRI8l83FU" Name="Input 3" Kind="InputPin" />
+            <Pin Id="ACPxwmSo8HANKeojONHRoq" Name="Debug" Kind="InputPin" />
+            <Pin Id="GoqYedGRltOPVC9zol1xlH" Name="Enabled" Kind="InputPin" />
+            <Pin Id="EZb30jD27gDMyzSBiQ6S5J" Name="Output" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="674,970,45,19" Id="AbZB2rPp9QpPE3AalRyb5N">
+            <p:NodeReference LastCategoryFullName="2D.Transform" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="Category" Name="Transform" NeedsToBeDirectParent="true">
+                <p:OuterCategoryReference Kind="Category" Name="2D" NeedsToBeDirectParent="true" />
+              </CategoryReference>
+              <Choice Kind="OperationCallFlag" Name="Rotate" />
+            </p:NodeReference>
+            <Pin Id="DiuRbvSapEAOqHQ8OIKlEk" Name="Input" Kind="InputPin" />
+            <Pin Id="NMo2gotakbxNWB5zNavQwJ" Name="Rotation" Kind="InputPin" DefaultValue="0.25" />
+            <Pin Id="KaZ9vMz8wzaQbjPRPxhzSg" Name="Output" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="-21,302,66,19" Id="N4dN4x30YHDNFRF36NLjyZ">
+            <p:NodeReference LastCategoryFullName="Graphics.Skia.IO" LastDependency="VL.Skia.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="SVGReader" />
+            </p:NodeReference>
+            <Pin Id="DYLhFdeNWy0LnakxRn5tBW" Name="Filename" Kind="InputPin" />
+            <Pin Id="JcXEAwwVmNxPV0aJ6sYyl3" Name="Load" Kind="InputPin" DefaultValue="False" />
+            <Pin Id="LUz6IZtqAk1PzCghP6EDoK" Name="Output" Kind="OutputPin" />
+          </Node>
+          <Pad Id="JcN0yBh8emQOHlFLqKKMrh" Comment="Filename" Bounds="-20,252,133,15" ShowValueBox="true" isIOBox="true" Value="assets\greece.svg">
+            <p:TypeAnnotation LastCategoryFullName="IO" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="Path" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Node Bounds="-23,434,125,19" Id="TPxrVwRtxMuMfTmdjiTC10">
+            <p:NodeReference LastCategoryFullName="Graphics.Skia.Layers" LastDependency="VL.Skia.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="DrawPicture" />
+            </p:NodeReference>
+            <Pin Id="EZFGYbZNnowLDO8Zn30oE6" Name="Picture" Kind="InputPin" />
+            <Pin Id="PlwCTMYq1tlNSw8Bc6jwQ1" Name="Position" Kind="InputPin" />
+            <Pin Id="Kh33iKLYWucOWSx66uXKuF" Name="Size" Kind="InputPin" />
+            <Pin Id="LgaaguADCptLghk8bqY7X0" Name="Size Mode" Kind="InputPin" DefaultValue="Size" />
+            <Pin Id="JJ8srKMMuC4OSF070zK97q" Name="Anchor" Kind="InputPin" DefaultValue="Center" />
+            <Pin Id="OFDOuIOKoXANgMnSthZHsP" Name="Paint" Kind="InputPin" />
+            <Pin Id="D1NfBSOWYRePEs3eWR5ZZo" Name="Enabled" Kind="InputPin" DefaultValue="True" />
+            <Pin Id="H6cU8W9Kzj9PTs2hzeoGTf" Name="Output" Kind="OutputPin" />
+            <Pin Id="RKtj1uvqRvIMkb3iq7t9EV" Name="Actual Bounds" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="79,347,45,19" Id="Oed542OAihdLRjVWY1YHgr">
+            <p:NodeReference LastCategoryFullName="Graphics.Skia.Paint" LastDependency="VL.Skia.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="Category" Name="Paint" NeedsToBeDirectParent="true">
+                <p:OuterCategoryReference Kind="Category" Name="Skia" NeedsToBeDirectParent="true" />
+              </CategoryReference>
+              <Choice Kind="ProcessAppFlag" Name="Fill" />
+            </p:NodeReference>
+            <Pin Id="S0fZpViXxMSMIBKmipKHcg" Name="Input" Kind="InputPin" />
+            <Pin Id="TMKEgdNn27yNnZsWlzRmPp" Name="Color" Kind="InputPin" DefaultValue="0.13999987, 0, 1, 1" />
+            <Pin Id="K3D1C9dZ1EVO4w7vtmshKa" Name="Shader" Kind="InputPin" />
+            <Pin Id="FrAsNZ79CFjQDmlS7P8NvS" Name="Output" Kind="OutputPin" />
+          </Node>
+          <Pad Id="JeTiqzE0VJKPE1sUhBaE2p" Comment="Color" Bounds="539,1149,136,15" ShowValueBox="true" isIOBox="true" Value="0.41000026, 0.41000026, 0.41000026, 0.17000043">
+            <p:TypeAnnotation LastCategoryFullName="Color" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="RGBA" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Node Bounds="-18,746,64,19" Id="L7JPKyIJuGhL2kJhrEcpXL">
+            <p:NodeReference LastCategoryFullName="Graphics.Skia.Transform" LastDependency="VL.Skia.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="Category" Name="Transform" NeedsToBeDirectParent="true">
+                <p:OuterCategoryReference Kind="Category" Name="Skia" NeedsToBeDirectParent="true" />
+              </CategoryReference>
+              <Choice Kind="ProcessAppFlag" Name="Transform" />
+            </p:NodeReference>
+            <Pin Id="MK0AHqN2MKHLa5DNOtkdrk" Name="Input" Kind="InputPin" />
+            <Pin Id="Cfkkcw3YNq5Lp8gDoPIpwU" Name="Transformation" Kind="InputPin" />
+            <Pin Id="BvLaldBwKtRNOZu25v8iPv" Name="Output" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="621,821,52,19" Id="HOr1BNkuhLvLHkddijipqV">
+            <p:NodeReference LastCategoryFullName="Collections.Spread" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="ClassType" Name="Spread" NeedsToBeDirectParent="true" />
+              <Choice Kind="OperationCallFlag" Name="GetSlice" />
+            </p:NodeReference>
+            <Pin Id="Qc7dRZkRuVfND9wZFCaTew" Name="Input" Kind="StateInputPin" />
+            <Pin Id="LLtCfBwYLE8NBH85XYD25O" Name="Default Value" Kind="InputPin" />
+            <Pin Id="QElHmdMuDSrPk1BRPam3Tw" Name="Index" Kind="InputPin" />
+            <Pin Id="PfBvw9TwD0MNCB6dQmk4Ft" Name="Result" Kind="OutputPin" />
+          </Node>
+          <Pad Id="LdKoPzMiTkvOUroH8xlkf8" Comment="Index" Bounds="695,768,35,15" ShowValueBox="true" isIOBox="true" Value="151">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="Integer32" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Node Bounds="163,491,34,19" Id="V4cdNM0EQwBPoH1HmURzkF">
+            <p:NodeReference LastCategoryFullName="2D.Rectangle" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="ClassType" Name="Rectangle" NeedsToBeDirectParent="true" />
+              <Choice Kind="OperationCallFlag" Name="Top" />
+            </p:NodeReference>
+            <Pin Id="My1M6BdV8T7MuRAqmiWuIz" Name="Input" Kind="StateInputPin" />
+            <Pin Id="GF4xJun3BCWQPRHpRJD9AZ" Name="Top" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="59,491,49,19" Id="B34gtruZ13xNxeJobJYXSw">
+            <p:NodeReference LastCategoryFullName="2D.Rectangle" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="ClassType" Name="Rectangle" NeedsToBeDirectParent="true" />
+              <Choice Kind="OperationCallFlag" Name="Bottom" />
+            </p:NodeReference>
+            <Pin Id="CambgQEcYxnM7D5BohsEnG" Name="Input" Kind="StateInputPin" />
+            <Pin Id="TumkntFAvdQPtgAdCbFqoN" Name="Bottom" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="4,491,34,19" Id="MQzpyq8fC8oMZAtXFf7go1">
+            <p:NodeReference LastCategoryFullName="2D.Rectangle" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="ClassType" Name="Rectangle" NeedsToBeDirectParent="true" />
+              <Choice Kind="OperationCallFlag" Name="Left" />
+            </p:NodeReference>
+            <Pin Id="ASwsF1yceMDLaG1HhTw0ji" Name="Input" Kind="StateInputPin" />
+            <Pin Id="TcEtx88gegQPqIZUaKor1W" Name="Left" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="116,491,40,19" Id="Sbn8fwpoZHoOvE8NchdkX7">
+            <p:NodeReference LastCategoryFullName="2D.Rectangle" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="ClassType" Name="Rectangle" NeedsToBeDirectParent="true" />
+              <Choice Kind="OperationCallFlag" Name="Right" />
+            </p:NodeReference>
+            <Pin Id="TMsSyRa1DH3OQEOaOMAn6L" Name="Input" Kind="StateInputPin" />
+            <Pin Id="DVKEUZ1lPc3ORgYhMYJW6x" Name="Right" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="116,535,62,19" Id="NtiHJRxnu6SLFt5QGpEwVN">
+            <p:NodeReference LastCategoryFullName="2D.Vector2" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="4043309057" Name="Vector2" />
+              <Choice Kind="OperationCallFlag" Name="Vector (Join)" />
+            </p:NodeReference>
+            <Pin Id="I6SM4o4NzSPQVm5VePP6PD" Name="X" Kind="InputPin" />
+            <Pin Id="POStRgKjYXGM1wCBoFVVH5" Name="Y" Kind="InputPin" />
+            <Pin Id="IgKlfCIs9A0NydcN4570G2" Name="Output" Kind="StateOutputPin" />
+          </Node>
+          <Node Bounds="4,535,62,19" Id="M6BFGKrvD2uN46s6ms6gmL">
+            <p:NodeReference LastCategoryFullName="2D.Vector2" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="4043309057" Name="Vector2" />
+              <Choice Kind="OperationCallFlag" Name="Vector (Join)" />
+            </p:NodeReference>
+            <Pin Id="P4GKe6OwZucPRVImZafnrN" Name="X" Kind="InputPin" />
+            <Pin Id="QN6NPGs6UfDNclvFVOuGYy" Name="Y" Kind="InputPin" />
+            <Pin Id="PY6Kx370AcMNfco8YWI71Y" Name="Output" Kind="StateOutputPin" />
+          </Node>
+          <Node Bounds="4,568,34,19" Id="KizeLJmWG5QPaCJBpXJUWT">
+            <p:NodeReference LastCategoryFullName="2D.Vector2" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="XYz" />
+            </p:NodeReference>
+            <Pin Id="HDGFpAaBUfhNhPabursLs9" Name="Input" Kind="StateInputPin" />
+            <Pin Id="Fhyo1MZS20YLfcgm4aGSVV" Name="Z" Kind="InputPin" />
+            <Pin Id="Sjfo2CHRkzxPsdukNPBBQp" Name="Output" Kind="StateOutputPin" />
+          </Node>
+          <Node Bounds="116,568,34,19" Id="H83NAFVye6oOi0cKZFggdL">
+            <p:NodeReference LastCategoryFullName="2D.Vector2" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="XYz" />
+            </p:NodeReference>
+            <Pin Id="OL8CChpO9gRNYGKofKtMkL" Name="Input" Kind="StateInputPin" />
+            <Pin Id="Rq4RdRXBYozNBufiErplPn" Name="Z" Kind="InputPin" />
+            <Pin Id="Vxgp8JcDvKXMA9gaGN0oXe" Name="Output" Kind="StateOutputPin" />
+          </Node>
+          <Node Bounds="515,1055,85,19" Id="NEMoAZc0BymNUVVy6LPfT3">
+            <p:NodeReference LastCategoryFullName="Graphics.Skia" LastDependency="VL.Skia.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="Group" />
+            </p:NodeReference>
+            <Pin Id="OnuurVvC5q3LTCmbovKSdv" Name="Input" Kind="InputPin" />
+            <Pin Id="QyEu91DyPgJQGT3i6BIPDx" Name="Input 2" Kind="InputPin" />
+            <Pin Id="CjYtVEbAtjvMoltzqgizXP" Name="Input 3" Kind="InputPin" />
+            <Pin Id="Ajk5y3RAWsXQbGsotmQotR" Name="Debug" Kind="InputPin" />
+            <Pin Id="SbKFGAIvekNObe8S0G5oCa" Name="Enabled" Kind="InputPin" />
+            <Pin Id="B0vO3B37B12NonbUwYyG8q" Name="Output" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="516,1111,64,19" Id="LPilI9iXXfmPV3zCzL3lsI">
+            <p:NodeReference LastCategoryFullName="Graphics.Skia.Transform" LastDependency="VL.Skia.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="Category" Name="Transform" NeedsToBeDirectParent="true">
+                <p:OuterCategoryReference Kind="Category" Name="Skia" NeedsToBeDirectParent="true" />
+              </CategoryReference>
+              <Choice Kind="ProcessAppFlag" Name="Transform" />
+            </p:NodeReference>
+            <Pin Id="AvDLmf2Y3PHLbhjfwuua9N" Name="Input" Kind="InputPin" />
+            <Pin Id="VBHXf9F0ExPOhgjQu28yqU" Name="Transformation" Kind="InputPin" />
+            <Pin Id="QW6YC6DIBZNPjS6FopHg2o" Name="Output" Kind="OutputPin" />
+          </Node>
+          <Pad Id="AopreNZhkw1OuT2Z9kTiRb" Comment="Size Mode" Bounds="40,414,89,15" ShowValueBox="true" isIOBox="true" Value="Size">
+            <p:TypeAnnotation LastCategoryFullName="2D" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="SizeMode" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Node Bounds="682,806,105,19" Id="C9wlJieKUgrNYJoa90hqi8">
+            <p:NodeReference LastCategoryFullName="Graphics.Skia.Paint" LastDependency="VL.Skia.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="Stroke" />
+            </p:NodeReference>
+            <Pin Id="NDmR7uxmdrIP8Cg05EvPpZ" Name="Input" Kind="InputPin" />
+            <Pin Id="TGl92E87xAZPXrH9DnOAwv" Name="Color" Kind="InputPin" />
+            <Pin Id="Rm7ea0Vpf0qNe8b5L0OOM5" Name="Stroke Width" Kind="InputPin" DefaultValue="0.004" />
+            <Pin Id="TmKv1924Ca0ODinju2RRWY" Name="Join" Kind="InputPin" />
+            <Pin Id="JbXVjwoV1qtNN9jaXx9U5g" Name="Cap" Kind="InputPin" />
+            <Pin Id="Jwo7t7fMIBAOzBQ0cYfszt" Name="Miter" Kind="InputPin" />
+            <Pin Id="IPLMUj72AwCNta6boKCW89" Name="Output" Kind="OutputPin" />
+          </Node>
+          <Pad Id="K1QqrlgfuzKMryC4zYdRxA" Comment="Color" Bounds="708,713,136,15" ShowValueBox="true" isIOBox="true" Value="0.9100001, 0.10009992, 0.63463354, 1">
+            <p:TypeAnnotation LastCategoryFullName="Color" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="RGBA" />
+            </p:TypeAnnotation>
+          </Pad>
+        </Canvas>
+        <Patch Id="B1RwMC3lSxaLWlLp9r5Bik" Name="Create" />
+        <Patch Id="Tai1y3qiVmQNz4SIyzxxNG" Name="Update" />
+        <ProcessDefinition Id="P3jhAxEqjFzN2uDYsfGzYq">
+          <Fragment Id="OZGE3IhBCakM3JcTIOLyDf" Patch="B1RwMC3lSxaLWlLp9r5Bik" Enabled="true" />
+          <Fragment Id="V71xTvc1zhBNDNEZyhfaKj" Patch="Tai1y3qiVmQNz4SIyzxxNG" Enabled="true" />
+        </ProcessDefinition>
+        <Link Id="VSMfSvgWqJCOaFDwdpbpEW" Ids="GYSBjmw9PvMO2pqLoZ7Ivi,BXQh02gFJz3NEMX6hbq04E" />
+        <Link Id="BsN6qEDW29jPSGkihSxOI5" Ids="FlXPWJP6m0RNdTwJsdjEOd,RS5rGuA3RjCMjtWOuXCEGG" />
+        <Link Id="QxaJQodNu4bNThRQ7eTXPT" Ids="RS5rGuA3RjCMjtWOuXCEGG,I75RJq8MfMLLiOD17KVLii" />
+        <Link Id="Px8al6qNgjWMZuXdYR3Elj" Ids="Kh9zxboHQWMNoCTFwaTnfO,BFnK6k6TMMhPHorZeUgPAS" />
+        <Link Id="BRfid99CHkaPNrhiVVK7Vz" Ids="TO7xtKgvWH9MN1zzXnWkd2,AZUgnkqJsc8PSfudRalH63" />
+        <Link Id="TqJhkvNXg57QIcDH4b233z" Ids="L6irHccOM57NMtSihsNacr,PYX41bLlFT1MtjfBmzjRR8" />
+        <Link Id="S9CebNAeKguNqwmYcgq79u" Ids="PYX41bLlFT1MtjfBmzjRR8,EYyRTMA9WpkLkNoCKKcw9Q" />
+        <Link Id="BYtk0Mk48eVLew2QWATxBN" Ids="VRqk0ATohcHNqOC94DjV93,KuytRV95nWtLVl2iw34VNH" />
+        <Link Id="IVi7a8UuivGPjSaBr9YByf" Ids="T3dYyGiWljELa15hClOFM1,OExmoyfLezYQcEuAJbPnhC" />
+        <Link Id="A5oXPVL5ycxMbOLGH1Ltna" Ids="KaZ9vMz8wzaQbjPRPxhzSg,IRLuT5NwPlkPVk9R5jTXMF" />
+        <Link Id="SgOeq5UopqZNN5gzxQK9SH" Ids="JcN0yBh8emQOHlFLqKKMrh,DYLhFdeNWy0LnakxRn5tBW" />
+        <Link Id="FRUjc7Ud99POyRgxD3igd2" Ids="LUz6IZtqAk1PzCghP6EDoK,EZFGYbZNnowLDO8Zn30oE6" />
+        <Link Id="VbW3oKa2iOoMEMcrG8HPZS" Ids="QkZ1b66xHAWNOabV55lETI,OJBmM5mjPP9Pt0j9pdsFuC" />
+        <Link Id="KtMTK7Wi4B2OETRg6IAIVm" Ids="TJYoPiSEhNbM361U5pZxWe,DwP6UfCyso0PsKRI8l83FU" />
+        <Link Id="MqezqefHLVIL3zwPFxDwE2" Ids="JeTiqzE0VJKPE1sUhBaE2p,NaHQSsQ1TjqPLIR6fLOUnF" />
+        <Link Id="SZdefdiwiYtORPLnispGOa" Ids="H6cU8W9Kzj9PTs2hzeoGTf,MK0AHqN2MKHLa5DNOtkdrk" />
+        <Link Id="PzNvO0CqAQVPY3Mo0k6KPY" Ids="FrAsNZ79CFjQDmlS7P8NvS,OFDOuIOKoXANgMnSthZHsP" />
+        <Link Id="NtTIvqhy8mjPRSGOhWVVGE" Ids="TO7xtKgvWH9MN1zzXnWkd2,GZoTW6Q2IhSLgopyCtqqBQ" />
+        <Link Id="IkVNVjiddFCM9INWosMddN" Ids="GZoTW6Q2IhSLgopyCtqqBQ,Qc7dRZkRuVfND9wZFCaTew" />
+        <Link Id="BmoWtZf6su6LyZtu5m69pm" Ids="PfBvw9TwD0MNCB6dQmk4Ft,ODLYtSieXoRMpoCsg4oPZY" />
+        <Link Id="JfLDBci0fIaPa38DVEjajr" Ids="LdKoPzMiTkvOUroH8xlkf8,QElHmdMuDSrPk1BRPam3Tw" />
+        <Link Id="UYpXDwzqymxLF6rNJMBIXz" Ids="Rl5nP7v0EAGL3jrxj1vvUB,SSeNYMtN5INLE4GgDBbkj9" />
+        <Link Id="McsHrzyYIYbPjQVh03WWUb" Ids="MwWFvPviWC6Lna6QqOVHEp,HGp5eSEWsuoNC3DzFcpdW0" />
+        <Link Id="Fe4jfAvF8iQOIpSQMv0ql2" Ids="RKtj1uvqRvIMkb3iq7t9EV,My1M6BdV8T7MuRAqmiWuIz" />
+        <Link Id="PFNE5h2k0ZLMvELfQ7Lu7z" Ids="RKtj1uvqRvIMkb3iq7t9EV,CambgQEcYxnM7D5BohsEnG" />
+        <Link Id="O3sDTaua1BtQEBS2Mu2vqY" Ids="RKtj1uvqRvIMkb3iq7t9EV,ASwsF1yceMDLaG1HhTw0ji" />
+        <Link Id="Qslx0wZNcAuLxVtmC0n9v8" Ids="RKtj1uvqRvIMkb3iq7t9EV,TMsSyRa1DH3OQEOaOMAn6L" />
+        <Link Id="JNj8EsXrIGgMMwHtEKGyYA" Ids="PY6Kx370AcMNfco8YWI71Y,HDGFpAaBUfhNhPabursLs9" />
+        <Link Id="CtPFiHoBs5sNbjWuEcK7Uk" Ids="Sjfo2CHRkzxPsdukNPBBQp,RWFObMlapxJOJuM8AQydch" />
+        <Link Id="VRw9ycptjldPlLgwEOK4FM" Ids="IgKlfCIs9A0NydcN4570G2,OL8CChpO9gRNYGKofKtMkL" />
+        <Link Id="NG6Q7eDahN6OB80H3SS34A" Ids="Vxgp8JcDvKXMA9gaGN0oXe,JlT3lxY62AaPXNK3p8DKdb" />
+        <Link Id="KRzkEVHTjOYOd1QuyDbRYS" Ids="BvLaldBwKtRNOZu25v8iPv,OnuurVvC5q3LTCmbovKSdv" />
+        <Link Id="O5cs0o7iMSWP28SdMKjOgh" Ids="EZb30jD27gDMyzSBiQ6S5J,VjmlDrywqEvLefdVCzKKbD" />
+        <Link Id="GSB0ad5tm0WMRoAtgEg1C5" Ids="RLYZR5I6kF2NUb2UvVrm3y,QyEu91DyPgJQGT3i6BIPDx" />
+        <Link Id="DgSSCOpxFKHNMQNmzcxZMR" Ids="B0vO3B37B12NonbUwYyG8q,AvDLmf2Y3PHLbhjfwuua9N" />
+        <Link Id="DNEuvke9SobONVr6VjwyzE" Ids="QW6YC6DIBZNPjS6FopHg2o,KtZCFecsRRJOuinTKMfNNm" />
+        <Link Id="U6Q7pOifs3eOtf1l8hTEpj" Ids="P8f2CD9fwz5NqDCqKwilWV,VBHXf9F0ExPOhgjQu28yqU" />
+        <Link Id="K7BBlxQCq2AMJywExGLVUN" Ids="DVKEUZ1lPc3ORgYhMYJW6x,I6SM4o4NzSPQVm5VePP6PD" />
+        <Link Id="VO1jlVYmCsjM61qnZ0BiUh" Ids="TcEtx88gegQPqIZUaKor1W,P4GKe6OwZucPRVImZafnrN" />
+        <Link Id="SPgjNzy935KOas2BRMBh53" Ids="TumkntFAvdQPtgAdCbFqoN,QN6NPGs6UfDNclvFVOuGYy" />
+        <Link Id="FCUf38SEH3TLmggTphUUAq" Ids="GF4xJun3BCWQPRHpRJD9AZ,POStRgKjYXGM1wCBoFVVH5" />
+        <Link Id="VSaLpgWlqn0LlkpnDQ7dWv" Ids="AopreNZhkw1OuT2Z9kTiRb,LgaaguADCptLghk8bqY7X0" />
+        <Link Id="ApCqXjyJkCGQMC8ZvWK05Y" Ids="IPLMUj72AwCNta6boKCW89,K73HIVUuHeyPgdL8qRFD6W" />
+        <Link Id="UJT5PLoBEkhMdozcn8YGbo" Ids="K1QqrlgfuzKMryC4zYdRxA,TGl92E87xAZPXrH9DnOAwv" />
+      </Patch>
+    </Node>
+  </Patch>
+  <NugetDependency Id="DK5TDmCHHgFQE8P9ytPpsm" Location="VL.Earth" Version="0.0.0" />
+  <NugetDependency Id="A23sgbj10iVMrh7fDleRBM" Location="VL.Skia" Version="2022.5.0-0543-g82b6f0906b" />
+</Document>

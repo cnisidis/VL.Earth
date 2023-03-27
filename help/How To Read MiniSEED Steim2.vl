@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:p="property" Id="RJc2tzPZC6oMwfJ874OB0n" LanguageVersion="2022.5.0-0698-g985682f12d" Version="0.128">
+  <NugetDependency Id="ApmSKzqzRgcL47MkWLBDgu" Location="VL.CoreLib" Version="2022.5.0-0698-g985682f12d" />
+  <Patch Id="UUwHDtxYTETNI5bBqh9uEQ">
+    <Canvas Id="Na6GDjZR7xPP5QCz7JFIj4" DefaultCategory="Main" BordersChecked="false" CanvasType="FullCategory" />
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="TwLHPyYsRkmMGOw8GaWPCu">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <CategoryReference Kind="Category" Name="Primitive" />
+      </p:NodeReference>
+      <Patch Id="TtD9VWKJWv1NdNaCWvCdfk">
+        <Canvas Id="JJSb6S1BOQvPWEaXmxJjdw" CanvasType="Group">
+          <Node Bounds="365,300,92,19" Id="NkNVFzNfKghPlyvdEkMRkD">
+            <p:NodeReference LastCategoryFullName="VL.Earth.MiniSeed" LastDependency="VL.Earth.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="Category" Name="MiniSeed" />
+              <Choice Kind="ProcessAppFlag" Name="DECODE_STEIM2" />
+            </p:NodeReference>
+            <Pin Id="NSg2In2aIvZPTQGlbSF9qe" Name="Recorrd" Kind="InputPin" />
+            <Pin Id="JFlUZyCRbFGOGFypxXodtg" Name="Input Is Big Endian" Kind="InputPin" />
+            <Pin Id="MZonOSO87K2NwLPZ8Mojft" Name="Update" Kind="ApplyPin" />
+          </Node>
+          <Node Bounds="364,213,77,19" Id="RHKemcfcFAfNvnErkeex6U">
+            <p:NodeReference LastCategoryFullName="VL.Earth.MiniSeed" LastDependency="VL.Earth.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="LoadFromFile" />
+            </p:NodeReference>
+            <Pin Id="PIGezcP6meKPi3XgmXBBMq" Name="File Path" Kind="InputPin" />
+            <Pin Id="CLpamS9JCKNNWvIdacAOuH" Name="Read" Kind="InputPin" />
+            <Pin Id="QtTRzXXhXlqM1vij615GD0" Name="Records" Kind="OutputPin" />
+          </Node>
+          <Pad Id="FomAsYejWdhQUh3SYrMiOg" Comment="File Path" Bounds="366,160,140,15" ShowValueBox="true" isIOBox="true" Value="..\..\..\..\Downloads\query(8)">
+            <p:TypeAnnotation LastCategoryFullName="IO" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="Path" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="HdI74Y1kfZROuZpKtvVu2A" Comment="Read" Bounds="438,106,35,35" ShowValueBox="true" isIOBox="true" Value="False">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
+              <CategoryReference Kind="Category" Name="Primitive" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Node Bounds="365,250,52,19" Id="A2e8XQUZJQROFLCvGhbUOE">
+            <p:NodeReference LastCategoryFullName="Collections.Spread" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="4026531840" Name="Spread" NeedsToBeDirectParent="true" />
+              <Choice Kind="OperationCallFlag" Name="GetSlice" />
+            </p:NodeReference>
+            <Pin Id="C05JLq90GdAMQiZX4mOB5Q" Name="Input" Kind="StateInputPin" />
+            <Pin Id="S9U4cCbNFZhMZg1DIeyMAX" Name="Default Value" Kind="InputPin" />
+            <Pin Id="AjGZHUepbObMiGlBVlMmJ9" Name="Index" Kind="InputPin" />
+            <Pin Id="FHJ6anLWUaPOAxMv9DU2B7" Name="Result" Kind="OutputPin" />
+          </Node>
+        </Canvas>
+        <Patch Id="RBbOzDkkL0FMq2XrTnD9hc" Name="Create" />
+        <Patch Id="CC08LSv3Ji2MzdsEbrFl1U" Name="Update" />
+        <ProcessDefinition Id="LwsGcJw9oj4MaMoxz1KvhZ">
+          <Fragment Id="JaZAIOIFAj2PUiCG785jUp" Patch="RBbOzDkkL0FMq2XrTnD9hc" Enabled="true" />
+          <Fragment Id="UPabDe8CIg8Mc7c3Qlx98D" Patch="CC08LSv3Ji2MzdsEbrFl1U" Enabled="true" />
+        </ProcessDefinition>
+        <Link Id="Cx06D3QnidWOiwzCZZJUaB" Ids="FomAsYejWdhQUh3SYrMiOg,PIGezcP6meKPi3XgmXBBMq" />
+        <Link Id="DJXrCtBuUYsP6pjPiEKHND" Ids="HdI74Y1kfZROuZpKtvVu2A,CLpamS9JCKNNWvIdacAOuH" />
+        <Link Id="AkLfA15F3lwPdKpRBuFJkt" Ids="QtTRzXXhXlqM1vij615GD0,C05JLq90GdAMQiZX4mOB5Q" />
+        <Link Id="LcPZCSALbi5QVk83HWxdl7" Ids="FHJ6anLWUaPOAxMv9DU2B7,NSg2In2aIvZPTQGlbSF9qe" />
+      </Patch>
+    </Node>
+  </Patch>
+  <NugetDependency Id="ByWI7HPXb9CM8EFhbQ7LVf" Location="VL.Earth" Version="0.0.0" />
+</Document>

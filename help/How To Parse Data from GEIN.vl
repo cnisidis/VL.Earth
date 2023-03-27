@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:p="property" Id="GqDfYWA8DeZQJLwzgJiZno" LanguageVersion="2022.5.0-0543-g82b6f0906b" Version="0.128">
+  <NugetDependency Id="PyTt4Pdp1BJPZBM6dmSU5G" Location="VL.CoreLib" Version="2022.5.0-0543-g82b6f0906b" />
+  <Patch Id="LKLVfy4QVYjL6rDsNn6yKn">
+    <Canvas Id="MD2QvdIDQjILdc49XfMEoW" DefaultCategory="Main" BordersChecked="false" CanvasType="FullCategory" />
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="EpWn4Gy3oazOwV3ViKwWZA">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <CategoryReference Kind="Category" Name="Primitive" />
+      </p:NodeReference>
+      <Patch Id="KR5Z52mpcPiOnyIfH6DOF2">
+        <Canvas Id="GCPbWTvJQgBLs3aslnTwXo" CanvasType="Group">
+          <Node Bounds="-502,90,85,19" Id="JC4VNba7mSsM9ewlMnoF20">
+            <p:NodeReference LastCategoryFullName="IO.HTTP" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="HTTPGet" />
+            </p:NodeReference>
+            <Pin Id="S5PveQD3rdXQAXtEqTxFaO" Name="URL" Kind="InputPin" />
+            <Pin Id="Ek1P2CTDyXYPWxvNlxfVWx" Name="Headers" Kind="InputPin" />
+            <Pin Id="VGX5kEMCeIqLcFZJmn68s3" Name="Username" Kind="InputPin" />
+            <Pin Id="NjmIitBnOJiOfu3JdbB8lz" Name="Password" Kind="InputPin" />
+            <Pin Id="K56HMLpD1YPPw8gLg0f9Ks" Name="Refresh" Kind="InputPin" />
+            <Pin Id="QwhjeUbVwMWOIMBIJCN81S" Name="Result" Kind="OutputPin" />
+            <Pin Id="THNmuBUBHCXNyaoItwjhrn" Name="In Progress" Kind="OutputPin" />
+          </Node>
+          <Pad Id="NcsqyXJ3hV2Od00ziXFfGH" Comment="URL" Bounds="-497,-93,380,15" ShowValueBox="true" isIOBox="true" Value="https://bbnet2.gein.noa.gr/current_catalogue/current_catalogue.php">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="L3ckxMCg3jQNHyl0D37OFf" Comment="Refresh" Bounds="-346,20,35,35" ShowValueBox="true" isIOBox="true" Value="False">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
+              <CategoryReference Kind="Category" Name="Primitive" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Node Bounds="-501,172,65,19" Id="Ksx2jS1m4sdP7vkPn2tuVD">
+            <p:NodeReference LastCategoryFullName="Reactive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="HoldLatest" />
+            </p:NodeReference>
+            <Pin Id="H8Lbhe1vVpwOwjxNUufGZv" Name="Async Notifications" Kind="InputPin" />
+            <Pin Id="QoeFsPjYOxjMoZf69KyTkn" Name="Reset" Kind="InputPin" DefaultValue="False" />
+            <Pin Id="Knu4JXVuQsdNfOi6dK33jT" Name="Value" Kind="OutputPin" />
+            <Pin Id="HFp83O2wl1BOddLrsgYyLe" Name="On Data" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="-502,216,57,26" Id="H8JZo37R8zvM79B97etLSD">
+            <p:NodeReference LastCategoryFullName="IO.HTTP.HTTPGet.HTTPResult" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="ClassType" Name="HTTPResult" />
+              <Choice Kind="OperationCallFlag" Name="Split" />
+            </p:NodeReference>
+            <Pin Id="JQpVUjJNOLkOqXG4B0qO0l" Name="Input" Kind="StateInputPin" />
+            <Pin Id="DmZSbVY01rQOYjX2cdRZ7N" Name="Status" Kind="OutputPin" />
+            <Pin Id="NDuZpR3FWtgNRyn9YG3XsV" Name="Header" Kind="OutputPin" />
+            <Pin Id="IuLctA79VQIOysYzyjQQdF" Name="Body" Kind="OutputPin" />
+          </Node>
+          <Pad Id="VWgNn3oAe9pM1yX84rOfTf" Comment="In Progress" Bounds="-363,161,35,35" ShowValueBox="true" isIOBox="true" />
+          <Node Bounds="316,-45,85,19" Id="BuhJy5PIRzUNYrNWYvgR3J">
+            <p:NodeReference LastCategoryFullName="IO.HTTP" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="Category" Name="HTTP" />
+              <Choice Kind="ProcessAppFlag" Name="HTTPGet" />
+            </p:NodeReference>
+            <Pin Id="IEqqJw0iYrVQQTNLjlI2Ve" Name="URL" Kind="InputPin" DefaultValue="https://bbnet2.gein.noa.gr/current_catalogue/current_catalogue.php" />
+            <Pin Id="PoOfzsTgcQLOj11TXq6Qdv" Name="Headers" Kind="InputPin" />
+            <Pin Id="I9fAsaPBvH3NGezOLB4035" Name="Username" Kind="InputPin" />
+            <Pin Id="Ewjd1UlWcD7QXQllZNS1yQ" Name="Password" Kind="InputPin" />
+            <Pin Id="NxkLBiASoPWL9OmPELyMeb" Name="Refresh" Kind="InputPin" />
+            <Pin Id="CpTO9xVX8r5NX97dgUANzJ" Name="Result" Kind="OutputPin" />
+            <Pin Id="Ezr8agbX2UjPK0K03lby7m" Name="In Progress" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="323,67" Id="Rvrvg0U5tEcOG5QKFSvcFM">
+            <p:NodeReference LastCategoryFullName="IO.HTTP.HTTPGet.HTTPResult" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="Category" Name="HTTP" />
+              <CategoryReference Kind="Category" Name="HTTPGet" />
+              <CategoryReference Kind="ClassType" Name="HTTPResult" />
+              <Choice Kind="OperationCallFlag" Name="Split" />
+            </p:NodeReference>
+            <Pin Id="TWmDmZgkKWOMWFYFUotR6h" Name="Input" Kind="StateInputPin" />
+            <Pin Id="T3dTX6T5d3bP3cfwRfaoCn" Name="Status" Kind="OutputPin" />
+            <Pin Id="VmD5m8BF3EFN2LkzvAqCPp" Name="Header" Kind="OutputPin" />
+            <Pin Id="IWmxxEVhEwPPMyEAytRCYl" Name="Body" Kind="OutputPin" />
+          </Node>
+          <Pad Id="CO7NQEQgEydOBBeZ057jV1" Comment="Status" Bounds="-500,299,153,15" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="Vp3uXrQZAwKLb42r2cxNqa" Comment="Reset" Bounds="-257,81,35,35" ShowValueBox="true" isIOBox="true" Value="False">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
+              <CategoryReference Kind="Category" Name="Primitive" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="PeAho9nnFhXPXtXHFYtKaJ" Comment="Headers" Bounds="-476,-32,35,34" ShowValueBox="true" isIOBox="true">
+            <p:TypeAnnotation LastCategoryFullName="Collections" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="Spread" />
+              <p:TypeArguments>
+                <TypeReference LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+                  <Choice Kind="TypeFlag" Name="String" />
+                </TypeReference>
+              </p:TypeArguments>
+            </p:TypeAnnotation>
+            <p:Value>
+              <Item></Item>
+            </p:Value>
+          </Pad>
+          <Node Bounds="193,68" Id="Sg0Ks9eLGiOMxb49hUu3uG">
+            <p:NodeReference LastCategoryFullName="IO" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="FileReader (String)" />
+            </p:NodeReference>
+            <Pin Id="TnKRnp3hJvzM7ZAP45t6d5" Name="File Path" Kind="InputPin" />
+            <Pin Id="FEuaxkaipaBQPoEcpcXGm9" Name="Encoding" Kind="InputPin" />
+            <Pin Id="SPtX5KCNjCJMpCroJLlcEh" Name="Read" Kind="InputPin" />
+            <Pin Id="Uu0ebq8Rq5bO584NPaGyiy" Name="Output" Kind="OutputPin" />
+          </Node>
+          <Pad Id="CNVsdwDIpWdP20lJ77ERkN" Comment="File Path" Bounds="194,15,133,15" ShowValueBox="true" isIOBox="true" Value="assets\GEIN_Earthquakes.txt">
+            <p:TypeAnnotation LastCategoryFullName="IO" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="Path" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="OZKNRwm5sdzLFEwPbViTaj" Comment="Read" Bounds="262,-23,35,35" ShowValueBox="true" isIOBox="true" Value="False">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
+              <CategoryReference Kind="Category" Name="Primitive" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Node Bounds="98,141,100,19" Id="SrVgrxlwJboOOBA643U50A">
+            <p:NodeReference LastCategoryFullName="VL.Earth" LastDependency="VL.Earth.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="GEINToEarthquake" />
+            </p:NodeReference>
+            <Pin Id="UZzIzA4g2NIOAmxX1NbBAi" Name="Force" Kind="InputPin" />
+            <Pin Id="RTkHSMVgZlWM1Z4sv70IK9" Name="GEIN Earthquakes" Kind="InputPin" />
+            <Pin Id="PqtbwbTCD5mM5P88t0eJft" Name="Earthquakes" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="80,190,165,19" Id="UxrtSAUyATEP7Rx7mEMtpy">
+            <p:NodeReference LastCategoryFullName="VL.Earth" LastDependency="VL.Earth.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="Category" Name="Earth" />
+              <Choice Kind="ProcessAppFlag" Name="MappingEarthquakes3D" />
+            </p:NodeReference>
+            <Pin Id="Lan9K6laoejM79vYWsnSOq" Name="Update" Kind="InputPin" />
+            <Pin Id="TuXK5sEeX1KPobsEHp2ldQ" Name="Earthquakes" Kind="InputPin" />
+            <Pin Id="UpuzqBeW8eIM6oA0yF2iQC" Name="Input Minimum" Kind="InputPin" />
+            <Pin Id="BQrP9oNfKW7OvFg060k7vs" Name="Input Maximum" Kind="InputPin" />
+            <Pin Id="EEnhRxu7eVTP9hgucFpd71" Name="Output Minimum" Kind="InputPin" />
+            <Pin Id="O9VQ0LWq68pO7GTJqIp5K4" Name="Output Maximum" Kind="InputPin" />
+            <Pin Id="NYnV7Kcw5p3PDBxe8N59Iy" Name="Depth" Kind="InputPin" />
+            <Pin Id="FKKbcstcI6uN18KzDc4a6z" Name="HueMin" Kind="InputPin" />
+            <Pin Id="S0UFntvFpdzMsMH5dmS0R8" Name="HueMax" Kind="InputPin" />
+            <Pin Id="QNL91jKAofgPAKqKvbzjXG" Name="Weights" Kind="OutputPin" />
+            <Pin Id="PJC0c2jHNcXPPJYRkUHYnr" Name="Earthquakes" Kind="OutputPin" />
+            <Pin Id="Dxxw6ickWdPOoOViev6WXM" Name="For KMeans" Kind="OutputPin" />
+            <Pin Id="RC0qpmfto0HLY2tBRy14TH" Name="Position 3D" Kind="OutputPin" />
+            <Pin Id="N9z65fBYduELPRms3nmdiV" Name="Depth" Kind="OutputPin" />
+            <Pin Id="KmYw0ZSk3vwMZ6lrnkx95Y" Name="Magnitude" Kind="OutputPin" />
+          </Node>
+        </Canvas>
+        <Patch Id="SS0UiHTekLxP7rMSCFF7Rg" Name="Create" />
+        <Patch Id="RjGaDEgnFAnNn2HRQx5Y1S" Name="Update" />
+        <ProcessDefinition Id="A1IISbhJ4e7MQOp6Rippwx">
+          <Fragment Id="Ihs5xFt0NPaQQ0HcYl3muQ" Patch="SS0UiHTekLxP7rMSCFF7Rg" Enabled="true" />
+          <Fragment Id="LxIad2iCttiMKU950aABKa" Patch="RjGaDEgnFAnNn2HRQx5Y1S" Enabled="true" />
+        </ProcessDefinition>
+        <Link Id="TZV3ws0qrCtMAOGQg4QPLO" Ids="NcsqyXJ3hV2Od00ziXFfGH,S5PveQD3rdXQAXtEqTxFaO" />
+        <Link Id="MrX0QyrSe1dPcZ8dnCBgt7" Ids="L3ckxMCg3jQNHyl0D37OFf,K56HMLpD1YPPw8gLg0f9Ks" />
+        <Link Id="HtDCdSCAUUGOEUiXjFDzqB" Ids="Knu4JXVuQsdNfOi6dK33jT,JQpVUjJNOLkOqXG4B0qO0l" />
+        <Link Id="RhcR12K36amNeKjQToXDqX" Ids="THNmuBUBHCXNyaoItwjhrn,VWgNn3oAe9pM1yX84rOfTf" />
+        <Link Id="QSOGwB70CV1QWSTc1lmYsu" Ids="DmZSbVY01rQOYjX2cdRZ7N,CO7NQEQgEydOBBeZ057jV1" />
+        <Link Id="DA6d4o2UivaNvCICW8lvqO" Ids="QwhjeUbVwMWOIMBIJCN81S,H8Lbhe1vVpwOwjxNUufGZv" />
+        <Link Id="IO6I719KXuoLbyyNApyJoa" Ids="Vp3uXrQZAwKLb42r2cxNqa,QoeFsPjYOxjMoZf69KyTkn" />
+        <Link Id="ASQDuX9r6kIL39LsrosCta" Ids="PeAho9nnFhXPXtXHFYtKaJ,Ek1P2CTDyXYPWxvNlxfVWx" />
+        <Link Id="GA32IizfUYuNBqwFPdRD7B" Ids="CNVsdwDIpWdP20lJ77ERkN,TnKRnp3hJvzM7ZAP45t6d5" />
+        <Link Id="QP4Vkz1EEk1NRycSoh8iw7" Ids="OZKNRwm5sdzLFEwPbViTaj,SPtX5KCNjCJMpCroJLlcEh" />
+        <Link Id="NxC9hxUOJwZLjauzC522np" Ids="Uu0ebq8Rq5bO584NPaGyiy,RTkHSMVgZlWM1Z4sv70IK9" />
+        <Link Id="AS4kSpEVagkM40uHKxq973" Ids="PqtbwbTCD5mM5P88t0eJft,TuXK5sEeX1KPobsEHp2ldQ" />
+      </Patch>
+    </Node>
+  </Patch>
+  <NugetDependency Id="NVHp5ujsUVLPWAKAgjYTZN" Location="VL.Earth" Version="0.0.0" />
+</Document>

@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:p="property" Id="EkZnlNQTv5uLKmy2gipxEQ" LanguageVersion="2022.5.0-0543-g82b6f0906b" Version="0.128">
+  <NugetDependency Id="Dfnc4X4mNPBL93c6wpSwzU" Location="VL.CoreLib" Version="2022.5.0-0543-g82b6f0906b" />
+  <Patch Id="HxhkJMmfgXQNOqJGZ6Br7l">
+    <Canvas Id="F7VK5bO1ujEPlSvGztbZuy" DefaultCategory="Main" BordersChecked="false" CanvasType="FullCategory" />
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="OP3wNtW0zMvPOtpAddVXQD">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <CategoryReference Kind="Category" Name="Primitive" />
+      </p:NodeReference>
+      <Patch Id="ANrZCA9t2paLKPRcMEZEqP">
+        <Canvas Id="PSi2OaPCN5iOQm3XUTSbHk" CanvasType="Group">
+          <Pad Id="TFN1mJ9Bf2VL3B5EMrsAW4" Bounds="592,89,628,128" ShowValueBox="true" isIOBox="true" Value="Year/Month/Day&#x9;Hour:Min:Sec&#x9;Latitude&#x9;Longitude&#x9;Depth&#x9;Magnitude&#x9;Event ID&#x9;Location&#x9;Type&#xD;&#xA;2022/01/31&#x9;23:44:27.43&#x9;38.3029&#x9;23.4036&#x9;11.3&#x9;1.4&#x9;noa2022ceqkl&#x9;8 Km ESE from Thebes&#x9;manual&#xD;&#xA;2022/01/31&#x9;23:12:43.47&#x9;35.1169&#x9;25.2164&#x9;12.5&#x9;1.6&#x9;noa2022cepjd&#x9;6 Km SW from Arkalochori&#x9;manual&#xD;&#xA;2022/01/31&#x9;22:20:53.49&#x9;38.3070&#x9;21.5465&#x9;15.8&#x9;1.1&#x9;noa2022cenqr&#x9;12 Km SE from Mesolongion&#x9;manual&#xD;&#xA;2022/01/31&#x9;22:19:42.53&#x9;38.2915&#x9;23.4013&#x9;12.1&#x9;1.2&#x9;noa2022cenpr&#x9;8 Km ESE from Thebes&#x9;manual&#xD;&#xA;2022/01/31&#x9;22:14:36.35&#x9;38.0772&#x9;21.9292&#x9;12.3&#x9;1.1&#x9;noa2022cenla&#x9;13 Km ESE from Chalandritsa Achaia&#x9;manual&#xD;&#xA;2022/01/31&#x9;22:05:16.04&#x9;41.3443&#x9;20.9134&#x9;15.8&#x9;2.5&#x9;noa2022cendh&#x9;75 Km NNW from Florina&#x9;manual&#xD;&#xA;2022/01/31&#x9;22:02:17.82&#x9;38.3098&#x9;23.4023&#x9;12.2&#x9;1.9&#x9;noa2022cenas&#x9;8 Km E from Thebes&#x9;manual&#xD;&#xA;2022/01/31&#x9;21:11:45.19&#x9;38.2787&#x9;23.3995&#x9;13.5&#x9;1.4&#x9;noa2022celji&#x9;8 Km ESE from Thebes&#x9;manual">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="ImmutableTypeFlag" Name="String" />
+              <CategoryReference Kind="Category" Name="Primitive" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Node Bounds="589,327,145,26" Id="NaIyqjrlViTPoZL2kO5RL9">
+            <p:NodeReference LastCategoryFullName="VL.Earth.Earthquake" LastDependency="VL.Earth.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="ClassType" Name="Earthquake" />
+              <Choice Kind="OperationCallFlag" Name="Split" />
+            </p:NodeReference>
+            <Pin Id="UJWfbnwDWjoN8OMCvmnfvn" Name="Input" Kind="StateInputPin" />
+            <Pin Id="VKUZYxIMKjjNAR7gtg1Sie" Name="Output" Kind="StateOutputPin" />
+            <Pin Id="QM7nPV3zcmoOunh9uEXQgL" Name="Event Id" Kind="OutputPin" />
+            <Pin Id="GEzRP0ouGiiLRkymEYim8x" Name="LatLong" Kind="OutputPin" />
+            <Pin Id="FdS8OWlBmCuMc0dgN4VTjQ" Name="Magnitude" Kind="OutputPin" />
+            <Pin Id="MQY52fJPE53OZKC1XddUGC" Name="Date" Kind="OutputPin" />
+            <Pin Id="IfxJvUBl84cLY310z2iAA2" Name="Depth" Kind="OutputPin" />
+            <Pin Id="HnhjJ1O47AXQFMZ4Hq9rlJ" Name="Location" Kind="OutputPin" />
+            <Pin Id="Ndp3u6WA76oNeMQOHXUYgM" Name="Type" Kind="OutputPin" />
+          </Node>
+          <Pad Id="SHFK38pRiauLSnL5rZLtvJ" Comment="Event Id" Bounds="610,404,73,15" ShowValueBox="true" isIOBox="true" />
+          <Node Bounds="500,271,94,19" Id="OpboFa3380KPoPc71VfhwY">
+            <p:NodeReference LastCategoryFullName="VL.Earth" LastDependency="VL.Earth.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="ReadEarthquakes" />
+            </p:NodeReference>
+            <Pin Id="Al8YPYOVe5RQKnp3ej2tto" Name="Force" Kind="InputPin" />
+            <Pin Id="NqTmkM3g77kNZHRX2rYjgO" Name="Earthquakes Catalog" Kind="InputPin" />
+            <Pin Id="KgPtrHEmMbiM3iO8U3Aoha" Name="Has Changed" Kind="OutputPin" />
+            <Pin Id="IbZraeAHye5OpdITHPsCwH" Name="Earthwuakes" Kind="OutputPin" />
+          </Node>
+        </Canvas>
+        <Patch Id="G1TdcPLDaCkLPmlPxglkow" Name="Create" />
+        <Patch Id="NEJn3eOgz2AO43AvySxyIA" Name="Update" />
+        <ProcessDefinition Id="NoL7Uolq4clMrJ4RiTpKz2">
+          <Fragment Id="TOlYmaezKv0PBYAexwlSF0" Patch="G1TdcPLDaCkLPmlPxglkow" Enabled="true" />
+          <Fragment Id="VQC6PuLOPoaMg52W8GUsYH" Patch="NEJn3eOgz2AO43AvySxyIA" Enabled="true" />
+        </ProcessDefinition>
+        <Link Id="KBFbqr5YHkCQAk2Qu7AWf9" Ids="QM7nPV3zcmoOunh9uEXQgL,SHFK38pRiauLSnL5rZLtvJ" />
+        <Link Id="KfjZRK6qK25MPteI9dHgwI" Ids="TFN1mJ9Bf2VL3B5EMrsAW4,NqTmkM3g77kNZHRX2rYjgO" />
+        <Link Id="FiHRGUaxNzkOcOC8gEF9xa" Ids="IbZraeAHye5OpdITHPsCwH,UJWfbnwDWjoN8OMCvmnfvn" />
+      </Patch>
+    </Node>
+  </Patch>
+  <NugetDependency Id="JJWNhE8jRpnPHUHkf5SuAf" Location="VL.Earth" Version="0.0.0" />
+</Document>
