@@ -5,8 +5,5 @@ namespace VL.Earth;
 
 public static class EarthUtils
 {
-    public static float DemoNode(float a, float b)
-    {
-        return a + b;
-    }
+    
 }
