@@ -1,3 +1,6 @@
 /csharp/VL.Earth/bin
 /csharp/VL.Earth/obj
-/csharp/VL.Earth/.vs
+/csharp/VL.Earth/obj
+/csharp/VL.Earth/.vs/*
+/csharp/EarthMiniSeed/
+/csharp/VL.Earth/x64/
