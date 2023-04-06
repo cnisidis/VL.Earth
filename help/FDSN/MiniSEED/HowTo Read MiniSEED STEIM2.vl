@@ -25,7 +25,7 @@
             <Pin Id="QtTRzXXhXlqM1vij615GD0" Name="Records" Kind="OutputPin" />
             <Pin Id="COOldFkTRycM1DF8xstJKz" Name="TotalSamples" Kind="OutputPin" />
           </Node>
-          <Pad Id="FomAsYejWdhQUh3SYrMiOg" Comment="File Path" Bounds="-345,-112,267,15" ShowValueBox="true" isIOBox="true" Value="..\..\..\Projects\Eartquakes_\mseed_python\noa_fdsnws.mseed">
+          <Pad Id="FomAsYejWdhQUh3SYrMiOg" Comment="File Path" Bounds="-345,-112,267,15" ShowValueBox="true" isIOBox="true" Value="assets\noa_fdsnws.mseed">
             <p:TypeAnnotation LastCategoryFullName="IO" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Path" />
             </p:TypeAnnotation>
@@ -125,7 +125,7 @@
             <Pin Id="D2r6nIIBt3ONAqV902fLUv" Name="Read" Kind="InputPin" DefaultValue="False" />
             <Pin Id="Lg5j3yYLtBwN3qx82OmHQP" Name="Output" Kind="OutputPin" />
           </Node>
-          <Pad Id="PgJYgoHRaMOOYW22ErgB1F" Comment="File Path" Bounds="-13,117,133,15" ShowValueBox="true" isIOBox="true" Value="..\..\..\Projects\Eartquakes_\mseed_python\noa_fdsnws_GVDS.txt">
+          <Pad Id="PgJYgoHRaMOOYW22ErgB1F" Comment="File Path" Bounds="-13,117,133,15" ShowValueBox="true" isIOBox="true" Value="assets\noa_fdsnws_GVDS.txt">
             <p:TypeAnnotation LastCategoryFullName="IO" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Path" />
             </p:TypeAnnotation>
