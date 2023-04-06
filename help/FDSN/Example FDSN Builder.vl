@@ -163,7 +163,7 @@
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="Renderer" />
             </p:NodeReference>
-            <Pin Id="VovjHUkOi2XM38rBJFomP6" Name="Bounds" Kind="InputPin" DefaultValue="430, 56, 1100, 652" />
+            <Pin Id="VovjHUkOi2XM38rBJFomP6" Name="Bounds" Kind="InputPin" DefaultValue="429, 56, 1100, 652" />
             <Pin Id="PaFel8QfyC1NEZXpsSDVoD" Name="Input" Kind="InputPin" />
             <Pin Id="Pd76uKaTIglPjDHc0mBhZh" Name="Color" Kind="InputPin" DefaultValue="0, 0, 0, 1" />
             <Pin Id="GjHD3zPfFBZNODoNWtGiNj" Name="Clear" Kind="InputPin" />
@@ -186,6 +186,7 @@
             <Pin Id="IFb4Ej2N6TtOtEMxRkedHr" Name="Use Skia Space" Kind="InputPin" />
             <Pin Id="C9Zj5rRZNOHM2gS6Gl6FXs" Name="Output" Kind="OutputPin" />
             <ControlPoint Id="ONK1LeYvnhePxZ1Nb08Xi6" Bounds="1246,427" Alignment="Top" />
+            <ControlPoint Id="SkuL2xeb1KhPAUGFxULjzm" Bounds="1336,1178" Alignment="Bottom" />
             <Patch Id="ILCGmo9wdpUMEVzEObAGsN" ManuallySortedPins="true">
               <Patch Id="RhRXPjsDsQzPhFcDrBhoSN" Name="Create" ManuallySortedPins="true" />
               <Patch Id="TVc7pdnsqBsPlGWrZQYmSZ" Name="Update" ParticipatingElements="GBOHcfd1o5WLvxOanL7ZRs,TIjdDsCnxHjMaU3T8kKvCB,V0yZKkDpR4TP61dmIfgsMg" ManuallySortedPins="true" />
@@ -217,7 +218,7 @@
                   <Patch Id="AUtUzkH31SnLE8t6aI7QRl" Name="Create" ManuallySortedPins="true" />
                   <Patch Id="V7liYfIg4TyQUjYnet4DNp" Name="Update" ManuallySortedPins="true" />
                   <Node Bounds="1304,634,90,19" Id="TvGunwPBr5sLkq3APn7kT2">
-                    <p:NodeReference LastCategoryFullName="Main" LastDependency="Example FSDN.vl">
+                    <p:NodeReference LastCategoryFullName="Main" LastDependency="Example FDSN Builder.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="ProcessAppFlag" Name="NetworksWidget" />
                     </p:NodeReference>
@@ -233,20 +234,6 @@
                   <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                   <Choice Kind="ProcessAppFlag" Name="ChildWindow" />
                 </p:NodeReference>
-                <Patch Id="GQlEuDLJMSwOsFyS30ufHS" ManuallySortedPins="true">
-                  <Patch Id="KTE1wvkJX3AMtnHxY0unyR" Name="Create" ManuallySortedPins="true" />
-                  <Patch Id="IgJU3V9AWEFLfryd68WCxX" Name="Update" ManuallySortedPins="true" />
-                  <Node Bounds="1318,928,85,19" Id="RQ5n9DJZePHQPGhky0f2UY">
-                    <p:NodeReference LastCategoryFullName="Main" LastDependency="Example FSDN.vl">
-                      <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                      <Choice Kind="ProcessAppFlag" Name="NetworkWidget" />
-                    </p:NodeReference>
-                    <Pin Id="Mw3g9DNMpy7NWV6SFpsPjk" Name="Network" Kind="InputPin" />
-                    <Pin Id="F938hpjLoTVNGvqlQ6EX1y" Name="Context" Kind="InputPin" />
-                    <Pin Id="IHornU6T9fELBvoPuD1wkQ" Name="SelectedStation" Kind="InputPin" />
-                    <Pin Id="BFot1IaerVONZMP2jlX3tz" Name="Context" Kind="OutputPin" />
-                  </Node>
-                </Patch>
                 <Pin Id="Jo5GX1u0yEoMHym0lnRsIR" Name="Context" Kind="InputPin" />
                 <Pin Id="DTMpB8QoQtgNd6LHuHNwjB" Name="Label" Kind="InputPin" DefaultValue="NetworkDetails" />
                 <Pin Id="KUI49o4de5kOWTmVGSD4lP" Name="Has Border" Kind="InputPin" DefaultValue="False" />
@@ -256,6 +243,20 @@
                 <Pin Id="OM0Ob4yHRu1MZ4SGHjah4r" Name="Context" Kind="OutputPin" />
                 <Pin Id="UsN05u8OmtBNl9BHwfuQ99" Name="Is Open" Kind="OutputPin" />
                 <ControlPoint Id="KQ4y70sN45EMXit9tP3QMK" Bounds="1320,989" Alignment="Bottom" />
+                <Patch Id="GQlEuDLJMSwOsFyS30ufHS" ManuallySortedPins="true">
+                  <Patch Id="KTE1wvkJX3AMtnHxY0unyR" Name="Create" ManuallySortedPins="true" />
+                  <Patch Id="IgJU3V9AWEFLfryd68WCxX" Name="Update" ManuallySortedPins="true" />
+                  <Node Bounds="1318,928,85,19" Id="RQ5n9DJZePHQPGhky0f2UY">
+                    <p:NodeReference LastCategoryFullName="Main" LastDependency="Example FDSN Builder.vl">
+                      <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                      <Choice Kind="ProcessAppFlag" Name="NetworkWidget" />
+                    </p:NodeReference>
+                    <Pin Id="Mw3g9DNMpy7NWV6SFpsPjk" Name="Network" Kind="InputPin" />
+                    <Pin Id="F938hpjLoTVNGvqlQ6EX1y" Name="Context" Kind="InputPin" />
+                    <Pin Id="IHornU6T9fELBvoPuD1wkQ" Name="SelectedStation" Kind="InputPin" />
+                    <Pin Id="BFot1IaerVONZMP2jlX3tz" Name="Context" Kind="OutputPin" />
+                  </Node>
+                </Patch>
               </Node>
               <Node Bounds="1302,805,59,19" Id="IroDffAOAWDPKt4oAjoIcX">
                 <p:NodeReference LastCategoryFullName="ImGui.Commands" LastDependency="VL.ImGui.Skia.vl">
@@ -285,7 +286,7 @@
                   <Patch Id="J5hu1XVlDDAN2ztZJImlnD" Name="Create" ManuallySortedPins="true" />
                   <Patch Id="KFCqdxH5RA0OWUiUbmJSDy" Name="Update" ParticipatingElements="DBrt1ZXluK7LkfgCW3I8Cq" ManuallySortedPins="true" />
                   <Node Bounds="1341,1119,79,19" Id="Ta3htgvCqQYOHYbCWdYbqp">
-                    <p:NodeReference LastCategoryFullName="Main" LastDependency="Example FSDN.vl">
+                    <p:NodeReference LastCategoryFullName="Main" LastDependency="Example FDSN Builder.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="ProcessAppFlag" Name="StationWidget" />
                     </p:NodeReference>
@@ -314,11 +315,14 @@
                   <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                   <Choice Kind="ProcessAppFlag" Name="MainMenuBar" />
                 </p:NodeReference>
+                <Pin Id="Ryq4FMR3M1jOINHbLOxC17" Name="Context" Kind="InputPin" />
+                <Pin Id="MdvkzPNGqVNPVbAjYLq2S9" Name="Style" Kind="InputPin" />
+                <Pin Id="IwQXXHW6OVONo9uXmzQ93E" Name="Context" Kind="OutputPin" />
                 <Patch Id="BT3ipfdyCnuOtEX05loRpI" ManuallySortedPins="true">
                   <Patch Id="Ro6kHUmOEdHMofBtX1Xsow" Name="Create" ManuallySortedPins="true" />
                   <Patch Id="BIDfDgBq0KRP6IjAAdeHdo" Name="Update" ManuallySortedPins="true" />
                   <Node Bounds="1196,510,72,19" Id="MBumyGGtjUvOR64pe7Tl5d">
-                    <p:NodeReference LastCategoryFullName="Main" LastDependency="Example FSDN.vl">
+                    <p:NodeReference LastCategoryFullName="Main" LastDependency="Example FDSN Builder.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="ProcessAppFlag" Name="UIMainMenu" />
                     </p:NodeReference>
@@ -326,12 +330,8 @@
                     <Pin Id="C26YSb0LHEqMfxKzju73f0" Name="Context" Kind="OutputPin" />
                   </Node>
                 </Patch>
-                <Pin Id="Ryq4FMR3M1jOINHbLOxC17" Name="Context" Kind="InputPin" />
-                <Pin Id="MdvkzPNGqVNPVbAjYLq2S9" Name="Style" Kind="InputPin" />
-                <Pin Id="IwQXXHW6OVONo9uXmzQ93E" Name="Context" Kind="OutputPin" />
               </Node>
             </Patch>
-            <ControlPoint Id="SkuL2xeb1KhPAUGFxULjzm" Bounds="1336,1178" Alignment="Bottom" />
           </Node>
           <!--
 
@@ -350,7 +350,7 @@
                 <ControlPoint Id="NSQunjbiKRFPN3qVToKkUo" Bounds="765,47" />
                 <Pad Id="Q89fRtdRc3jNEcDvcFDlS4" SlotId="OK8T727OGq9Pz4hRyLYwAa" Bounds="1231,-13" />
                 <Node Bounds="1225,72,63,19" Id="NX1RmgXF2uKQcpIp9U7Bgy">
-                  <p:NodeReference LastCategoryFullName="Main" LastDependency="Example FSDN.vl">
+                  <p:NodeReference LastCategoryFullName="Main" LastDependency="Example FDSN Builder.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                     <Choice Kind="ProcessAppFlag" Name="FilterCode" />
                   </p:NodeReference>
@@ -1094,7 +1094,7 @@
             </Patch>
           </Node>
           <Node Bounds="1765,342,63,19" Id="UP8Bx9mHjzTQa99D2wFmA9">
-            <p:NodeReference LastCategoryFullName="Main" LastDependency="Example FSDN.vl">
+            <p:NodeReference LastCategoryFullName="Main" LastDependency="Example FDSN Builder.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="FilterCode" />
             </p:NodeReference>
@@ -2023,7 +2023,7 @@
               <Choice Kind="TypeFlag" Name="Integer32" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="RijCzZCsBUENOTViK54MeJ" Comment="" Bounds="1877,824,190,132" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="RijCzZCsBUENOTViK54MeJ" Comment="" Bounds="2047,767,190,132" ShowValueBox="true" isIOBox="true" />
           <Pad Id="Pwh2tlorNBGLiOgx2tfFHN" SlotId="IwEZ60tnzemM6TUma6oTu6" Bounds="2030,358" />
           <Pad Id="S1nO66xPKucQPXJDNxnhJg" Comment="Size" Bounds="1326,457,35,28" ShowValueBox="true" isIOBox="true" Value="1.2, 0">
             <p:TypeAnnotation LastCategoryFullName="2D" LastDependency="VL.CoreLib.vl">
@@ -2350,20 +2350,6 @@
             <Pin Id="PegCDM7B0nhLFSlA4THT3A" Name="Query" Kind="OutputPin" />
           </Node>
           <Pad Id="CYaeiTsQYGULdwjkwDEj5g" Comment="Query" Bounds="2361,623,728,25" ShowValueBox="true" isIOBox="true" />
-          <Pad Id="IsAq7X89y87LpCPjsonhVu" Comment="Channels" Bounds="2177,386,35,65" ShowValueBox="true" isIOBox="true">
-            <p:TypeAnnotation LastCategoryFullName="Collections" LastDependency="VL.CoreLib.vl">
-              <Choice Kind="TypeFlag" Name="Spread" />
-              <p:TypeArguments>
-                <TypeReference LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
-                  <Choice Kind="TypeFlag" Name="String" />
-                </TypeReference>
-              </p:TypeArguments>
-            </p:TypeAnnotation>
-            <p:Value>
-              <Item>HZE</Item>
-              <Item>HZZ</Item>
-            </p:Value>
-          </Pad>
           <Node Bounds="2434,356,51,19" Id="CU2hByBpoikQRSvNSkES9a">
             <p:NodeReference LastCategoryFullName="System.DateTime (UTC)" LastDependency="VL.CoreLib.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
