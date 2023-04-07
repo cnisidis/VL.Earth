@@ -29,7 +29,7 @@ namespace VL.Earth
             return BitConverter.GetBytes(((value >> startbit) & ((1U << length) - 1)));
         }
 
-        
+
         public static void SwitchNibble(int frame, int nibble, bool debug, out List<int> diff)
         {
             byte[] dword = new byte[8];
@@ -76,7 +76,7 @@ namespace VL.Earth
                             var temp = (int)EXTRACTBITRANGE(frame, 0, 30);
                             temp = (temp ^ semask) - semask;
                             diff.Add(temp);
-                            
+
 
                             if (debug)
                                 Console.WriteLine("  W{0:G}: 10,01=1x30b  {1:G}\n", diff[0]);
@@ -87,7 +87,7 @@ namespace VL.Earth
                             semask = (int)(1ul << (15 - 1)); /* Sign extension from bit 15 */
                             for (int idx = 0; idx < diffcount; idx++)
                             {
-                                temp = (int)EXTRACTBITRANGE(frame, ( 15 - idx * 15), 15);
+                                temp = (int)EXTRACTBITRANGE(frame, (15 - idx * 15), 15);
                                 temp = (temp ^ semask) - semask;
                                 diff.Add(temp); //15 - 
                                 //diff[idx] = (diff[idx] ^ semask) - semask;
@@ -103,9 +103,9 @@ namespace VL.Earth
                             for (int idx = 0; idx < diffcount; idx++)
                             {
                                 temp = (int)EXTRACTBITRANGE(frame, (20 - idx * 10), 10);
-                                
+
                                 temp = (temp ^ semask) - semask;
-                                diff.Add(temp); //20 -
+                                diff.Add(temp); 
                                 //diff[idx] = (diff[idx] ^ semask) - semask;
                             }
 
@@ -128,7 +128,7 @@ namespace VL.Earth
                                 var temp = (int)EXTRACTBITRANGE(frame, (24 - idx * 6), 6);
                                 temp = (temp ^ semask) - semask;
                                 diff.Add(temp); //24 -
-                                
+
                                 //diff[idx] = (diff[idx] ^ semask) - semask;
                             }
 
@@ -156,7 +156,7 @@ namespace VL.Earth
                             for (int idx = 0; idx < diffcount; idx++)
                             {
                                 var temp = (int)EXTRACTBITRANGE(frame, (24 - idx * 4), 4);
-                                temp =(temp ^ semask) - semask;
+                                temp = (temp ^ semask) - semask;
                                 diff.Add(temp); //24 - 
                                 //diff[idx] = (diff[idx] ^ semask) - semask;
                             }
@@ -179,10 +179,10 @@ namespace VL.Earth
         public static void CalculateDifferences(int[] differences, int wordIndex, int frameIndex, int X0, ref int[] values, int outputptr, int numberOfSamples, int samplecount)
         {
             int diffcount = differences.Length;
-            
-            if(diffcount > 0)
+
+            if (diffcount > 0)
             {
-                for (int idx = 0; idx < diffcount && samplecount<numberOfSamples; idx++)
+                for (int idx = 0; idx < diffcount && samplecount < numberOfSamples; idx++)
                 {
                     if (wordIndex == 0 && frameIndex == 0) /* Ignore first difference, instead store X0 */
                         values[0] = X0;
@@ -192,13 +192,13 @@ namespace VL.Earth
                     samplecount--;
                 }
             }
-            
-            
+
+
         }
 
         public static uint MsGswap4(uint data4)
         {
-            
+
 
             uint dat = ((data4 & 0xff000000) >> 24) | ((data4 & 0x000000ff) << 24) |
                   ((data4 & 0x00ff0000) >> 8) | ((data4 & 0x0000ff00) << 8);
@@ -223,7 +223,7 @@ namespace VL.Earth
         }
         public static void msr_decode_steim2(int[] input, int samplecount, ref int[] output, int inputLength, bool swapflag, out int maxframes, bool debug)
         {
-            
+
             int outputptr = 0;
             //int outputptr=0;
             /*
@@ -233,32 +233,32 @@ namespace VL.Earth
             }
             */
             UInt32[] frame = new UInt32[16];
-           
+
             int X0 = 0;
             int Xn = 0;
             int[] diff = new Int32[7];
             int[] diffs = new int[7];
             Int32 semask = 0;
-            maxframes = inputLength / 16 ;
+            maxframes = inputLength / 16;
             uint startnibble = 3;
             int nibble = 0;
             int diffcount = 0;
             //int outputptr = 0;
-                //DWord dword = new DWord();
-            byte[] dword = new byte[16];
+            //DWord dword = new DWord();
+            byte[] dword = new byte[4];
             //List<int> output = new List<int>(); 
-            if(debug)
+            if (debug)
                 Console.WriteLine("TotalFrames: {0:G}", maxframes);
             for (int frameidx = 0; frameidx < maxframes && samplecount > 0; frameidx++)
             {
-                
+
                 /* Copy frame, each is 16x32-bit quantities = 64 bytes */
                 //memcpy(frame, input + (16 * frameidx), 64);
                 //Buffer.BlockCopy(input,  frameidx * 16, frame, 0, 64);
                 //frame must be 16 bytes not 64 bits
                 Array.Copy(input, frameidx * 16, frame, 0, 16);
-
-
+                //frame = input[frameidx*16]
+                //Buffer.BlockCopy(input, frameidx * 16, frame, 0, 16);
                 if (frameidx == 0)
                 {
 
@@ -272,18 +272,18 @@ namespace VL.Earth
                     Xn = (Int32)frame[2];
 
                     startnibble = 3; /* First frame: skip nibbles, X0, and Xn */
-                    if(debug)
+                    if (debug)
                         Console.WriteLine("Frame 0, X0 = {0:G} Xn = {1:G}", X0, Xn);
                 }
                 else
                 {
                     startnibble = 1; /* Subsequent frames: skip nibbles */
-                    
+
                 }
                 /* Swap 32-bit word containing the nibbles */
                 if (swapflag)
                     frame[0] = MsGswap4(frame[0]);
-                if(debug)
+                if (debug)
                     Console.WriteLine("Frame: {0:G}", frameidx);
                 /* Decode each 32-bit word according to nibble */
                 for (int widx = (int)startnibble; widx < 16 && samplecount > 0; widx++)
@@ -299,21 +299,25 @@ namespace VL.Earth
                     {
                         case 0: /* nibble=00: Special flag, no differences */
                             //if (libmseed_decodedebug > 0)
-                                Console.WriteLine("\t  00=special", widx, frameidx);
+                            Console.WriteLine("\t  00=special", widx, frameidx);
 
                             break;
                         case 1: /* nibble=01: Four 1-byte differences */
                             diffcount = 4;
 
-                                    Buffer.BlockCopy(frame, widx, dword, 0, 8); //BitConverter.GetBytes(frame[widx]);
-                                                                                //Buffer.BlockCopy(frame, 0, dword, widx, 32-widx*4);
                             
-                                for (int idx = 0; idx < diffcount; idx++)
-                                {
-                                    //Buffer.BlockCopy(dword, 0, diff, widx, 2);
-                                    diff[idx] = (int)dword[idx];
-                                }
-                             
+                            dword = BitConverter.GetBytes(frame[widx]);
+                            dword = dword.Reverse().ToArray();
+                            int counter = diffcount - 1;
+
+                            for (int idx = 0; idx < diffcount; idx++)
+                            {
+                                //Buffer.BlockCopy(dword, 0, diff, widx, 4);
+                                diff[idx] = (SByte)dword[idx];
+                                counter--;
+
+                            }
+                            Console.WriteLine("word: [{0}]", string.Join(", ", dword));
                             break;
 
                         case 2: /* nibble=10: Must consult dnib, the high order two bits */
@@ -325,7 +329,7 @@ namespace VL.Earth
                             switch (dnib)
                             {
                                 case 0: /* nibble=10, dnib=00: Error, undefined value */
-                                    //ms_log(2, "%s: Impossible Steim2 dnib=00 for nibble=10\n", srcname);
+                                    Console.WriteLine(" -- ERROR -- Impossible Steim2 dnib=00 for nibble=10\n");
 
 
                                     break;
@@ -345,7 +349,7 @@ namespace VL.Earth
                                         diff[idx] = EXTRACTBITRANGE(frame[widx], (15 - idx * 15), 15);
                                         diff[idx] = (diff[idx] ^ semask) - semask;
                                     }
-                                    //Console.WriteLine("  W{0:G}: 10,10=2x15b  {1:G}  {2:G}", widx, diff[0], diff[1]);
+                                    Console.WriteLine("  W{0:G}: 10,10=2x15b  {1:G}  {2:G}", widx, diff[0], diff[1]);
 
                                     break;
 
@@ -357,11 +361,11 @@ namespace VL.Earth
                                         diff[idx] = EXTRACTBITRANGE(frame[widx], (20 - idx * 10), 10);
                                         diff[idx] = (diff[idx] ^ semask) - semask;
                                     }
-
+                                    Console.WriteLine("  W{0:G}: 10,10=3x10b  {1:G}  {2:G}  {3:G}", widx, diff[0], diff[1], diff[2]);
                                     break;
-                                    
+
                             }
-                            
+
                             break;
 
                         case 3: /* nibble=11: Must consult dnib, the high order two bits */
@@ -380,7 +384,8 @@ namespace VL.Earth
                                         diff[idx] = (int)EXTRACTBITRANGE(frame[widx], (24 - idx * 6), 6);
                                         diff[idx] = (diff[idx] ^ semask) - semask;
                                     }
-
+                                    Console.WriteLine("  W{0:G}: 10,10=5x6b  {1:G}  {2:G}  {3:G}  {4:G}  {5:G}", 
+                                        widx, diff[0], diff[1], diff[2], diff[3], diff[4]);
                                     break;
 
                                 case 1: /* nibble=11, dnib=01: Six 5-bit differences */
@@ -391,7 +396,8 @@ namespace VL.Earth
                                         diff[idx] = (int)EXTRACTBITRANGE(frame[widx], (25 - idx * 5), 5);
                                         diff[idx] = (diff[idx] ^ semask) - semask;
                                     }
-
+                                    Console.WriteLine("  W{0:G}: 10,10=6x5b  {1:G}  {2:G}  {3:G}  {4:G}  {5:G}  {6:G}",
+                                        widx, diff[0], diff[1], diff[2], diff[3], diff[4], diff[5]);
 
                                     break;
 
@@ -403,7 +409,8 @@ namespace VL.Earth
                                         diff[idx] = (int)EXTRACTBITRANGE(frame[widx], (24 - idx * 4), 4);
                                         diff[idx] = (diff[idx] ^ semask) - semask;
                                     }
-
+                                    Console.WriteLine("  W{0:G}: 10,10=7x4b  {1:G}  {2:G}  {3:G}  {4:G}  {5:G}  {6:G}  {7:G}",
+                                        widx, diff[0], diff[1], diff[2], diff[3], diff[4], diff[5], diff[6]);
 
                                     break;
 
@@ -421,12 +428,12 @@ namespace VL.Earth
                     if (diffcount > 0)
                     {
 
-                        for (int idx = 0; idx < diffcount && samplecount>0; idx++)
+                        for (int idx = 0; idx < diffcount && samplecount > 0; idx++)
                         {
                             if (outputptr == 0) /* Ignore first difference, instead store X0 */
                             {
-                    //diff[0] = X0;
-                            output[outputptr] = (X0);
+                                //diff[0] = X0;
+                                output[outputptr] = (X0);
                                 //output.Add(X0);
                             }
                             /* Otherwise store difference from previous sample */
@@ -438,15 +445,15 @@ namespace VL.Earth
                             }
                             //diffs.Add(diffcount);
                             if (debug)
-                                Console.WriteLine("s:{0:G} ", outputptr);
+                                Console.WriteLine("s:{0:G} d:{1:G}", outputptr, diff[idx]);
                             samplecount--;
                             outputptr++;
-                            
+
                         }
 
                     }
-                    
-                    
+
+
 
 
                 } /* Done looping over nibbles and 32-bit word */
@@ -459,6 +466,6 @@ namespace VL.Earth
 
     }
 
-    
+
 }
 
