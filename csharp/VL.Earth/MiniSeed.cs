@@ -299,6 +299,7 @@ namespace VL.Earth
                     {
                         case 0: /* nibble=00: Special flag, no differences */
                             //if (libmseed_decodedebug > 0)
+
                             Console.WriteLine("\t  00=special", widx, frameidx);
 
                             break;
@@ -317,7 +318,8 @@ namespace VL.Earth
                                 counter--;
 
                             }
-                            Console.WriteLine("word: [{0}]", string.Join(", ", dword));
+                            if (debug)
+                                Console.WriteLine("word: [{0}]", string.Join(", ", dword));
                             break;
 
                         case 2: /* nibble=10: Must consult dnib, the high order two bits */
@@ -349,7 +351,8 @@ namespace VL.Earth
                                         diff[idx] = EXTRACTBITRANGE(frame[widx], (15 - idx * 15), 15);
                                         diff[idx] = (diff[idx] ^ semask) - semask;
                                     }
-                                    Console.WriteLine("  W{0:G}: 10,10=2x15b  {1:G}  {2:G}", widx, diff[0], diff[1]);
+                                    if (debug)
+                                        Console.WriteLine("  W{0:G}: 10,10=2x15b  {1:G}  {2:G}", widx, diff[0], diff[1]);
 
                                     break;
 
@@ -361,7 +364,8 @@ namespace VL.Earth
                                         diff[idx] = EXTRACTBITRANGE(frame[widx], (20 - idx * 10), 10);
                                         diff[idx] = (diff[idx] ^ semask) - semask;
                                     }
-                                    Console.WriteLine("  W{0:G}: 10,10=3x10b  {1:G}  {2:G}  {3:G}", widx, diff[0], diff[1], diff[2]);
+                                    if (debug)
+                                        Console.WriteLine("  W{0:G}: 10,10=3x10b  {1:G}  {2:G}  {3:G}", widx, diff[0], diff[1], diff[2]);
                                     break;
 
                             }
@@ -384,7 +388,8 @@ namespace VL.Earth
                                         diff[idx] = (int)EXTRACTBITRANGE(frame[widx], (24 - idx * 6), 6);
                                         diff[idx] = (diff[idx] ^ semask) - semask;
                                     }
-                                    Console.WriteLine("  W{0:G}: 10,10=5x6b  {1:G}  {2:G}  {3:G}  {4:G}  {5:G}", 
+                                    if (debug)
+                                        Console.WriteLine("  W{0:G}: 10,10=5x6b  {1:G}  {2:G}  {3:G}  {4:G}  {5:G}", 
                                         widx, diff[0], diff[1], diff[2], diff[3], diff[4]);
                                     break;
 
@@ -396,7 +401,8 @@ namespace VL.Earth
                                         diff[idx] = (int)EXTRACTBITRANGE(frame[widx], (25 - idx * 5), 5);
                                         diff[idx] = (diff[idx] ^ semask) - semask;
                                     }
-                                    Console.WriteLine("  W{0:G}: 10,10=6x5b  {1:G}  {2:G}  {3:G}  {4:G}  {5:G}  {6:G}",
+                                    if (debug)
+                                        Console.WriteLine("  W{0:G}: 10,10=6x5b  {1:G}  {2:G}  {3:G}  {4:G}  {5:G}  {6:G}",
                                         widx, diff[0], diff[1], diff[2], diff[3], diff[4], diff[5]);
 
                                     break;
@@ -409,7 +415,8 @@ namespace VL.Earth
                                         diff[idx] = (int)EXTRACTBITRANGE(frame[widx], (24 - idx * 4), 4);
                                         diff[idx] = (diff[idx] ^ semask) - semask;
                                     }
-                                    Console.WriteLine("  W{0:G}: 10,10=7x4b  {1:G}  {2:G}  {3:G}  {4:G}  {5:G}  {6:G}  {7:G}",
+                                    if (debug)
+                                        Console.WriteLine("  W{0:G}: 10,10=7x4b  {1:G}  {2:G}  {3:G}  {4:G}  {5:G}  {6:G}  {7:G}",
                                         widx, diff[0], diff[1], diff[2], diff[3], diff[4], diff[5], diff[6]);
 
                                     break;
