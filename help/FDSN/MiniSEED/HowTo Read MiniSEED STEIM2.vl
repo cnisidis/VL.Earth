@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="A7S6g8qyXzHLtmKRIiNozt" LanguageVersion="2022.5.0-0698-g985682f12d" Version="0.128">
-  <NugetDependency Id="ApmSKzqzRgcL47MkWLBDgu" Location="VL.CoreLib" Version="2022.5.0-0698-g985682f12d" />
+<Document xmlns:p="property" xmlns:r="reflection" Id="A7S6g8qyXzHLtmKRIiNozt" LanguageVersion="2022.5.0-0761-gabcd235dd0" Version="0.128">
+  <NugetDependency Id="ApmSKzqzRgcL47MkWLBDgu" Location="VL.CoreLib" Version="2022.5.0-0761-gabcd235dd0" />
   <Patch Id="UUwHDtxYTETNI5bBqh9uEQ">
-    <Canvas Id="Na6GDjZR7xPP5QCz7JFIj4" DefaultCategory="Main" BordersChecked="false" CanvasType="FullCategory" />
+    <Canvas Id="Na6GDjZR7xPP5QCz7JFIj4" DefaultCategory="Main" CanvasType="FullCategory" />
     <!--
 
     ************************ Application ************************
@@ -39,7 +39,7 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
-          <Node Bounds="-46,153,63,19" Id="NN8g2k3Diq5PLNVRokRqqQ">
+          <Node Bounds="-48,153,63,19" Id="NN8g2k3Diq5PLNVRokRqqQ">
             <p:NodeReference LastCategoryFullName="IO" LastDependency="VL.CoreLib.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="FileReader (String)" />
@@ -49,7 +49,7 @@
             <Pin Id="D2r6nIIBt3ONAqV902fLUv" Name="Read" Kind="InputPin" DefaultValue="False" />
             <Pin Id="Lg5j3yYLtBwN3qx82OmHQP" Name="Output" Kind="OutputPin" />
           </Node>
-          <Pad Id="PgJYgoHRaMOOYW22ErgB1F" Comment="File Path" Bounds="-44,90,133,15" ShowValueBox="true" isIOBox="true" Value="assets\noa_fdsnws_GVDS.txt">
+          <Pad Id="PgJYgoHRaMOOYW22ErgB1F" Comment="File Path" Bounds="-46,90,133,15" ShowValueBox="true" isIOBox="true" Value="assets\noa_fdsnws_GVDS.txt">
             <p:TypeAnnotation LastCategoryFullName="IO" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Path" />
             </p:TypeAnnotation>
@@ -82,7 +82,7 @@
             <Patch Id="RJUyn1MroVMP3mkyJCdDwb" ManuallySortedPins="true">
               <Patch Id="RFD4eqFaBrdMqBoiue92oU" Name="Create" ManuallySortedPins="true" />
               <Patch Id="QBtxaYanQGrNIUCNel1g7m" Name="Then" ManuallySortedPins="true" />
-              <Node Bounds="-335,346,83,19" Id="Ngc8EBPoLCNO4Ri8BB9FPN">
+              <Node Bounds="-335,346,83,26" Id="Ngc8EBPoLCNO4Ri8BB9FPN">
                 <p:NodeReference LastCategoryFullName="Collections.Spread" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <CategoryReference Kind="ClassType" Name="Spread" NeedsToBeDirectParent="true" />
@@ -144,7 +144,7 @@
             <Patch Id="Gx0gfFSwu47LhlzkowRUUe" ManuallySortedPins="true">
               <Patch Id="FlHzuarAxY9LDLU6wtMa9m" Name="Create" ManuallySortedPins="true" />
               <Patch Id="FbfvTuI2BIJMqlToawHtTE" Name="Then" ManuallySortedPins="true" />
-              <Node Bounds="-46,205,45,19" Id="FfVyYt8D97CPrLVHIMf5z1">
+              <Node Bounds="-48,205,45,26" Id="FfVyYt8D97CPrLVHIMf5z1">
                 <p:NodeReference LastCategoryFullName="Primitive.String" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <CategoryReference Kind="StringType" Name="String" NeedsToBeDirectParent="true" />
@@ -155,7 +155,7 @@
                 <Pin Id="Vobjq6JssjrNjt8WhOtyWb" Name="Options" Kind="InputPin" DefaultValue="RemoveEmptyEntries" />
                 <Pin Id="UoVhMUbXqTVNllQrBkBy5Q" Name="Result" Kind="OutputPin" />
               </Node>
-              <Node Bounds="-46,267,83,19" Id="Fb3hppSbRZGPRl1RHHthPf">
+              <Node Bounds="-48,267,83,26" Id="Fb3hppSbRZGPRl1RHHthPf">
                 <p:NodeReference LastCategoryFullName="Collections.Spread" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <CategoryReference Kind="ClassType" Name="Spread" NeedsToBeDirectParent="true" />
@@ -166,13 +166,65 @@
               </Node>
             </Patch>
             <ControlPoint Id="DIQUicauawRQYpZSkdF4Hd" Bounds="-46,187" Alignment="Top" />
-            <ControlPoint Id="BRpbCBh12ZbP5tZ3QVqTDB" Bounds="-41,317" Alignment="Bottom" />
+            <ControlPoint Id="BRpbCBh12ZbP5tZ3QVqTDB" Bounds="-46,317" Alignment="Bottom" />
           </Node>
           <Overlay Id="K1CRvwDVC3eMYc8iQiNM7L" Name="MiniSEED STEIM2 Decoding" Bounds="-523,-16,373,539">
             <p:ColorIndex p:Type="Int32">3</p:ColorIndex>
           </Overlay>
           <Pad Id="Dpl3GzwrULGP4nZLFqUfON" Comment="" Bounds="-332,575,59,95" ShowValueBox="true" isIOBox="true" Value="0" />
-          <Pad Id="Cgn61HJCEqqLo47zDZW89S" Comment="" Bounds="-40,570,62,105" ShowValueBox="true" isIOBox="true">
+          <Pad Id="Cgn61HJCEqqLo47zDZW89S" Comment="" Bounds="-44,570,62,105" ShowValueBox="true" isIOBox="true">
+            <p:Value>
+              <Item></Item>
+            </p:Value>
+          </Pad>
+          <Pad Id="T8LRfam6vtWLA4J1yvrGMs" Comment="File Path" Bounds="389,40,129,15" ShowValueBox="true" isIOBox="true" Value="assets\noa_fdsnws.mseed">
+            <p:TypeAnnotation LastCategoryFullName="IO" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="Path" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="STLt7RfgSQTQOxv9zpTupF" Comment="Read" Bounds="447,-24,35,35" ShowValueBox="true" isIOBox="true" Value="False">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
+              <CategoryReference Kind="Category" Name="Primitive" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Node Bounds="375,78,145,159" Id="NPYrgJ1l25UPpzKX7dU6De">
+            <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
+              <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
+              <CategoryReference Kind="Category" Name="Primitive" />
+              <Choice Kind="ProcessStatefulRegion" Name="Cache" />
+            </p:NodeReference>
+            <Pin Id="ScOAWrW3ONfMBD9oCUoubN" Name="Force" Kind="InputPin" />
+            <Pin Id="Bmn6fDmuEL8OyVSyhRtCgb" Name="Dispose Cached Outputs" Kind="InputPin" />
+            <Pin Id="VGQU8WipF2BNDXAlbpMKkQ" Name="Has Changed" Kind="OutputPin" />
+            <ControlPoint Id="CYuVUIJBx7uNICNlcqZD2n" Bounds="447,84" Alignment="Top" />
+            <ControlPoint Id="OQvke8uWVobQdNVdr30OOh" Bounds="390,231" Alignment="Bottom" />
+            <Patch Id="MXqTgBHjWqNPjVquLfwWS1" ManuallySortedPins="true">
+              <Patch Id="S4QSawXf2esMNTrP3roq2m" Name="Create" ManuallySortedPins="true" />
+              <Patch Id="VesC27fsMSQNb8Dj98Rusp" Name="Then" ManuallySortedPins="true" />
+              <Node Bounds="387,109,63,19" Id="ORnyUongLj0ML9odv3ekwS">
+                <p:NodeReference LastCategoryFullName="IO" LastDependency="VL.CoreLib.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="ProcessAppFlag" Name="FileReader" />
+                </p:NodeReference>
+                <Pin Id="Av3Kgn3rHMLPbNX6vJKHEG" Name="File Path" Kind="InputPin" />
+                <Pin Id="SUkvurHNi2KOlSNACvjzlx" Name="Read" Kind="InputPin" />
+                <Pin Id="RL6f5KVPwRTPTBfZ07QDue" Name="Output" Kind="OutputPin" />
+              </Node>
+              <Node Bounds="387,156,80,19" Id="GMxxqMQm1l0M4Iy3iOTSSX">
+                <p:NodeReference LastCategoryFullName="VL.Earth.MiniSeed" LastDependency="VL.Earth.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="ProcessAppFlag" Name="StreamToMiniSeedData" />
+                </p:NodeReference>
+                <Pin Id="PcXvtdygvaCM3EPOJq7fKu" Name="Bytes" Kind="InputPin" />
+                <Pin Id="EemwbdZuvmaLP0LGC0Qk8H" Name="Output" Kind="OutputPin" />
+              </Node>
+            </Patch>
+          </Node>
+          <Pad Id="V0Xu4Voo9wWNUIiaaCQair" Comment="" Bounds="388,286,351,125" ShowValueBox="true" isIOBox="true">
             <p:Value>
               <Item></Item>
             </p:Value>
@@ -202,11 +254,17 @@
         <Link Id="D8fWpdENhR1PyI3Qy5vczP" Ids="HdI74Y1kfZROuZpKtvVu2A,D2r6nIIBt3ONAqV902fLUv" />
         <Link Id="U16M7mrwvWJQIUGa2FWU31" Ids="QSi1I7pgkpVPrBY2BBzLJy,Dpl3GzwrULGP4nZLFqUfON" />
         <Link Id="LshN8ZO8fSRP6MXn4lynqs" Ids="BRpbCBh12ZbP5tZ3QVqTDB,Cgn61HJCEqqLo47zDZW89S" />
+        <Link Id="VEeKwRL1rXiOr2dW4PMP1k" Ids="T8LRfam6vtWLA4J1yvrGMs,Av3Kgn3rHMLPbNX6vJKHEG" />
+        <Link Id="VloLhWsnRzbNeCIoBZ4DXC" Ids="STLt7RfgSQTQOxv9zpTupF,CYuVUIJBx7uNICNlcqZD2n" />
+        <Link Id="RDdXXSUgmevPn4HLDzzHCy" Ids="CYuVUIJBx7uNICNlcqZD2n,SUkvurHNi2KOlSNACvjzlx" />
+        <Link Id="HSnEmU3X4TaL4hpO1UtIMa" Ids="OQvke8uWVobQdNVdr30OOh,V0Xu4Voo9wWNUIiaaCQair" />
+        <Link Id="F9ki7G5gzcmOUKMVCqsDiu" Ids="RL6f5KVPwRTPTBfZ07QDue,PcXvtdygvaCM3EPOJq7fKu" />
+        <Link Id="UFYYjlHv7d2Pr84UbAFYTa" Ids="EemwbdZuvmaLP0LGC0Qk8H,OQvke8uWVobQdNVdr30OOh" />
       </Patch>
     </Node>
   </Patch>
   <NugetDependency Id="ByWI7HPXb9CM8EFhbQ7LVf" Location="VL.Earth" Version="0.0.0" />
-  <NugetDependency Id="SkWL4LduBkMMkdMFkBiT16" Location="VL.Skia" Version="2022.5.0-0698-g985682f12d" />
-  <NugetDependency Id="NMO6Z8RpYedQVcRQPG2i84" Location="VL.ImGui" Version="2022.5.0-0698-g985682f12d" />
-  <NugetDependency Id="UBKs2DBsEKBPsaszEt1E0F" Location="VL.ImGui.Skia" Version="2022.5.0-0698-g985682f12d" />
+  <NugetDependency Id="SkWL4LduBkMMkdMFkBiT16" Location="VL.Skia" Version="2022.5.0-0761-gabcd235dd0" />
+  <NugetDependency Id="NMO6Z8RpYedQVcRQPG2i84" Location="VL.ImGui" Version="2022.5.0-0761-gabcd235dd0" />
+  <NugetDependency Id="UBKs2DBsEKBPsaszEt1E0F" Location="VL.ImGui.Skia" Version="2022.5.0-0761-gabcd235dd0" />
 </Document>
