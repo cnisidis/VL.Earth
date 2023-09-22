@@ -8,7 +8,7 @@
     ************************ Earthquake ************************
 
 -->
-      <Node Name="Earthquake" Bounds="173,203" Id="LvYZ8EukQBCOvB9KY75JDx">
+      <Node Name="Earthquake" Bounds="211,196" Id="LvYZ8EukQBCOvB9KY75JDx">
         <p:NodeReference>
           <Choice Kind="ClassDefinition" Name="Class" />
           <CategoryReference Kind="Category" Name="Primitive" />
@@ -7581,7 +7581,7 @@
                   <Patch Id="Da6PnycRszNMLgsMtFqSj0" Name="Create" ManuallySortedPins="true" />
                   <Patch Id="DefwYWKdJhrQDMnD0T89YH" Name="Update" ManuallySortedPins="true" />
                   <Patch Id="FULFFTlKwp6L6K98YktPzK" Name="Dispose" ManuallySortedPins="true" />
-                  <Node Bounds="525,237,99,19" Id="PKHIUJy1WCVMsgrI1t9oOT">
+                  <Node Bounds="525,237,99,26" Id="PKHIUJy1WCVMsgrI1t9oOT">
                     <p:NodeReference LastCategoryFullName="System.XML" LastDependency="VL.CoreLib.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="XElementsByName" />
@@ -7659,7 +7659,7 @@
               </Node>
               <ControlPoint Id="REVzaIXH4VZPaci1AjPyIY" Bounds="527,3" />
               <ControlPoint Id="QOPy9dXnaIXN02aNVZo61l" Bounds="410,891" />
-              <Node Bounds="526,102,99,19" Id="BiiE5TdTvi3Pwvj9ve5go8">
+              <Node Bounds="526,102,99,26" Id="BiiE5TdTvi3Pwvj9ve5go8">
                 <p:NodeReference LastCategoryFullName="System.XML" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="OperationCallFlag" Name="XElementsByName" />
@@ -7852,7 +7852,7 @@
     ************************ Channel ************************
 
 -->
-        <Node Name="Channel" Bounds="778,223" Id="L8X8OFQcdw4MltlWyC2jkP">
+        <Node Name="Channel" Bounds="779,215" Id="L8X8OFQcdw4MltlWyC2jkP">
           <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
             <Choice Kind="ClassDefinition" Name="Class" />
           </p:NodeReference>
