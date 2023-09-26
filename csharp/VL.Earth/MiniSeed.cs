@@ -565,5 +565,11 @@ namespace VL.Earth
         DigitalFilterCharging,
         QuestionableTimetag
     }
+
+    public enum SampleRateFactor
+    {
+        SamplesPerSecond =0,
+        SecondsPerSample =1
+    }
 }
 
