@@ -331,9 +331,11 @@ namespace VL.Earth
                             switch (dnib)
                             {
                                 case 0: /* nibble=10, dnib=00: Error, undefined value */
-                                    Console.WriteLine(" -- ERROR -- Impossible Steim2 dnib=00 for nibble=10\n");
-
-
+                                    if(debug)
+                                    {
+                                        Console.WriteLine(" -- ERROR -- Impossible Steim2 dnib=00 for nibble=10\n");
+                                    }
+                                        
                                     break;
 
                                 case 1: /* nibble=10, dnib=01: One 30-bit difference */
@@ -570,6 +572,38 @@ namespace VL.Earth
     {
         SamplesPerSecond =0,
         SecondsPerSample =1
+    }
+
+    public enum EncodingFormat
+    {
+        ASCII =0,
+        Int16 =1,
+        Int24 =2,
+        Int32 =3,
+        Float =4,
+        Double =5,
+
+        STEIM1 = 10,
+        STEIM2 = 11,
+        GEOSCOPE24bit =12,
+        GEOSCOPE16bit3bitExponent = 13,
+        GEOSCOPE16bit4bitExponent = 14,
+        USNationalNetworkCompression = 15,
+        CDSN = 16,
+        Graefenberg = 17,
+        IPG = 18,
+        STEIM3 = 19,
+
+        SRO = 30,
+        HGLP =31,
+        DWWSSN =32,
+        RSTN = 33
+    }
+
+    public enum ByteOrder
+    {
+        LittleEndian = 0,
+        BigEndian =1
     }
 }
 
