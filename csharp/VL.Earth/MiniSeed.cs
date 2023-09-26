@@ -299,8 +299,8 @@ namespace VL.Earth
                     {
                         case 0: /* nibble=00: Special flag, no differences */
                             //if (libmseed_decodedebug > 0)
-
-                            Console.WriteLine("\t  00=special", widx, frameidx);
+                            if(debug)
+                                Console.WriteLine("\t  00=special", widx, frameidx);
 
                             break;
                         case 1: /* nibble=01: Four 1-byte differences */
