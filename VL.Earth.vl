@@ -3520,7 +3520,7 @@
               <Node Bounds="1693,469,131,19" Id="QeGj2DdELcAM1TIdDv1uuE">
                 <p:NodeReference LastCategoryFullName="VL.Earth.MiniSeed" LastDependency="VL.Earth.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                  <Choice Kind="ProcessAppFlag" Name="DECODE_STEIM2" />
+                  <Choice Kind="ProcessAppFlag" Name="DecodeSTEIM2" />
                 </p:NodeReference>
                 <Pin Id="DaA3QTCVpZCQYYFgQv8gb8" Name="Node Context" Kind="InputPin" IsHidden="true" />
                 <Pin Id="Dh6Z1F7HJjRMT87rcurDnT" Name="Input" Kind="InputPin" />
@@ -5632,10 +5632,10 @@
         </Node>
         <!--
 
-    ************************ DECODE_STEIM2 ************************
+    ************************ DecodeSTEIM2 ************************
 
 -->
-        <Node Name="DECODE_STEIM2" Bounds="234,182" Id="U77QIbFXZsIN7ehPOTVp6X">
+        <Node Name="DecodeSTEIM2" Bounds="234,182" Id="U77QIbFXZsIN7ehPOTVp6X">
           <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
             <Choice Kind="ContainerDefinition" Name="Process" />
           </p:NodeReference>
@@ -6839,7 +6839,7 @@
     ************************ StreamToMiniSeedData ************************
 
 -->
-        <Node Name="StreamToMiniSeedData" Bounds="655,363" Id="PwFz9WVTaZVP30ZS0qzSwy">
+        <Node Name="StreamToMiniSeedData" Bounds="256,246" Id="PwFz9WVTaZVP30ZS0qzSwy">
           <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
             <Choice Kind="ContainerDefinition" Name="Process" />
           </p:NodeReference>
