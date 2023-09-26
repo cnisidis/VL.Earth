@@ -473,6 +473,97 @@ namespace VL.Earth
 
     }
 
+    public enum BlocketteType
+    {
+        SAMPLE_RATE = 100,
+        
+        DATA_ONLY_SEED = 1000,
+        DATA_EXTENSION = 1001,
+        GENERIC_EVENT_DETECTION = 200,
+        MURDOCK_EVENT_DETECTION = 201,
+        VARIABLE_LENGTH_OPAQUE_DATA = 2000,
 
+        STEP_CALLIBRATION = 300,
+        SINE_CALLIBRATION = 310,
+        PSEUDO_RANDOM_CALLIBRATION = 320,
+        GENERIC_CALLIBRATION = 390,
+        CALLIBRATION_ABORT = 395,
+
+        BEAM = 400,
+        BEAM_DELAY = 405,
+
+        TIMING = 500,
+
+
+        FIELD_VOLUME_IDENTIFIER = 005,
+        TELEMETRY_VOLUME_IDENTIFIER = 008,
+        VOLUME_IDENTIFIER = 010,
+        VOLUME_STATION_HEADER_INDEX = 011,
+        VOLUME_TIME_SPAN_INDEX = 012,
+        DATA_FORMAT_DICTIONARY = 030,
+        COMMENT_DESCRIPTION = 031,
+        CITED_SOURCE_DICTIONARY = 032,
+        GENERIC_ABBREVIATION = 033,
+        UNITS_ABBREVIATION = 034,
+        BEAM_CONFIGURATION = 035,
+        FIR_DICTIONARY = 041,
+        RESPONSE_POLYNOMIAL_DICT = 042,
+        RESPONSE_POLES_AND_ZEROS_DICT = 043,
+        RESPONSE_COEFFICIENTS_DICT = 044,
+        RESPONSE_LIST_DICT = 045,
+        GENERIC_RESPONSE_DICT = 046,
+        DECIMATION_DICTIONARY = 047,
+        CHANNEL_SENSITIVITY_GAIN_DICT = 048,
+        RESPONSE_POLYNOMIAL_DICT_v23 = 049,
+        
+        STATION_IDENTIFIER = 050,
+        STATION_COMMENT = 051,
+        CHANNEL_IDENTIFIER = 052,
+        STA_RESPONSE_POLES_AND_ZEROS
+
+
+
+    }
+
+    public enum QualityIndicator
+    {
+        D, //The state of quality control of the data is indeterminate.
+        R, //Raw Waveform Data with no Quality Control
+        Q, //Quality Controlled Data, some processes have been applied to the data.
+        M  //Data center modified, time-series values have not been changed.
+    }
+
+    public enum ActivityFlags {
+        CalibrationSignalPresent,
+        TimeCorrectionApplied,
+        BeginningOfEvent,
+        EndOfEvent,
+        PositiveLeap,
+        NegativeLeap,
+        EventInProgress
+    
+    }
+
+    public enum IOAndClockFlags
+    {
+        PossibleParrityError,
+        LongRecordRead,
+        ShortRecordRead,
+        StartOfTimeSeries,
+        EndOfTimeSeries,
+        ClockLocked
+    }
+
+    public enum DataQualityFlags 
+    {
+        AmplifierSaturation,
+        DigitizerClipping,
+        SpikesDetected,
+        Glitches,
+        MissingData,
+        TelemetrySyncError,
+        DigitalFilterCharging,
+        QuestionableTimetag
+    }
 }
 
