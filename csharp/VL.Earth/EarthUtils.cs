@@ -5,5 +5,5 @@ namespace VL.Earth;
 
 public static class EarthUtils
 {
-    
+
 }
