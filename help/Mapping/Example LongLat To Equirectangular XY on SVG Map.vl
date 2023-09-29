@@ -304,7 +304,7 @@
               <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="HKenp6PHNT6LV3Si0QJeqQ" Comment="Index" Bounds="295,-107,35,15" ShowValueBox="true" isIOBox="true" Value="0">
+          <Pad Id="HKenp6PHNT6LV3Si0QJeqQ" Comment="Index" Bounds="295,-107,35,15" ShowValueBox="true" isIOBox="true" Value="2">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Integer32" />
             </p:TypeAnnotation>
@@ -532,6 +532,7 @@
               <Choice Kind="TypeFlag" Name="RGBA" />
             </p:TypeAnnotation>
           </Pad>
+          <ControlPoint Id="V377JMjAPKoOGNHOFbk8mg" Bounds="1176,332" />
         </Canvas>
         <ProcessDefinition Id="SpTj0hRdiFHPESBapJsGje">
           <Fragment Id="AW40LnUSDLJNx4YmVEpsdy" Patch="O0ayIJG1DO5O0UOrnED0Ul" Enabled="true" />
@@ -586,7 +587,7 @@
         <Link Id="EBkMoRAcTpVNH1ROvIv4XD" Ids="IffLPwFQCJHPP0y0f3gpr9,LW66dketz67M530fMAtUGh" />
         <Link Id="EtNs7QvXRQtOQ0YqA57HOb" Ids="IffLPwFQCJHPP0y0f3gpr9,EQGtvYUdoIZOYogGlHCDjg" />
         <Link Id="ATiYsFLBwrQNuNuIvYBcHR" Ids="SEt8dcEyLjzPgvc9c2torA,EBk9Gs2kTFIM1GYvE5jxKx" />
-        <Link Id="R5erlkDIUPfNy2VR9afxiK" Ids="L0gef3G5K4dOML3P0NXbEl,N6o6dv2rE9MPrR5K0n3sCD" />
+        <Link Id="R5erlkDIUPfNy2VR9afxiK" Ids="L0gef3G5K4dOML3P0NXbEl,V377JMjAPKoOGNHOFbk8mg,N6o6dv2rE9MPrR5K0n3sCD" />
         <Link Id="Ew2kWZ5JMByOlzEYUCv4VP" Ids="E4euKrnVvG1MTmLoY8sSWV,DDliuXsvJ2vN48ktpNIiCJ" IsFeedback="true" />
         <Link Id="DzcQMQFe3EaLB2VSEdwB5T" Ids="SZ0LAF4QegwOqjMWDpk97P,DDliuXsvJ2vN48ktpNIiCJ" />
         <Link Id="GHpo5Ab9FAxQNcFSs69pJc" Ids="DDliuXsvJ2vN48ktpNIiCJ,FxKsRUNTvjcMoUbxQpkzfh" />
