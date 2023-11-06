@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VL.Earth
+namespace VL.Earth.FDSN
 {
-    public class FDSN
-    {
-        public enum SEEDChannel
+    
+        public  enum SEEDChannel
         {
             BHZ=0,// Broadband High Gain Seismometer (Vertical component)
             BHN =1, // Broadband High Gain Seismometer(North-South component)
@@ -29,5 +28,5 @@ namespace VL.Earth
             CLOSED = 0,
             OPEN =1,
         }
-    }
+    
 }
