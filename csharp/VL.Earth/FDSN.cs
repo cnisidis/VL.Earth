@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VL.Earth
+namespace VL.Earth.FDSN
 {
     public class FDSN
     {

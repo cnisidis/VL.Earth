@@ -1,0 +1,75 @@
+//https://www.shadertoy.com/view/wdtyDH
+[Category()]
+[Summary("Returns Cricles as Ripples")]
+shader Ripples_TextureFX : TextureFX
+{
+    
+    
+    float delta = 1.4;
+    
+    float2 center = float2(0,0);
+    float time = 0.0f;
+    float input = 0.0f;
+    float2 Resolution = float2(1024, 1024);
+
+    bool trigger = false;
+
+    stage override float4 Shading()
+    {
+        float2 uv = streams.TexCoord;
+        
+        float pressure = Texture0.Sample(Sampler0, uv).x;
+        float pVel = Texture0.Sample( Sampler0, uv).y;
+
+        float p_right = Texture0.Sample( Sampler0, uv+float2(1,0)).x;
+        float p_left = Texture0.Sample( Sampler0, uv+float2(-1,0)).x;
+        float p_up = Texture0.Sample( Sampler0, uv + float2(0,1)).x; 
+        float p_down = Texture0.Sample( Sampler0, uv+float2(0,-1)).x; 
+
+        // Change values so the screen boundaries aren't fixed.
+        if (uv.x == 0.5) p_left = p_right;
+        if (uv.x == Resolution.x - 0.5) p_right = p_left;
+        if (uv.y == 0.5) p_down = p_up;
+        if (uv.y == Resolution.y - 0.5) p_up = p_down;
+
+        // Apply horizontal wave function
+        pVel += delta * (-2.0 * pressure + p_right + p_left) / 4.0;
+        // Apply vertical wave function (these could just as easily have been one line)
+        pVel += delta * (-2.0 * pressure + p_up + p_down) / 4.0;
+        
+        // Change pressure by pressure velocity
+        pressure += delta * pVel;
+        
+        // "Spring" motion. This makes the waves look more like water waves and less like sound waves.
+        pVel -= 0.005 * delta * pressure;
+        
+        // Velocity damping so things eventually calm down
+        pVel *= 1.0 - 0.002 * delta;
+        
+        // Pressure damping to prevent it from building up forever.
+        pressure *= 0.999;
+        
+        //x = pressure. y = pressure velocity. Z and W = X and Y gradient
+        float4 col  = float4(pressure, pVel, (p_right - p_left) / 2.0, (p_up - p_down) / 2.0);
+        float4 data = Texture1.Sample(Sampler0, uv);
+        
+        if (trigger > 1.0) {
+        float dist = distance(uv, center);
+        if (dist <= 20.0) {
+            col.x += 1.0 - dist / 20.0;
+        }
+        }
+        
+        
+        //float4 feedback = Texture1.Sample(Sampler0, uv);
+        
+        
+        
+        return col+=data;
+        
+        
+    }
+
+   
+};
+
