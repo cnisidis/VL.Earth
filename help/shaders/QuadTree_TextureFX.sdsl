@@ -1,0 +1,152 @@
+// @license MIT
+// @author ciphrd
+// 
+// This algorithm is sort of a probabilistic quad tree construction where quad divisions are 
+// added if the color variation (variance) in a quad is too important.
+// 
+// The color variation is computed by taking n samples within the quad, and then we compute the 
+// variance on each color component of the samples.
+//
+//
+// Limitations
+// 
+// If a certain area, which is large, has a small section of it being detailed while the rest
+// is pretty much linear, divisions might not be added. Because this algorithm picks random
+// points in the quad, the small detailed section has little to no infuence on the overall
+// variations of the colors in the quad.
+// You can observe this behavior on the Google logo when it appears.
+//
+
+[Category()]
+[Summary("Builds a Propabilistic Quadtree")]
+
+
+
+shader QuadTree_TextureFX : TextureFX
+{
+
+    static const uint SAMPLES_PER_ITERATION = 30;
+    static const float FSamplesPerIteration = 30.0f;
+    static const uint MaxSamples = 200;
+    static const uint MaxIterations = 6;
+
+    float MinDivisions = 4.0f;
+    
+    float2 Res = float2(1024,1024);
+
+    float ThresholdMin = 0.0001;
+    float ThresholdMax = 0.01; 
+    float mix = 0.5;
+
+    
+    
+    // taken from http://glslsandbox.com/e#41197.0
+    float2 hash22(float2 p) 
+    { 
+        float n = sin(dot(p, float2(41, 289)));
+        return frac(float2(262144, 32768)*n);    
+    }
+
+    // Computes the color variation on a quad division of the space
+    // Basically, this method takes n random samples in a given quad, compute the average 
+    // of each color component of the samples.
+    // Then, it computes the variance of the samples
+    // This is the way I thought for computing the color variation, there might be others,
+    // and there must be better ones
+
+    float4 quadColorVariation (float2 center, float size) 
+    {
+        // this array will store the grayscale of the samples
+        float3 samplesBuffer[SAMPLES_PER_ITERATION];
+        
+        // the average of the color components
+        float3 avg = float3(0,0,0);
+        
+        // we sample the current space by picking pseudo random samples in it 
+        for (uint i = 0; i < SAMPLES_PER_ITERATION; i++) 
+        {
+            float fi = float(i);
+            // pick a random 2d point using the center of the active quad as input
+            // this ensures that for every point belonging to the active quad, we pick the same samples
+            float2 r = hash22(center.xy + float2(fi, 0.0))-0.5;
+            float3 sp = (float3)Texture0.Sample(Sampler0, center + r * size).rgb;
+            avg+= sp;
+            samplesBuffer[i] = sp;
+        }
+        
+        avg /= FSamplesPerIteration;
+        
+        // estimate the color variation on the active quad by computing the variance
+
+        float3 avar = float3(0,0,0);
+        
+        for (uint j = 0; j < SAMPLES_PER_ITERATION; j++) 
+        {
+            avar += pow(samplesBuffer[j], 2);
+        }
+        avar /= FSamplesPerIteration;
+        avar -= pow(avg, 2);
+            
+        return float4(avg, (avar.x + avar.y + avar.z) /3.0);
+    }
+
+
+
+    stage override float4 Shading()
+    {
+        float2 uv = streams.TexCoord;
+        
+
+
+        
+        float Threshold = lerp(ThresholdMin, ThresholdMax, mix);
+
+        float divs= MinDivisions;
+
+        // the center of the active quad - we initialze with 2 divisions
+        float2 quadCenter = (floor(uv * divs) + 0.5) / divs;
+        float quadSize = 1. / divs; // the length of a side of the active quad
+        
+        // we store average and variance here
+        float4 quadInfos = float4(0,0,0,0);
+        
+        for (uint k = 0; k < (uint)MaxIterations; k++) 
+        {
+            quadInfos = quadColorVariation(quadCenter, quadSize);
+            
+            // if the variance is lower than the threshold, current quad is outputted
+            if (quadInfos.w < Threshold) break;
+            
+            // otherwise, we divide the space again
+            divs*= 2.0;
+            quadCenter = (floor(uv * divs) + 0.5) / divs;
+            quadSize/= 2.0;
+        }
+        
+        float4 color = Texture0.Sample(Sampler0, uv);
+    
+        // the coordinates of the quad
+        float2 nUv = frac(uv * divs);
+        
+        // we create lines from the uv coordinates
+        float2 lWidth = float2(1./Res.x, 1./Res.y);
+        float2 uvAbs = abs(nUv-0.5);
+        float s = step(0.5-uvAbs.x, lWidth.x*divs) + step(0.5-uvAbs.y, lWidth.y*divs);
+        
+        // we smooth the color between average and texture initial
+        //color.rgb = mix(color.rgb, quadInfos.rgb, uv.x);
+        
+        // we smooth the lines over the x axis
+        //s*= pow(1. - uv.x, 4.0);
+        
+        // for black lines, we just subtract
+        //color *= s*1;
+
+        // Output to screen
+        return s;
+        
+        
+    }
+   
+};
+

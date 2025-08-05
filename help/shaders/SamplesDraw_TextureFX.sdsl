@@ -1,0 +1,48 @@
+
+[Category()]
+[Summary("Returns a halo texture")]
+shader SamplesDraw_TextureFX : TextureFX
+{
+    
+    float Gamma = 1.0f;
+    float2 Resolution;
+    float Intensity = 1.0f;
+    float Speed = 2.0f;
+    
+    float Bins = 32.0f;
+
+    [Color]
+    float4 Background;
+    [Color]
+    float4 Cold;
+    [Color]
+    float4 Hot;
+    
+
+    stage override float4 Shading()
+    {
+        float2 uv = streams.TexCoord;
+        float PixelWidth = Bins/Resolution.x;
+
+        //from left to right
+        float effect_mask = step(uv.x, 1- PixelWidth);
+        uv.x += PixelWidth * PixelWidth; 
+        
+        //from right to left
+        //uv.y -= PixelWidth * Speed; 
+        
+        float4 input = Texture0.Sample(Sampler0, uv) * Gamma;
+        float4 feedback = Texture1.Sample(Sampler0, uv);
+        
+        float intens = Intensity * input.r;
+        float4 col = lerp( Background, lerp(Cold, Hot, intens), intens);
+        
+        return lerp(col,feedback, effect_mask);
+        //from right to left
+        //return lerp(feedback,float4(0,input.r,0,1) effect_mask);
+        
+    }
+
+   
+};
+

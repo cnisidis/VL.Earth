@@ -1,0 +1,63 @@
+
+[Category()]
+[Summary("Returns a halo texture")]
+shader HorizontalGridGraph_TextureFX : TextureFX
+{
+    
+    float Gamma = 1.0f;
+    float2 Resolution;
+    float Intensity = 1.0f;
+    float Speed = 2.0f;
+    
+    [Color]
+    float4 Background;
+    [Color]
+    float4 Cold;
+    [Color]
+    float4 Hot;
+
+    rgroup PerUpdate
+    {
+        Buffer<float> Data;
+    }
+    
+    [numthreads(1, 1, 1)]
+    stage override float4 Shading()
+    {
+        float2 uv = streams.TexCoord;
+        float PixelWidth = 1/Resolution.x;
+
+
+        //from left to right
+        float effect_mask = step(uv.x, 1-PixelWidth);
+        //uv.x += PixelWidth * Speed; 
+        
+        //from right to left
+        uv.x -= PixelWidth * Speed; 
+        float4 feedback = Texture1.Sample(Sampler0, uv);
+        
+        //float4 col = lerp( Background, lerp(Cold, Hot, intens), intens);
+        float col = float4(0,0,0,0);
+        //Split To rows
+        float val = 0;
+        for(uint i=0; i<12; i++)
+        {
+            if(uv.y > uv.y+0.1)
+            {
+                val = (float)Data[i];
+                col = float4( val, 0, 0, 1); 
+            }
+            
+                
+        }
+        //col = float4(uv.y,0,0,1);
+        //return lerp(col, feedback, effect_mask);
+        return col;
+        
+        
+        
+    }
+
+   
+};
+

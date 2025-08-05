@@ -1,0 +1,58 @@
+
+[Category()]
+[Summary("Returns a Thin Line")]
+shader MovingPoint_TextureFX : TextureFX
+{
+    float InputValue = 0.5;
+    
+    
+
+    
+    [Color]
+    float4 Background = float4(0,0,0,1);
+    [Color]
+    float4 Color = float4(1,1,1,1);
+    [Color]
+    float4 ZeroLine = float4(0,0,0,1);
+    float ZeroLineThickness = 1.0f;
+    
+    float Speed=1.0f;
+    
+    
+    float MaskThickness = 1.0f;
+    float Intensity = 5.0f;
+    float2 Resolution = float2(3000, 300);
+
+    stage override float4 Shading()
+    {
+        float2 uv = streams.TexCoord;
+        float PixelWidth = 1/Resolution.x;
+        float PixelHeight = (1/Resolution.y) * Intensity;
+
+        //from left to right
+        float effect_mask = step(uv.x, 1-PixelWidth* MaskThickness);
+        
+        uv.x += PixelWidth * Speed; 
+        
+        //from right to left
+        //uv.x -= PixelWidth * Speed; 
+        
+        float4 col = Background;
+        float4 feedback = Texture0.Sample(Sampler0, uv);
+        if(uv.y >= 1- InputValue - PixelHeight/2  && uv.y <= InputValue + PixelHeight/2)
+            {
+                col = Color;
+            }
+        if(uv.y >= 0.5 - PixelHeight*ZeroLineThickness  && uv.y <= 0.5 + PixelHeight*ZeroLineThickness)
+        {
+            col = ZeroLine;
+        }
+        
+        
+        return lerp(col,feedback, effect_mask);
+        //from right to left
+        //return lerp(feedback,float4(0,input.r,0,1) effect_mask);
+        
+    }
+};
+

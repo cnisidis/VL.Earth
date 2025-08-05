@@ -1,0 +1,69 @@
+
+[Category()]
+[Summary("Returns a halo texture")]
+shader WaveDraw_TextureFX : FilterBase
+{
+    
+    float Gamma = 1.0f;
+    float2 Resolution;
+    float Signal=0.0f;
+    float Speed = 2.0f;
+    float split = 0.5f;
+
+    float ThresholdValue=0.5;
+
+    bool ShowThreshold = false;
+
+    [Color]
+    float4 Hot;
+
+    stage override float4 Shading()
+    {
+        float2 uv = streams.TexCoord;
+        float PixelWidth = 1/Resolution.x;
+
+        //from left to right
+        float effect_mask = step(uv.x, 1-PixelWidth);
+        uv.x += PixelWidth * Speed; 
+        
+        //from right to left
+        //uv.x -= PixelWidth * Speed; 
+        
+        float2 Size = float2(PixelWidth*2, Signal);
+        float4 col = float4(0,0,0,1);
+        
+        
+        // if(uv.y-1 > -Size.y && uv.y < Size.y)
+        // {
+        //     col = float4(0,0,1,1);
+        // }
+        if(uv.y-1 > -Size.y )
+        {
+            col = Hot*Signal;
+            
+        }
+        else
+        {
+            col = float4(0,0,0,0);
+        }
+
+        
+        float4 feedback = Texture0.Sample(Sampler0, uv);
+        float4 ThresholdLine = float4(0,0,0,0);
+        if(ShowThreshold)
+        {
+            if(uv.y >= ThresholdValue && uv.y <= ThresholdValue + 1/Resolution.y)
+            {
+                ThresholdLine = float4(1,0,0,1);
+            }
+        }
+        col = lerp(col, feedback, effect_mask);
+        return col + ThresholdLine;
+        //from right to left
+        //return lerp(feedback,float4(0,input.r,0,1) effect_mask);
+        
+    }
+
+   
+};
+

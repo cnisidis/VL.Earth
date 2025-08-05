@@ -1,0 +1,106 @@
+
+[Category()]
+[Summary("Returns a halo texture")]
+shader FFTScanner_TextureFX : FilterBase
+{
+    
+    bool Clear = false;
+    float Gamma = 1.0f;
+    float Intensity = 1.0f;
+    float2 Resolution;
+    float PixelColoumn = 0.0f;
+    [Color]
+    float4 Background;
+    [Color]
+    float4 Hot;
+    [Color]
+    float4 Cold;
+    bool ShowCursor = true;
+    stage override float4 Shading()
+    {
+        float2 uv = streams.TexCoord;
+        float PixelWidth = 1/Resolution.x;
+        float PixelPos = PixelColoumn/Resolution.x;
+
+        float4 input = Texture0.Sample(Sampler0, uv);
+        float4 feedback = Texture1.Sample(Sampler0, uv);
+        
+        float intens = Intensity * input.r;
+        float4 col = lerp( Background, lerp(Cold, Hot, intens),intens);
+        
+        if(Clear)
+        {
+            return Background ;
+        }
+        else if(uv.x>=PixelPos && uv.x < PixelPos + PixelWidth)
+        {
+            //return float4(0,input.r,0,1);
+            return col;
+            
+        }
+        else if((uv.x>=PixelPos+PixelWidth && uv.x < PixelPos + PixelWidth*4) && (ShowCursor))
+        {
+            return float4(0.2,1,0,1);
+        }
+        else if(uv.x < PixelPos)
+        {
+            return feedback;
+        }
+        
+        else
+        {
+            return feedback;
+        }
+
+        
+    }
+
+    // float4 Mix(float4 tex0, float4 tex1, float fader)
+    // {
+    //     float2 uv = streams.TexCoord;
+    //     float PixelWidth = 1/Resolution.x;
+	//     float PixelPos = PixelColoumn/Resolution.x;
+                
+    //     if(Clear)
+    //     {
+    //         return float4(0,0,0,1) ;
+    //     }
+    //     else if(uv.x>=PixelPos && uv.x < PixelPos + PixelWidth)
+    //     {
+    //         return tex0 ;
+    //     }
+    //     else if(uv.x < PixelPos)
+    //     {
+    //         return tex1;
+    //     }
+        
+    //     else
+    //     {
+    //         return float4(0,0,0,1) ;
+    //     }
+
+            
+    // }
+};
+
+/*
+shader FFTScanner_TextureFX : TextureFX
+{
+    
+    
+    float Gamma = 0.5f;
+    float InnerRadius = 0.0f;
+    float OuterRadius = 0.5f;
+    
+
+    stage override float4 Shading()
+    {
+        float2 uv = streams.TexCoord;
+
+        float4 col = float4(uv.x*Gamma, uv.y,1, 1);
+        
+
+        return col;
+    }
+};
+*/
