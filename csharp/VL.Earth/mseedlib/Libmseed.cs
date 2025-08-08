@@ -24,6 +24,14 @@ public static class LibmseedDelegates
 public static class Libmseed
 {
     [DllImport(DllName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+    public static extern ulong mstl3_unpack_recordlist(
+        [In]IntPtr id,
+        [In]IntPtr seg,
+        [Out]IntPtr output,
+        ulong outputsize,
+        byte verbose);
+
+    [DllImport(DllName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
     public static extern Int64 mstl3_readbuffer(
         ref IntPtr ppmstl, 
         [In] byte[] buffer, 
@@ -389,21 +397,39 @@ public static class MSeedUtil
         IntPtr trace = IntPtr.Zero;
         IntPtr tlc = IntPtr.Zero;
         byte splitVersion = 0;
-        uint flags = (uint)(Constants.MSF_SKIPNOTDATA | Constants.MSF_UNPACKDATA);
+        uint flags = (uint)(Constants.MSF_SKIPNOTDATA | Constants.MSF_UNPACKDATA); //Constants.MSF_RECORDLIST
 
         count = (int)Libmseed.mstl3_readbuffer(ref trace, Bytes.ToArray(), Bytes.Count(), splitVersion, flags, tlc, 0);
         MS3TraceList traceList = Marshal.PtrToStructure<MS3TraceList>(trace);
         TraceList tList = new TraceList(traceList);
 
         IntPtr currentTraceIdPtr = traceList.traces.next[0];
-        int traceIndex = 0;
-        while (currentTraceIdPtr != IntPtr.Zero)
+        
+        while (currentTraceIdPtr != IntPtr.Zero )
         {
-            traceIndex++;
-            // Marshal the current MS3TraceID pointer.
             MS3TraceID currentTraceId = Marshal.PtrToStructure<MS3TraceID>(currentTraceIdPtr);
 
-            tList.Traces.Add(currentTraceId);
+            // Create a new Trace object to hold the ID and its segments.
+            Trace newTrace = new Trace() { Id = currentTraceId };
+
+            // --- THIS IS THE NEW CODE TO GET THE SEGMENTS ---
+            IntPtr currentSegPtr = currentTraceId.first;
+           
+            while (currentSegPtr != IntPtr.Zero)
+            {
+                // Marshal the current MS3TraceSeg pointer.
+                MS3TraceSeg currentSeg = Marshal.PtrToStructure<MS3TraceSeg>(currentSegPtr);
+
+                // Add the segment to our new Trace object.
+                newTrace.Segments.Add(new ManagedTraceSeg(currentSeg));
+
+                // Move to the next segment in the linked list.
+                currentSegPtr = currentSeg.next;
+              
+            }
+            // --- END OF NEW CODE ---
+
+            tList.Traces.Add(newTrace);
 
             // Move to the next actual MS3TraceID in the lowest level of the skip list.
             currentTraceIdPtr = currentTraceId.next[0];

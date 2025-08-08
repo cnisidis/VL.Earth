@@ -15,13 +15,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="libs\libmseed.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="VL.Core" Version="2024.6.7" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="libs\libmseed.dll">
+    <Resource Include="libs\libmseed.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Resource>
   </ItemGroup>
 
 </Project>

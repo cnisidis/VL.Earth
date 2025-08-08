@@ -1,12 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using VL.Earth.Libmseed;
 
 namespace VL.Earth.Libmseed;
+
+[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+public struct MS3RecordList
+{
+    public ulong recordcnt;   //Count of records in the list(for convenience)
+    public IntPtr first;   //Pointer to first entry, NULL if the none.
+    public IntPtr last; //Pointer to last entry, NULL if the none. 
+}
 
 // The MS3Record struct is defined in a more detailed form than the pointer-only version
 // provided earlier. It's an internal representation, but its size is required for P/Invoke
