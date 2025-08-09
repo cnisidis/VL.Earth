@@ -36,22 +36,35 @@ namespace VL.Earth.FDSN;
             query,
             queryauth,
             version,
+            extent
             
-        }
+
+    }
 
         public enum RequestServiceType
         {
             station,
             dataselect,
-
-
+            availability
         }
 
-        public enum RequestFormat
+        public enum RequestFormatStation
         {
-            txt,
             xml,
-            miniseed
+            text,
+            
+        }
+
+        public enum RequestFormatDataselect
+    { 
+            mseed
+        }
+
+        public enum RequestFormatAvailability
+    {
+            text,
+            geocsv,
+            json
         }
 
         public enum RequestLevel
@@ -75,54 +88,39 @@ namespace VL.Earth.FDSN;
 
         public static void ParseRoot(string XMLString, out RootType stationData)
         {
+
             stationData = new RootType();
-            try
+        // Create a StringReader to read the XML string
+            using (StringReader reader = new StringReader(XMLString))
             {
-                // Create a StringReader to read the XML string
-                using (StringReader reader = new StringReader(XMLString))
+                // Create an XmlSerializer for your root class (RootType)
+                XmlSerializer serializer = new XmlSerializer(typeof(RootType));
+
+                // Deserialize the XML and cast it to your root class
+                stationData = (RootType)serializer.Deserialize(reader);
+
+                // Now you can access the deserialized data
+                Console.WriteLine("Deserialization successful!");
+                Console.WriteLine($"Source: {stationData.Source}");
+
+                // The 'Network' property is an array, so let's iterate through it
+                if (stationData.Network != null && stationData.Network.Length > 0)
                 {
-                    // Create an XmlSerializer for your root class (RootType)
-                    XmlSerializer serializer = new XmlSerializer(typeof(RootType));
-
-                    // Deserialize the XML and cast it to your root class
-                    stationData = (RootType)serializer.Deserialize(reader);
-
-                    // Now you can access the deserialized data
-                    Console.WriteLine("Deserialization successful!");
-                    Console.WriteLine($"Source: {stationData.Source}");
-
-                    // The 'Network' property is an array, so let's iterate through it
-                    if (stationData.Network != null && stationData.Network.Length > 0)
+                    foreach (var network in stationData.Network)
                     {
-                        foreach (var network in stationData.Network)
-                        {
-                            Console.WriteLine($"Network Code: {network.code}");
-                            Console.WriteLine($"Network Description: {network.Description}");
+                        Console.WriteLine($"Network Code: {network.code}");
+                        Console.WriteLine($"Network Description: {network.Description}");
 
-                            if (network.Station != null && network.Station.Length > 0)
-                            {
-                                Console.WriteLine($"Number of Stations: {network.Station.Length}");
-                                // Access the first station as an example
-                                Console.WriteLine($"First Station Code: {network.Station[0].code}");
-                            }
+                        if (network.Station != null && network.Station.Length > 0)
+                        {
+                            Console.WriteLine($"Number of Stations: {network.Station.Length}");
+                            // Access the first station as an example
+                            Console.WriteLine($"First Station Code: {network.Station[0].code}");
                         }
                     }
                 }
             }
-            catch (InvalidOperationException ex)
-            {
-                Console.WriteLine($"Deserialization failed: {ex.Message}");
-                // The InnerException often contains more specific details about the error
-                if (ex.InnerException != null)
-                {
-                    Console.WriteLine($"Inner Exception: {ex.InnerException.Message}");
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"An unexpected error occurred: {ex.Message}");
-            }
-            
+         
         }
     }
 

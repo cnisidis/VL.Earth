@@ -9,6 +9,8 @@ using VL.Lib.Collections;
 
 namespace VL.Earth.Libmseed;
 
+
+
 /// <summary>
 /// Contains delegates for C function pointers used in libmseed structs.
 /// </summary>
@@ -23,6 +25,8 @@ public static class LibmseedDelegates
 
 public static class Libmseed
 {
+    private const string DllName = "libs/libmseed.dll";
+
     [DllImport(DllName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
     public static extern ulong mstl3_unpack_recordlist(
         [In]IntPtr id,
@@ -41,7 +45,7 @@ public static class Libmseed
         IntPtr tolerance, 
         byte verbose); //MS3TraceList**
 
-    private const string DllName = "libmseed.dll";
+    
 
     //
     // extern int msr3_parse (const char *record, uint64_t recbuflen, MS3Record **ppmsr,
