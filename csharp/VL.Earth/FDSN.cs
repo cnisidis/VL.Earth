@@ -4,6 +4,7 @@
 using System.Xml.Serialization;
 using VL.Lib.Collections;
 using Stride.Core.Mathematics;
+using System.Runtime.CompilerServices;
 
 namespace VL.Earth.FDSN;
 
@@ -45,27 +46,22 @@ namespace VL.Earth.FDSN;
         {
             station,
             dataselect,
-            availability
-        }
+            availability,
+            @event,
+            wfcatalog
+    }
 
-        public enum RequestFormatStation
+        public enum RequestFormat
         {
             xml,
             text,
+            geocsv,
+            mseed,
+            json
             
         }
 
-        public enum RequestFormatDataselect
-    { 
-            mseed
-        }
-
-        public enum RequestFormatAvailability
-    {
-            text,
-            geocsv,
-            json
-        }
+        
 
         public enum RequestLevel
         {
@@ -143,7 +139,66 @@ public partial class NetworkType
 {
     public string GetCode()
     {
-        return this.code;
+        if (this != null)
+            return this.code;
+        else
+            return string.Empty;
+    }
+
+    public string GetDescription()
+    {
+        if (this != null)
+            return this.Description;
+        else
+            return string.Empty;
+    }
+
+    public Spread<CommentType> GetComments()
+    {
+        
+        return this.Comment.ToSpread();
+    }
+
+    public string GetSourceID()
+    {
+        return this.sourceID;
+    }
+
+    public Spread<OperatorType> GetOperators()
+    {
+        return this.Operator.ToSpread();
+    }
+
+    public void GetDates(out DateTime Start, out DateTime End)
+    {
+        Start = this.startDate;
+        End = this.endDate;
+    }
+    public void Split(out string code,  out string SourceID, out DataAvailabilityType DataAvailability)
+    {
+        code = this.code;
+        SourceID = this.sourceID;
+        DataAvailability = this.DataAvailability;
+        
+        
+    }
+}
+
+public partial class CommentType
+{
+    public void Split(out string Id, out string Subject, out string Value, out string Author, out DateTime BeginTime, out DateTime EndTime)
+    {
+        Id = this.id;
+        Value = this.Value;
+        Subject = this.subject;
+        Author = string.Join(" ", this.Author.SelectMany(x => x.Name));
+        BeginTime = this.BeginEffectiveTime;
+        EndTime = this.EndEffectiveTime;
+    }
+
+    public string GetValue()
+    {
+        return this.Value;
     }
 }
 
@@ -167,6 +222,43 @@ public partial class StationType
     {
         return new Vector2((float)this.Longitude.Value, (float)this.Latitude.Value);
         
+    }
+
+    public Spread<ChannelType> GetChannels()
+    {
+        return this.Channel.ToSpread();
+    }
+}
+
+public partial class ChannelType
+{
+    public string GetCode()
+    {
+
+        return this.code;
+    }
+
+    public void Split(out string Code, out RestrictedStatusType RestrictedStatus, out string Comment)
+    {
+        Code = this.code;
+        RestrictedStatus = this.restrictedStatus;
+        Comment = String.Join(",", this.Comment.SelectMany(x => x.GetValue()));
+
+
+
+    }
+}
+    public partial class DataAvailabilityType
+{
+    
+}
+
+public partial class EquipmentType
+{
+    public void Split(out DateTime InstallationDate, out string Type)
+    {
+        InstallationDate = this.InstallationDate;
+        Type = this.Type;
     }
 }
     

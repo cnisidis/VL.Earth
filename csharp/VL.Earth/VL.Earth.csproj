@@ -6,6 +6,8 @@
     <Nullable>enable</Nullable>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <Platforms>AnyCPU;x86</Platforms>
+    <!--<OutputPath>..\lib\</OutputPath>-->
+    
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,13 +21,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="VL.Core" Version="2024.6.7" />
+    <Content Include="libs\libmseed.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="libs\libmseed.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    <PackageReference Include="VL.Core" Version="2024.6.7" />
   </ItemGroup>
 
 </Project>
