@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" xmlns:r="reflection" Id="GVl8XTeRf6KPU1pFxGIsuS" LanguageVersion="2025.7.0-0517-ge070c1d18e" Version="0.128">
-  <NugetDependency Id="R0RkHmJiATtNK3CSO0CI6l" Location="VL.CoreLib" Version="2025.7.0-0517-ge070c1d18e" />
+<Document xmlns:p="property" xmlns:r="reflection" Id="GVl8XTeRf6KPU1pFxGIsuS" LanguageVersion="2025.7.0" Version="0.128">
+  <NugetDependency Id="R0RkHmJiATtNK3CSO0CI6l" Location="VL.CoreLib" Version="2025.7.0" />
   <Patch Id="NpHfIAfyQ6bOC4zDu79C5D">
     <Canvas Id="OuFw6c7cdUlL6X7L9Eaf35" DefaultCategory="VL.Earth" CanvasType="FullCategory">
       <!--
@@ -9220,7 +9220,7 @@
             </ProcessDefinition>
           </Patch>
         </Node>
-        <Canvas Id="V5VTYaoztnBOLbDrr1CpTi" Name="Serializers" Position="372,-53">
+        <Canvas Id="V5VTYaoztnBOLbDrr1CpTi" Name="Serializers" Position="379,-83">
           <!--
 
     ************************ RootTypeSerializer ************************
@@ -15010,11 +15010,6 @@
               <Pin Id="GboltjvbG4kNOMf9cUlbvm" Name="Samples" Kind="OutputPin" />
               <Pin Id="VnrJTK0JANqLwhaAM1mJuh" Name="Default" Kind="InputPin" />
             </Patch>
-            <!--
-
-    ************************  ************************
-
--->
             <ProcessDefinition Id="CsnRNLfrQdILFWcFWYCXIc">
               <Fragment Id="DBVWHFdizv7NPRzx1JBnro" Patch="KkHzJiQ5SV5MyCxQuOrmls" Enabled="true" />
               <Fragment Id="HWk1Eg6WLwIN3e6g41Cxlj" Patch="AXaRYHlR9QLMSDJbjVhHOu" Enabled="true" />
@@ -18032,7 +18027,7 @@
   <PlatformDependency Id="UaCngIlAm5PLVlpvrVfgnD" Location="System.Text.Encoding" />
   <NugetDependency Id="JLqBxdDcYKSLrTxyMMgzLh" Location="Newtonsoft.Json" Version="13.0.3" />
   <NugetDependency Id="CzRSZmArDMlMUHmA8copDm" Location="VL.Earth" Version="0.0.0" />
-  <NugetDependency Id="CkksVtI6ZKlMrQu2e4LO0n" Location="VL.Stride" Version="2025.7.0-0517-ge070c1d18e" />
-  <NugetDependency Id="TYDOMyfMc79LWnPwJBAB83" Location="VL.Stride.TextureFX" Version="2025.7.0-0517-ge070c1d18e" />
+  <NugetDependency Id="CkksVtI6ZKlMrQu2e4LO0n" Location="VL.Stride" Version="2025.7.0" />
+  <NugetDependency Id="TYDOMyfMc79LWnPwJBAB83" Location="VL.Stride.TextureFX" Version="2025.7.0" />
   <PlatformDependency Id="Bp24t43amDZNTrgxi6g8ym" Location="./csharp/VL.Earth/bin/Debug/net8.0/VL.Earth.dll" />
 </Document>
