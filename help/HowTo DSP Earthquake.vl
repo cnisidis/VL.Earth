@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" xmlns:r="reflection" Id="CgSsD0j9s19La10nXLT9DA" LanguageVersion="2025.7.0-0517-ge070c1d18e" Version="0.128">
-  <NugetDependency Id="Bth3OEMLQdYM5xLImDV0f9" Location="VL.CoreLib" Version="2025.7.0-0517-ge070c1d18e" />
+<Document xmlns:p="property" xmlns:r="reflection" Id="CgSsD0j9s19La10nXLT9DA" LanguageVersion="2025.7.0" Version="0.128">
+  <NugetDependency Id="Bth3OEMLQdYM5xLImDV0f9" Location="VL.CoreLib" Version="2025.7.0" />
   <Patch Id="QkYrE2IVwYbOOYmOL4uwvb">
     <Canvas Id="DdJBuzflxM7OUoSRWYaJsG" DefaultCategory="Main" BordersChecked="false" CanvasType="FullCategory" />
     <!--
@@ -20,11 +20,13 @@
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="Renderer" />
             </p:NodeReference>
+            <Pin Id="Spo6Fpwb5ZOQDlpMyMjJVo" Name="Node Context" Kind="InputPin" IsHidden="true" />
             <Pin Id="HWzmDUhwJV3PD5wd12k7CN" Name="Bounds" Kind="InputPin" DefaultValue="968, 180, 612, 436" />
             <Pin Id="Vef5ouQoqRCO3mlUhI8lQj" Name="Save Bounds" Kind="InputPin" IsHidden="true" />
             <Pin Id="RvwBsyV4HiZMkWbk04QiEj" Name="Bound to Document" Kind="InputPin" IsHidden="true" />
-            <Pin Id="Spo6Fpwb5ZOQDlpMyMjJVo" Name="Node Context" Kind="InputPin" IsHidden="true" />
             <Pin Id="V7pvzuJPo59NAnFAF4tfNG" Name="Dialog If Document Changed" Kind="InputPin" IsHidden="true" />
+            <Pin Id="SQVL2zZXw13PfQ5bJrSNgj" Name="Always On Top" Kind="InputPin" IsHidden="true" />
+            <Pin Id="UUkn0elIkk3LGscpmcmtok" Name="Extend Into Title Bar" Kind="InputPin" IsHidden="true" />
             <Pin Id="CzYnbWtAMwvNoaK6z63WPM" Name="Input" Kind="InputPin" />
             <Pin Id="DbXDjgSYJSvOitFyW2s2b1" Name="Title" Kind="InputPin" />
             <Pin Id="KmDDQZWcQE2NumRw6PSyCe" Name="Color" Kind="InputPin" />
@@ -147,17 +149,6 @@
             <ControlPoint Id="KTrijkadg01M57guiMcPhm" Bounds="566,47" Alignment="Top" />
           </Node>
           <Pad Id="SHvFxyCpUbQOwPmC2VoEzF" Comment="" Bounds="601,290,87,15" ShowValueBox="true" isIOBox="true" />
-          <Node Bounds="333,280,56,26" Id="S0khGD1C0S6PzxEsaVRvBN">
-            <p:NodeReference LastCategoryFullName="VL.Tactus.NWaves.DiscreteSignal.Operations" LastDependency="VL.Tactus.vl">
-              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <CategoryReference Kind="Category" Name="DiscreteSignal" />
-              <Choice Kind="OperationCallFlag" Name="Last" />
-            </p:NodeReference>
-            <Pin Id="SmswzMvD4eRPPxABmAS4pY" Name="Input" Kind="InputPin" />
-            <Pin Id="LvZTRLoETh5MrHqe0yM6Ql" Name="N" Kind="InputPin" DefaultValue="32" />
-            <Pin Id="GdrK8VZZ5JQLV3zM4mJyqn" Name="Output" Kind="OutputPin" />
-          </Node>
-          <Pad Id="OpMUU0lW3yuPFYznIebnqX" Comment="" Bounds="59,321,190,132" ShowValueBox="true" isIOBox="true" />
           <Node Bounds="333,230,56,26" Id="QnFrS9UKnFsLZL1bqgOt1z">
             <p:NodeReference LastCategoryFullName="VL.Tactus.NWaves.DiscreteSignal.Operations" LastDependency="VL.Tactus.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
@@ -167,7 +158,7 @@
               <Choice Kind="OperationCallFlag" Name="First" />
             </p:NodeReference>
             <Pin Id="KtWrU2P8YZOLdtW2MTTqPx" Name="Input" Kind="InputPin" />
-            <Pin Id="AOIUqfeeXu8MTkt2Dkre05" Name="N" Kind="InputPin" DefaultValue="2413" />
+            <Pin Id="AOIUqfeeXu8MTkt2Dkre05" Name="N" Kind="InputPin" DefaultValue="2424" />
             <Pin Id="RMit4Zqh0GLNf06yvhU0fa" Name="Output" Kind="OutputPin" />
           </Node>
           <Pad Id="IdsH0XbWs9qNT5aRBYDNdF" Comment="" Bounds="61,231,186,79" ShowValueBox="true" isIOBox="true" />
@@ -189,7 +180,7 @@
             <Pin Id="S1p98eInOtnP6cOa8HvPmY" Name="STFT" Kind="OutputPin" />
             <Pin Id="Jpy7ZWb9Ci5LL8vu4SabrK" Name="Size" Kind="OutputPin" />
           </Node>
-          <Pad Id="NhZZEe5TRFWN0HKtrHTjaK" Comment="" Bounds="335,400,324,122" ShowValueBox="true" isIOBox="true" />
+          <Pad Id="NhZZEe5TRFWN0HKtrHTjaK" Comment="" Bounds="335,400,324,143" ShowValueBox="true" isIOBox="true" />
           <Node Bounds="526,331,85,19" Id="IMDO7rTjUjIK9ZdDP9OzNo">
             <p:NodeReference LastCategoryFullName="VL.Tactus.NWaves.Transforms" LastDependency="VL.Tactus.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
@@ -230,10 +221,7 @@
         <Link Id="Kp5opQG6rDWQDfU3Q1ozBL" Ids="JfRmzAytw56NZRbvxAyP0C,RnzOoWtKa6NOXLanenPBr2" />
         <Link Id="CZN4c7VLwo4OJsQVViHbZO" Ids="OF9PCnEEI5ZOGqX781T2kp,Hs5h22aVI9qMuy6MgW2C32" />
         <Link Id="QikLttSrYlOL2Ie5rftVGE" Ids="IJ6QnshxTE5P7tFquUHth3,P0IpyrpXKK3OkgtFDxfIoR" />
-        <Link Id="Iddx75XB3DtOULiDn4vDSX" Ids="GdrK8VZZ5JQLV3zM4mJyqn,OpMUU0lW3yuPFYznIebnqX" />
         <Link Id="JzNJO3eNAj6QTQg6U8l5Ql" Ids="B20Fe3FxkcOPkuCCIXcTRd,KtWrU2P8YZOLdtW2MTTqPx" />
-        <Link Id="Ji3lfIYefc3O83Elmo6M5Z" Ids="RMit4Zqh0GLNf06yvhU0fa,SmswzMvD4eRPPxABmAS4pY" />
-        <Link Id="EboFIBA1r1MNDIRg9zVvNB" Ids="GdrK8VZZ5JQLV3zM4mJyqn,IaMZe3c2fXEMrZ11puawZd" />
         <Link Id="CdOOuvmOt59LZHREOK6XzD" Ids="VmANhqbRldILtd149ajsqZ,NhZZEe5TRFWN0HKtrHTjaK" />
         <Link Id="IFwbedVn4csLOZVsBw5m8e" Ids="IJ6QnshxTE5P7tFquUHth3,M2Egw23jnZJNv8UAd2yeur" />
         <Link Id="CrarJwNAkyQOEdx7Q1Mcw9" Ids="IJ6QnshxTE5P7tFquUHth3,B20Fe3FxkcOPkuCCIXcTRd" />
@@ -242,12 +230,13 @@
         <Link Id="OGZ4kfgMlpHPEx43m5oDV0" Ids="AjVbCfZhqtUPFVctug5wmP,FFPWnokiFuhQXY2FJsXyV1" />
         <Link Id="TeodVZomShZOnRw9r3tfZm" Ids="KTrijkadg01M57guiMcPhm,R6zmW8M3fTpM1UcrGmjlpQ" />
         <Link Id="NGn9mvUv1rcMwbC60oNlGe" Ids="UGIWZGTJgFlLlRAyTURG1D,KTrijkadg01M57guiMcPhm" />
+        <Link Id="KZdOjvZDlmhLrJfZOWCill" Ids="RMit4Zqh0GLNf06yvhU0fa,IaMZe3c2fXEMrZ11puawZd" />
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="PaNjXFS21u4Lacl1aEvNdu" Location="VL.Skia" Version="2025.7.0-0517-ge070c1d18e" />
-  <NugetDependency Id="JGZ0lQyhh7fLWRaDX8TpOj" Location="VL.ImGui.Skia" Version="2025.7.0-0517-ge070c1d18e" />
-  <NugetDependency Id="PsITvRUAH49NZfMZ9qOVWj" Location="VL.ImGui" Version="2025.7.0-0517-ge070c1d18e" />
+  <NugetDependency Id="PaNjXFS21u4Lacl1aEvNdu" Location="VL.Skia" Version="2025.7.0" />
+  <NugetDependency Id="JGZ0lQyhh7fLWRaDX8TpOj" Location="VL.ImGui.Skia" Version="2025.7.0" />
+  <NugetDependency Id="PsITvRUAH49NZfMZ9qOVWj" Location="VL.ImGui" Version="2025.7.0" />
   <NugetDependency Id="RiTsvfllsz5LFJ1SRRfEUs" Location="VL.Earth" Version="0.0.0" />
   <NugetDependency Id="PKS51nzes7yMlNmDrHWaXB" Location="VL.Tactus" Version="0.0.0" />
 </Document>
