@@ -1,6 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <Document xmlns:p="property" xmlns:r="reflection" Id="GVl8XTeRf6KPU1pFxGIsuS" LanguageVersion="2025.7.4" Version="0.128">
   <NugetDependency Id="R0RkHmJiATtNK3CSO0CI6l" Location="VL.CoreLib" Version="2025.7.4" />
+=======
+<Document xmlns:p="property" xmlns:r="reflection" Id="GVl8XTeRf6KPU1pFxGIsuS" LanguageVersion="2025.7.0" Version="0.128">
+  <NugetDependency Id="R0RkHmJiATtNK3CSO0CI6l" Location="VL.CoreLib" Version="2025.7.0" />
+>>>>>>> 1e03d77331639e25f8906ddada9ad51f65125c3d
   <Patch Id="NpHfIAfyQ6bOC4zDu79C5D">
     <Canvas Id="OuFw6c7cdUlL6X7L9Eaf35" DefaultCategory="VL.Earth" CanvasType="FullCategory">
       <!--
@@ -9220,7 +9225,7 @@
             </ProcessDefinition>
           </Patch>
         </Node>
-        <Canvas Id="V5VTYaoztnBOLbDrr1CpTi" Name="Serializers" Position="372,-53">
+        <Canvas Id="V5VTYaoztnBOLbDrr1CpTi" Name="Serializers" Position="379,-83">
           <!--
 
     ************************ RootTypeSerializer ************************
@@ -14893,7 +14898,7 @@
                 <Pin Id="Jzcdg0T56pLLx9roLzykO4" Name="Result" Kind="OutputPin" />
                 <Pin Id="NNi62ATm3DqOK71MEccQCQ" Name="Not Assigned" Kind="OutputPin" />
               </Node>
-              <Node Bounds="360,227,291,482" Id="K87KN2yBlVMM3VENFxrRVv">
+              <Node Bounds="360,227,359,482" Id="K87KN2yBlVMM3VENFxrRVv">
                 <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
                   <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                   <CategoryReference Kind="Category" Name="Primitive" />
@@ -14903,7 +14908,7 @@
                 <Patch Id="HEYqIJqtq8CM2aNMIJVJVO" ManuallySortedPins="true">
                   <Patch Id="S4l8bJHp6XFOm6AvuXrFut" Name="Create" ManuallySortedPins="true" />
                   <Patch Id="JeyoLDFCa6vMpQkapZLK8i" Name="Then" ManuallySortedPins="true" />
-                  <Node Bounds="380,250,63,26" Id="AyfZbjwN2tRPOXrUWrCuhz">
+                  <Node Bounds="380,250,325,26" Id="AyfZbjwN2tRPOXrUWrCuhz">
                     <p:NodeReference LastCategoryFullName="VL.Earth.FDSN" LastDependency="VL.Earth.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <CategoryReference Kind="Category" Name="FDSN" NeedsToBeDirectParent="true" />
@@ -15019,16 +15024,20 @@
                 </Patch>
                 <ControlPoint Id="QQ6fffPdiV7P4gwGCDNEve" Bounds="558,703" Alignment="Bottom" />
                 <ControlPoint Id="IFF4FMy08twMXPCbsPXPAU" Bounds="558,233" Alignment="Top" />
+                <ControlPoint Id="KMzXhRktol0L6J4C60jNyT" Bounds="702,703" Alignment="Bottom" />
+                <ControlPoint Id="GYNHrZFtGEvOvfI3cwi9Hx" Bounds="702,233" Alignment="Top" />
               </Node>
               <ControlPoint Id="DL0jP3Eq6MnLHqp3Nfnrgt" Bounds="382,80" />
               <ControlPoint Id="FJDx4JMZ7teLiCGxr3YQAo" Bounds="558,769" />
               <ControlPoint Id="PXtrbFkKNnVPuagyXQ40TO" Bounds="601,80" />
+              <ControlPoint Id="KXubon6MfDyPaJ00NiEexW" Bounds="702,770" />
             </Canvas>
             <Patch Id="KkHzJiQ5SV5MyCxQuOrmls" Name="Create" />
             <Patch Id="AXaRYHlR9QLMSDJbjVhHOu" Name="Update">
               <Pin Id="FIaSsgmQlDUP7ECa3mG3FN" Name="Bytes" Kind="InputPin" />
               <Pin Id="GboltjvbG4kNOMf9cUlbvm" Name="Samples" Kind="OutputPin" />
               <Pin Id="VnrJTK0JANqLwhaAM1mJuh" Name="Default" Kind="InputPin" />
+              <Pin Id="CZvxhwS0WPGMFwFI4QP1Mj" Name="Traces Count" Kind="OutputPin" />
             </Patch>
             <ProcessDefinition Id="CsnRNLfrQdILFWcFWYCXIc">
               <Fragment Id="DBVWHFdizv7NPRzx1JBnro" Patch="KkHzJiQ5SV5MyCxQuOrmls" Enabled="true" />
@@ -15056,6 +15065,10 @@
             <Link Id="NJsYsuryNj7P59e0M4RJzb" Ids="NdTeIlwxkUDQYcuKRNzekm,F3BsSyAMQZeNf0zLcnSBdO" />
             <Link Id="JxE7leUYbquLR37se8JitY" Ids="PXtrbFkKNnVPuagyXQ40TO,GUztPPvp1FxNC4JywKSXhM" />
             <Link Id="OlufKbAoVCWLeG7wctfps0" Ids="VnrJTK0JANqLwhaAM1mJuh,PXtrbFkKNnVPuagyXQ40TO" IsHidden="true" />
+            <Link Id="RoEsvjX1k37NpgDOpPvqtp" Ids="GYNHrZFtGEvOvfI3cwi9Hx,KMzXhRktol0L6J4C60jNyT" IsFeedback="true" />
+            <Link Id="R0hGUsH7ab3L1aveypesQH" Ids="HnCRhHC72VsP3xvtjEL8b5,KMzXhRktol0L6J4C60jNyT" />
+            <Link Id="NvzPLJv9h0CQXqxBPwM1La" Ids="KMzXhRktol0L6J4C60jNyT,KXubon6MfDyPaJ00NiEexW" />
+            <Link Id="IG0N1MngOBdLZgu5ffTRjM" Ids="KXubon6MfDyPaJ00NiEexW,CZvxhwS0WPGMFwFI4QP1Mj" IsHidden="true" />
           </Patch>
         </Node>
         <!--
@@ -18355,7 +18368,12 @@
   <PlatformDependency Id="UaCngIlAm5PLVlpvrVfgnD" Location="System.Text.Encoding" />
   <NugetDependency Id="JLqBxdDcYKSLrTxyMMgzLh" Location="Newtonsoft.Json" Version="13.0.3" />
   <NugetDependency Id="CzRSZmArDMlMUHmA8copDm" Location="VL.Earth" Version="0.0.0" />
+<<<<<<< HEAD
   <NugetDependency Id="CkksVtI6ZKlMrQu2e4LO0n" Location="VL.Stride" Version="2025.7.4" />
   <NugetDependency Id="TYDOMyfMc79LWnPwJBAB83" Location="VL.Stride.TextureFX" Version="2025.7.4" />
+=======
+  <NugetDependency Id="CkksVtI6ZKlMrQu2e4LO0n" Location="VL.Stride" Version="2025.7.0" />
+  <NugetDependency Id="TYDOMyfMc79LWnPwJBAB83" Location="VL.Stride.TextureFX" Version="2025.7.0" />
+>>>>>>> 1e03d77331639e25f8906ddada9ad51f65125c3d
   <PlatformDependency Id="Bp24t43amDZNTrgxi6g8ym" Location="./csharp/VL.Earth/bin/Debug/net8.0/VL.Earth.dll" />
 </Document>
