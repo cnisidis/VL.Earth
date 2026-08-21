@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:p="property" xmlns:r="reflection" Id="UFGp1N1Jwq6PmwjVX4TumF" LanguageVersion="2025.7.4" Version="0.128">
+  <NugetDependency Id="NbsNOJn80U3OBXec5PhLy0" Location="VL.CoreLib" Version="2025.7.4" />
+  <Patch Id="DyyTjYSP9rJNNiDxWu3XSR">
+    <Canvas Id="F3SCNg7JNKHN0sOb03XIV8" DefaultCategory="Main" BordersChecked="false" CanvasType="FullCategory" />
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="O2RWoSyAo88PIFg5wejITz">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <CategoryReference Kind="Category" Name="Primitive" />
+      </p:NodeReference>
+      <Patch Id="EZhtN3HUL3aPE70WjSWeIb">
+        <Canvas Id="SSJqLK2GsMHQA9iHFL520U" CanvasType="Group">
+          <Node Bounds="638,300,108,19" Id="HEmryCiJvxULylnUMcV9UH">
+            <p:NodeReference LastCategoryFullName="VL.Earth.FDSN" LastDependency="VL.Earth.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="RequestDataCenters" />
+            </p:NodeReference>
+            <Pin Id="QWONiREXQjoMRc64zFl63E" Name="Node Context" Kind="InputPin" IsHidden="true" />
+            <Pin Id="HJX20rsUyPjLy2gsO115tC" Name="URL" Kind="InputPin" />
+            <Pin Id="D1aHk87nWrVLEpncy1WmcI" Name="Refresh" Kind="InputPin" />
+            <Pin Id="H9nhekCk9sxLxJtYptB1Yx" Name="Datacenters" Kind="OutputPin" />
+            <Pin Id="Jaj36QlGibZNCTa3AS280U" Name="In Progress" Kind="OutputPin" />
+          </Node>
+          <Pad Id="MzOkaAVsVnWNSMon7o4mG9" Comment="Get datacenters catalog" Bounds="640,219,369,20" ShowValueBox="true" isIOBox="true" Value="https://www.fdsn.org/ws/datacenters/1/query">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="MLDSt7QGUZ2NHIURcWhrnd" Comment="Refresh" Bounds="743,269,35,35" ShowValueBox="true" isIOBox="true" Value="false">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="LFeigNliQ7fQVb0TvB4MZF" Comment="Search for a specific datacenter" Bounds="640,186,369,20" ShowValueBox="true" isIOBox="true" Value="https://www.fdsn.org/ws/datacenters/1/query?name=NOA">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="UNq1ZFGOawvMUDJ3o1LgOr" Comment="Datacenters" Bounds="640,350,123,130" ShowValueBox="true" isIOBox="true" />
+        </Canvas>
+        <Patch Id="OUcz6HCLQRCL3IQEwZFnBk" Name="Create" />
+        <Patch Id="PBs1q0k1MhDLUUqsqGuy8j" Name="Update" />
+        <ProcessDefinition Id="B70gOhs3XCPMZK7L4buyIp">
+          <Fragment Id="BahxBd1FM5DPpjyIY3Yv17" Patch="OUcz6HCLQRCL3IQEwZFnBk" Enabled="true" />
+          <Fragment Id="UaKmkcczhptQbYgzpR4X95" Patch="PBs1q0k1MhDLUUqsqGuy8j" Enabled="true" />
+        </ProcessDefinition>
+        <Link Id="DSkWLQlFeDxPFy0O7ioBhN" Ids="MzOkaAVsVnWNSMon7o4mG9,HJX20rsUyPjLy2gsO115tC" />
+        <Link Id="Kk6BRpLZKbRMbqsDZDWQR0" Ids="MLDSt7QGUZ2NHIURcWhrnd,D1aHk87nWrVLEpncy1WmcI" />
+        <Link Id="UYRpW6tYcMZNZ0YD0w9TNc" Ids="H9nhekCk9sxLxJtYptB1Yx,UNq1ZFGOawvMUDJ3o1LgOr" />
+      </Patch>
+    </Node>
+  </Patch>
+  <NugetDependency Id="O4B82ZbAtCMNLoqGRVHGXW" Location="VL.Earth" Version="0.0.0" />
+</Document>
